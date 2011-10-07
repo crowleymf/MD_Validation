@@ -1,0 +1,30 @@
+* microcanonical MD on whole system
+* Protein, cellulose, and water
+* Total 711,887 atoms
+*
+
+
+read rtf   card name "toppar/top_all36_carb.rtf"
+read param card name "toppar/par_all36_carb.prm"
+
+read psf card name charmm_output/onegluc_c36.psf
+
+read coor pdb name pdb/onegluc_min.pdb
+
+energy cutnb 999 ctofnb 998 ctonnb 997 
+
+open unit 11 form write name charmm_output/onegluc_min_chm.frcdump
+frcdump unit 11
+close unit 11
+
+read coor pdb name pdb/onegluc_600k.pdb
+
+energy cutnb 999 ctofnb 998 ctonnb 997 
+
+open unit 11 form write name charmm_output/onegluc_600k_chm.frcdump
+frcdump unit 11
+close unit 11
+
+stop
+
+
