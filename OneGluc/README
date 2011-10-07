@@ -1,0 +1,10 @@
+Test case for c36 carbohydrate force field.
+Currently only Amber is tested against charmm.
+
+Run script will do the whole test except the comparison.
+Requires in your path: charmm, chamber, sander
+
+OUtput to compare is in Amber_output/ and charmm_output/ with file extension: frcdmp.
+
+Sample output of current versions of charmm and amber are in the SAVED directories.
+
