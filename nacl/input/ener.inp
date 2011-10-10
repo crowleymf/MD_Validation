@@ -1,0 +1,16 @@
+**
+*
+
+read rtf   card name toppar/top_all27_prot_na.rtf
+read param card name toppar/par_all27_prot_na.prm
+
+read psf card name charmm_output/nacl.psf
+read coor pdb name pdb/nacl.pdb
+
+ener cutnb 999 ctofnb 998 ctonnb 997 vswi swit
+
+open unit 1 form write name charmm_output/nacl.frcdmp
+frcdmp unit 1
+close unit 1
+
+stop

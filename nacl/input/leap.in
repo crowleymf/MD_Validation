@@ -1,0 +1,6 @@
+source leaprc.ff99SB
+
+a = sequence { Na+ Cl- }
+saveamberparm a a.prmtop a.inpcrd
+quit
+
