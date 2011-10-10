@@ -2,6 +2,8 @@
 set echo
 
 set chm = ~crowley/charmm/CURRENT/em64t/exec/em64t/charmm
+set sander = sander
+
 
 $chm -i input/onegluc_create.inp | tee charmm_output/OUT.create
 $chm -i input/ener.inp | tee charmm_output/OUT.ener
@@ -20,7 +22,7 @@ set yn = $<
 if ( $yn == n ) exit
 
 sander:
-sander -O -o stdout \
+$sander -O -o stdout \
        -i input/onegluc.mdin \
        -p Amber_output/onegluc.prmtop \
        -c Amber_output/onegluc.inpcrd \
@@ -39,7 +41,7 @@ chamber -nocmap -vmd \
      -p      Amber_output/onegluc.prmtop \
      -inpcrd Amber_output/onegluc.inpcrd
 
-sander -O -o stdout \
+$sander -O -o stdout \
        -i input/onegluc.mdin \
        -p Amber_output/onegluc.prmtop \
        -c Amber_output/onegluc.inpcrd \
