@@ -33,5 +33,9 @@ $sander -O -o stdout \
 /bin/mv charmm_gold Amber_output/nacl_amber.frcdmp
 /bin/mv vmd_prmtop  Amber_output/nacl.vmd_prmtop
 
-../tool/ffcompare Amber_output/nacl_amber.frcdmp charmm_output/nacl.frcdmp
+echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
+../ffcompare Amber_output/nacl_amber.frcdmp charmm_output/nacl.frcdmp
 
+echo "----------------------------------------------------------------"
