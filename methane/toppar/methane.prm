@@ -1,0 +1,17 @@
+* Methane parameters
+*
+BONDS
+HA   CT3   322.000     1.1110 ! ALLOW   ALI
+
+ANGLES
+HA   CT3  HA    35.500    108.40    5.40   1.80200 ! ALLOW   ALI
+
+DIHEDRALS
+
+NONBONDED nbxmod  5 atom cdiel shift vatom vdistance vswitch -
+cutnb 14.0 ctofnb 12.0 ctonnb 10.0 eps 1.0 e14fac 1.0 wmin 1.5 
+CT3    0.000000  -0.080000     2.060000   0.000000  -0.010000     1.900000 ! ALLOW   ALI
+HA     0.000000  -0.022000     1.320000 ! ALLOW PEP ALI POL SUL ARO PRO ALC
+
+END
+
