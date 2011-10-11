@@ -1,0 +1,42 @@
+#! /bin/csh 
+
+set name=polypro
+
+charmm -i  input/$name.inp | tee charmm_output/charmm.out
+
+#  if ( ! -e charmm_output/methane2.psf) cp SAVED/methane.psf SAVED/charmm.out charmm_output
+
+chamber -cmap  \
+    -p Amber_output/$name.prmtop \
+    -inpcrd Amber_output/$name.inpcrd \
+    -crd pdb/$name.pdb \
+    -psf charmm_output/$name.psf \
+    -top toppar/top_all27_prot_na.rtf \
+    -param toppar/par_all27_prot_na.prm
+
+
+echo -n "Run sander (y/n): "
+set yn = $<
+if ( $yn == n ) exit
+
+sander:
+if ( $?SANDER ) then
+   set sander = $SANDER
+else 
+   set sander = `which sander`
+endif
+
+$sander -O -i input/mdin -inf Amber_output/mdinfo \
+   -c Amber_output/$name.inpcrd \
+   -p Amber_output/$name.prmtop \
+   -o Amber_output/stdout |& tee mdout
+
+    mv charmm_gold Amber_output/${name}_amber.frcdmp
+
+
+echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
+../ffcompare charmm_output/${name}_chm.frcdmp Amber_output/${name}_amber.frcdmp
+echo "----------------------------------------------------------------"
+
