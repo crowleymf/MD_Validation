@@ -1,5 +1,5 @@
 #! /bin/csh
-set echo
+#set echo
 
 set chm = ~crowley/charmm/CURRENT/em64t/exec/em64t/charmm
 set sander = sander
@@ -53,8 +53,15 @@ $sander -O -o stdout \
 /bin/mv charmm_gold Amber_output/onegluc_600k_amber.frcdmp
 /bin/mv vmd_prmtop  Amber_output/onegluc.vmd_prmtop
 
+echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
 ../ffcompare charmm_output/onegluc_min_chm.frcdmp \
              Amber_output/onegluc_min_amber.frcdmp
 
+echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
 ../ffcompare charmm_output/onegluc_600k_chm.frcdmp \
              Amber_output/onegluc_600k_amber.frcdmp
+echo "----------------------------------------------------------------"
