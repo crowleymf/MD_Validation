@@ -34,9 +34,31 @@ $sander -O -i input/mdin -inf Amber_output/mdinfo \
     mv charmm_gold Amber_output/${name}_amber.frcdmp
 
 
+chamber -cmap  \
+    -p Amber_output/$name.prmtop \
+    -inpcrd Amber_output/${name}_600k.inpcrd \
+    -crd pdb/${name}_600k.pdb \
+    -psf charmm_output/$name.psf \
+    -top toppar/top_all27_prot_na.rtf \
+    -param toppar/par_all27_prot_na.prm
+
+$sander -O -i input/mdin -inf Amber_output/mdinfo \
+   -c Amber_output/${name}_600k.inpcrd \
+   -p Amber_output/$name.prmtop \
+   -o Amber_output/stdout |& tee mdout
+
+    mv charmm_gold Amber_output/${name}_600k_amber.frcdmp
+
 echo "----------------------------------------------------------------"
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/${name}_chm.frcdmp Amber_output/${name}_amber.frcdmp
+../ffcompare charmm_output/${name}_chm.frcdmp \
+              Amber_output/${name}_amber.frcdmp
+echo "----------------------------------------------------------------"
+
+echo ""
+echo "----------------------------------------------------------------"
+../ffcompare charmm_output/${name}_600k_chm.frcdmp \
+              Amber_output/${name}_600k_amber.frcdmp
 echo "----------------------------------------------------------------"
 
