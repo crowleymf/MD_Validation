@@ -30,7 +30,7 @@ $sander -O -o stdout \
        | tee Amber_output/onegluc.out
 
 /bin/rm mdinfo
-/bin/mv charmm_gold Amber_output/onegluc_min_amber.frcdump
+/bin/mv charmm_gold Amber_output/onegluc_min_amber.frcdmp
 /bin/mv vmd_prmtop  Amber_output/onegluc.vmd_prmtop
 
 chamber -nocmap -vmd \
@@ -50,6 +50,11 @@ $sander -O -o stdout \
 
 
 /bin/rm mdinfo
-/bin/mv charmm_gold Amber_output/onegluc_600k_amber.frcdump
+/bin/mv charmm_gold Amber_output/onegluc_600k_amber.frcdmp
 /bin/mv vmd_prmtop  Amber_output/onegluc.vmd_prmtop
 
+../ffcompare charmm_output/onegluc_min_chm.frcdmp \
+             Amber_output/onegluc_min_amber.frcdmp
+
+../ffcompare charmm_output/onegluc_600k_chm.frcdmp \
+             Amber_output/onegluc_600k_amber.frcdmp

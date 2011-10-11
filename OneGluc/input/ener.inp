@@ -11,17 +11,17 @@ read psf card name charmm_output/onegluc_c36.psf
 
 read coor pdb name pdb/onegluc_min.pdb
 
-energy cutnb 999 ctofnb 998 ctonnb 997 
+energy cutnb 999 ctofnb 998 ctonnb 997 swit vswit
 
-open unit 11 form write name charmm_output/onegluc_min_chm.frcdump
+open unit 11 form write name charmm_output/onegluc_min_chm.frcdmp
 frcdump unit 11
 close unit 11
 
 read coor pdb name pdb/onegluc_600k.pdb
 
-energy cutnb 999 ctofnb 998 ctonnb 997 
+energy cutnb 999 ctofnb 998 ctonnb 997 swit vswit
 
-open unit 11 form write name charmm_output/onegluc_600k_chm.frcdump
+open unit 11 form write name charmm_output/onegluc_600k_chm.frcdmp
 frcdump unit 11
 close unit 11
 

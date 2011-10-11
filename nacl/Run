@@ -30,6 +30,8 @@ $sander -O -o stdout \
        | tee Amber_output/nacl.out
 
 /bin/rm mdinfo
-/bin/mv charmm_gold Amber_output/nacl_amber.frcdump
+/bin/mv charmm_gold Amber_output/nacl_amber.frcdmp
 /bin/mv vmd_prmtop  Amber_output/nacl.vmd_prmtop
+
+../tool/ffcompare Amber_output/nacl_amber.frcdmp charmm_output/nacl.frcdmp
 
