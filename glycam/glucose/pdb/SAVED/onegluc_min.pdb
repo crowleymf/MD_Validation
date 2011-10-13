@@ -1,0 +1,28 @@
+REMARK ONE BETA-GLUCOPYRANOSE TEST CASE                                               
+REMARK   DATE:    10/ 7/11     16:51: 8      CREATED BY USER: crowley                 
+ATOM      1  C1  BGLC    1      20.909  52.734  96.053  1.00 23.63      GLA 
+ATOM      2  H1  BGLC    1      21.450  51.841  96.445  1.00  0.00      GLA 
+ATOM      3  O1  BGLC    1      19.539  52.544  96.273  1.00 23.63      GLA 
+ATOM      4  HO1 BGLC    1      19.271  51.844  95.668  1.00  0.00      GLA 
+ATOM      5  C5  BGLC    1      22.791  54.097  96.565  1.00 23.63      GLA 
+ATOM      6  H5  BGLC    1      23.317  53.183  96.932  1.00  0.00      GLA 
+ATOM      7  O5  BGLC    1      21.376  53.910  96.718  1.00 23.63      GLA 
+ATOM      8  C2  BGLC    1      21.161  52.873  94.558  1.00 23.63      GLA 
+ATOM      9  H2  BGLC    1      20.597  53.769  94.200  1.00  0.00      GLA 
+ATOM     10  O2  BGLC    1      20.693  51.739  93.819  1.00 23.63      GLA 
+ATOM     11  HO2 BGLC    1      21.019  51.845  92.914  1.00  0.00      GLA 
+ATOM     12  C3  BGLC    1      22.636  53.108  94.296  1.00 23.63      GLA 
+ATOM     13  H3  BGLC    1      23.201  52.206  94.638  1.00  0.00      GLA 
+ATOM     14  O3  BGLC    1      22.899  53.275  92.903  1.00 23.63      GLA 
+ATOM     15  HO3 BGLC    1      23.828  53.526  92.817  1.00  0.00      GLA 
+ATOM     16  C4  BGLC    1      23.117  54.301  95.094  1.00 23.63      GLA 
+ATOM     17  H4  BGLC    1      22.570  55.203  94.724  1.00  0.00      GLA 
+ATOM     18  O4  BGLC    1      24.513  54.524  94.918  1.00 23.63      GLA 
+ATOM     19  HO4 BGLC    1      24.695  55.460  95.075  1.00 22.02      GLA 
+ATOM     20  C6  BGLC    1      23.205  55.251  97.454  1.00 23.63      GLA 
+ATOM     21  H61 BGLC    1      24.316  55.317  97.493  1.00  0.00      GLA 
+ATOM     22  H62 BGLC    1      22.842  55.080  98.493  1.00  0.00      GLA 
+ATOM     23  O6  BGLC    1      22.695  56.495  96.973  1.00 23.63      GLA 
+ATOM     24  HO6 BGLC    1      21.736  56.500  97.084  1.00  0.00      GLA 
+TER      25      BGLC     1
+END
