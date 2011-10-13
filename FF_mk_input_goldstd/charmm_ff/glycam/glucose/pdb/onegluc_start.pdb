@@ -1,0 +1,28 @@
+REMARK ONE BETA-GLUCOPYRANOSE TEST CASE                                               
+REMARK   DATE:    10/ 6/11      8:50:37      CREATED BY USER: crowley                 
+ATOM      1  C1  BGLC    1      20.891  52.729  96.064  1.00 23.63      GLUC
+ATOM      2  H1  BGLC    1      21.434  51.838  96.457  1.00  0.00      GLUC
+ATOM      3  O1  BGLC    1      19.520  52.528  96.269  1.00 23.63      GLUC
+ATOM      4  HO1 BGLC    1      19.264  51.848  95.637  1.00  0.00      GLUC
+ATOM      5  C5  BGLC    1      22.764  54.084  96.614  1.00 23.63      GLUC
+ATOM      6  H5  BGLC    1      23.276  53.184  97.029  1.00  0.00      GLUC
+ATOM      7  O5  BGLC    1      21.343  53.909  96.731  1.00 23.63      GLUC
+ATOM      8  C2  BGLC    1      21.158  52.880  94.574  1.00 23.63      GLUC
+ATOM      9  H2  BGLC    1      20.620  53.795  94.222  1.00  0.00      GLUC
+ATOM     10  O2  BGLC    1      20.675  51.768  93.810  1.00 23.63      GLUC
+ATOM     11  HO2 BGLC    1      21.065  51.859  92.928  1.00  0.00      GLUC
+ATOM     12  C3  BGLC    1      22.640  53.080  94.336  1.00 23.63      GLUC
+ATOM     13  H3  BGLC    1      23.181  52.157  94.661  1.00  0.00      GLUC
+ATOM     14  O3  BGLC    1      22.919  53.276  92.951  1.00 23.63      GLUC
+ATOM     15  HO3 BGLC    1      23.667  53.892  92.858  1.00  0.00      GLUC
+ATOM     16  C4  BGLC    1      23.148  54.237  95.155  1.00 23.63      GLUC
+ATOM     17  H4  BGLC    1      22.698  55.181  94.761  1.00  0.00      GLUC
+ATOM     18  O4  BGLC    1      24.574  54.279  95.087  1.00 23.63      GLUC
+ATOM     19  HO4 BGLC    1      25.091  55.450  94.472  1.00 22.02      GLUC
+ATOM     20  C6  BGLC    1      23.162  55.275  97.460  1.00 23.63      GLUC
+ATOM     21  H61 BGLC    1      24.270  55.400  97.438  1.00  0.00      GLUC
+ATOM     22  H62 BGLC    1      22.861  55.103  98.519  1.00  0.00      GLUC
+ATOM     23  O6  BGLC    1      22.556  56.481  96.991  1.00 23.63      GLUC
+ATOM     24  HO6 BGLC    1      21.598  56.392  97.083  1.00  0.00      GLUC
+
+
