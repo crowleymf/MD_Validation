@@ -1,0 +1,37 @@
+REMARK *                                                                              
+REMARK   DATE:    10/11/11     17:14:53      CREATED BY USER: crowley                 
+ATOM      1  N   ALA     1       4.807  -0.191  -0.099  1.00  0.00      AAL 
+ATOM      2  HT1 ALA     1       4.510  -0.831   0.562  1.00  0.00      AAL 
+ATOM      3  HT2 ALA     1       5.475  -0.558  -0.800  1.00  0.00      AAL 
+ATOM      4  HT3 ALA     1       5.537   0.370   0.526  1.00  0.00      AAL 
+ATOM      5  CA  ALA     1       3.883   0.766  -0.671  1.00  0.00      AAL 
+ATOM      6  HA  ALA     1       4.500   1.490  -1.178  1.00  0.00      AAL 
+ATOM      7  CB  ALA     1       3.176   0.047  -1.879  1.00  0.00      AAL 
+ATOM      8  HB1 ALA     1       2.584  -0.880  -1.563  1.00  0.00      AAL 
+ATOM      9  HB2 ALA     1       2.608   0.894  -2.342  1.00  0.00      AAL 
+ATOM     10  HB3 ALA     1       3.882  -0.414  -2.559  1.00  0.00      AAL 
+ATOM     11  C   ALA     1       3.016   1.540   0.106  1.00  0.00      AAL 
+ATOM     12  O   ALA     1       1.796   1.295   0.082  1.00  0.00      AAL 
+ATOM     13  N   ALA     2       3.601   2.592   0.685  1.00  0.00      AAL 
+ATOM     14  HN  ALA     2       4.576   2.603   0.768  1.00  0.00      AAL 
+ATOM     15  CA  ALA     2       3.003   3.994   0.727  1.00  0.00      AAL 
+ATOM     16  HA  ALA     2       2.606   4.220   1.741  1.00  0.00      AAL 
+ATOM     17  CB  ALA     2       1.803   4.362  -0.241  1.00  0.00      AAL 
+ATOM     18  HB1 ALA     2       1.433   5.430  -0.060  1.00  0.00      AAL 
+ATOM     19  HB2 ALA     2       2.053   4.070  -1.242  1.00  0.00      AAL 
+ATOM     20  HB3 ALA     2       0.937   3.740   0.010  1.00  0.00      AAL 
+ATOM     21  C   ALA     2       4.293   4.738   0.700  1.00  0.00      AAL 
+ATOM     22  O   ALA     2       4.442   5.578   1.611  1.00  0.00      AAL 
+ATOM     23  N   ALA     3       5.285   4.166   0.040  1.00  0.00      AAL 
+ATOM     24  HN  ALA     3       5.016   3.622  -0.765  1.00  0.00      AAL 
+ATOM     25  CA  ALA     3       6.603   3.994   0.326  1.00  0.00      AAL 
+ATOM     26  HA  ALA     3       6.790   4.144   1.427  1.00  0.00      AAL 
+ATOM     27  CB  ALA     3       7.409   5.058  -0.387  1.00  0.00      AAL 
+ATOM     28  HB1 ALA     3       8.478   4.932  -0.040  1.00  0.00      AAL 
+ATOM     29  HB2 ALA     3       7.291   5.146  -1.485  1.00  0.00      AAL 
+ATOM     30  HB3 ALA     3       7.030   6.088   0.003  1.00  0.00      AAL 
+ATOM     31  C   ALA     3       7.142   2.533   0.196  1.00  0.00      AAL 
+ATOM     32  OT1 ALA     3       8.094   1.958  -0.355  1.00  0.00      AAL 
+ATOM     33  OT2 ALA     3       6.267   1.786   0.659  1.00  0.00      AAL 
+TER      34      ALA      3
+END

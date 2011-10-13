@@ -1,0 +1,6 @@
+Methane and two methanes validation test.
+
+Run: one methane
+Run2: run after Run, copies one methane onto the first and moves it 4A away then runs the test.
+
+

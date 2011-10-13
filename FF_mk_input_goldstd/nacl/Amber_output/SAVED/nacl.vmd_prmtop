@@ -1,0 +1,174 @@
+%VERSION  VERSION_STAMP = V0001.000  DATE = 06/11/03  12:02:08
+%FLAG TITLE
+%FORMAT(20a4)
+    
+%FLAG POINTERS
+%FORMAT(10I8)                                                                          
+       2       2       0       0       0       0       0       0       0       0
+       2       2       0       0       0       0       0       0       2       0
+       0       0       0       0       0       0       0       0       1       0
+       0
+%FLAG FORCE_FIELD_TYPE
+%FORMAT(i2,a78)
+ 1 CHARMM  31       *>>>>>>>>CHARMM22 All-Hydrogen Topology File for Proteins <<
+%FLAG ATOM_NAME
+%FORMAT(20a4)              
+SOD CLA 
+%FLAG CHARGE
+%FORMAT(5e16.8)            
+  0.18222832E+02 -0.18222832E+02
+%FLAG MASS
+%FORMAT(5e16.8)            
+  0.22989800E+02  0.35450000E+02
+%FLAG ATOM_TYPE_INDEX
+%FORMAT(10i8)              
+       1       2
+%FLAG NUMBER_EXCLUDED_ATOMS
+%FORMAT(10i8)              
+       1       1
+%FLAG EXCLUDED_ATOMS_LIST
+%FORMAT(10i8)              
+       0       0
+%FLAG NONBONDED_PARM_INDEX
+%FORMAT(10i8)              
+       1       2       2       3
+%FLAG RESIDUE_LABEL
+%FORMAT(20a4)              
+SOD CLA 
+%FLAG RESIDUE_POINTER
+%FORMAT(10i8)              
+       1       2
+%FLAG BOND_FORCE_CONSTANT
+%FORMAT(5e16.8)            
+
+%FLAG BOND_EQUIL_VALUE
+%FORMAT(5e16.8)            
+
+%FLAG ANGLE_FORCE_CONSTANT
+%FORMAT(5e16.8)            
+
+%FLAG ANGLE_EQUIL_VALUE
+%FORMAT(3e25.17)           
+
+%FLAG CHARMM_UREY_BRADLEY_COUNT
+%COMMENT  V(ub) = K_ub(r_ik - R_ub)**2
+%COMMENT  Number of Urey Bradley terms and types
+%FORMAT(2i8)               
+       0       0
+%FLAG CHARMM_UREY_BRADLEY
+%COMMENT  List of the two atoms and its parameter index
+%COMMENT  in each UB term: i,k,index
+%FORMAT(10i8)              
+
+%FLAG CHARMM_UREY_BRADLEY_FORCE_CONSTANT
+%COMMENT  K_ub: kcal/mole/A**2
+%FORMAT(5e16.8)            
+
+%FLAG CHARMM_UREY_BRADLEY_EQUIL_VALUE
+%COMMENT  r_ub: A 
+%FORMAT(5e16.8)            
+
+%FLAG DIHEDRAL_FORCE_CONSTANT
+%FORMAT(5e16.8)            
+
+%FLAG DIHEDRAL_PERIODICITY
+%FORMAT(5e16.8)            
+
+%FLAG DIHEDRAL_PHASE
+%FORMAT(5e16.8)            
+
+%FLAG SCEE_SCALE_FACTOR
+%FORMAT(5e16.8)            
+
+%FLAG SCNB_SCALE_FACTOR
+%FORMAT(5e16.8)            
+
+%FLAG CHARMM_NUM_IMPROPERS
+%COMMENT  Number of terms contributing to the
+%COMMENT  quadratic four atom improper energy term:
+%COMMENT  V(improper) = K_psi(psi - psi_0)**2
+%FORMAT(10i8)              
+       0
+%FLAG CHARMM_IMPROPERS
+%COMMENT  List of the four atoms in each improper term
+%COMMENT  i,j,k,l,index  i,j,k,l,index
+%COMMENT  where index is into the following two lists:
+%COMMENT  CHARMM_IMPROPER_{FORCE_CONSTANT,IMPROPER_PHASE}
+%FORMAT(10i8)              
+
+%FLAG CHARMM_NUM_IMPR_TYPES
+%COMMENT  Number of unique parameters contributing to the
+%COMMENT  quadratic four atom improper energy term
+%FORMAT(i8)                
+       0
+%FLAG CHARMM_IMPROPER_FORCE_CONSTANT
+%COMMENT  K_psi: kcal/mole/rad**2 
+%FORMAT(5e16.8)            
+
+%FLAG CHARMM_IMPROPER_PHASE
+%COMMENT  psi: degrees
+%FORMAT(5e16.8)            
+
+%FLAG SOLTY
+%FORMAT(5e16.8)            
+  0.00000000E+00  0.00000000E+00
+%FLAG LENNARD_JONES_ACOEF
+%FORMAT(5e16.8)            
+  0.79496856E+04  0.44452131E+06  0.11501686E+08
+%FLAG LENNARD_JONES_BCOEF
+%FORMAT(5e16.8)            
+  0.38618144E+02  0.38618226E+03  0.26269776E+04
+%FLAG LENNARD_JONES_14_ACOEF
+%FORMAT(5e16.8)            
+  0.79496856E+04  0.44452131E+06  0.11501686E+08
+%FLAG LENNARD_JONES_14_BCOEF
+%FORMAT(5e16.8)            
+  0.38618144E+02  0.38618226E+03  0.26269776E+04
+%FLAG BONDS_INC_HYDROGEN
+%FORMAT(10i8)              
+
+%FLAG BONDS_WITHOUT_HYDROGEN
+%FORMAT(10i8)              
+
+%FLAG ANGLES_INC_HYDROGEN
+%FORMAT(10i8)              
+
+%FLAG ANGLES_WITHOUT_HYDROGEN
+%FORMAT(10i8)              
+
+%FLAG DIHEDRALS_INC_HYDROGEN
+%FORMAT(10i8)              
+
+%FLAG DIHEDRALS_WITHOUT_HYDROGEN
+%FORMAT(10i8)              
+
+%FLAG HBOND_ACOEF
+%FORMAT(5e16.8)            
+
+%FLAG HBOND_BCOEF
+%FORMAT(5e16.8)            
+
+%FLAG HBCUT
+%FORMAT(5e16.8)            
+
+%FLAG AMBER_ATOM_TYPE
+%FORMAT(20a4)              
+SOD CLA 
+%FLAG TREE_CHAIN_CLASSIFICATION
+%FORMAT(20a4)              
+BLA BLA 
+%FLAG JOIN_ARRAY
+%FORMAT(10i8)              
+       0       0
+%FLAG IROTAT
+%FORMAT(10i8)              
+       0       0
+%FLAG RADIUS_SET
+%FORMAT(1a80)              
+modified Bondi radii (mbondi)                                                   
+%FLAG RADII
+%FORMAT(5E16.8)            
+  0.15000000E+01  0.17000000E+01
+%FLAG SCREEN
+%FORMAT(5E16.8)            
+  0.80000000E+00  0.80000000E+00

@@ -1,0 +1,43 @@
+#! /bin/csh 
+
+#--  use charmm to make a psf for methane, and a pdb file
+#    produces methane.psf, methane.cor, and methane.pdb
+
+charmm -i  input/methane2.inp | tee charmm_output/charmm.out
+
+#  if ( ! -e charmm_output/methane2.psf) cp SAVED/methane.psf SAVED/charmm.out charmm_output
+
+chamber -nocmap  \
+    -p Amber_output/methane2.prmtop \
+    -inpcrd Amber_output/methane2.inpcrd \
+    -crd pdb/methane2.pdb \
+    -psf charmm_output/methane2.psf \
+    -top toppar/methane.rtf \
+    -param toppar/methane.prm
+
+
+echo -n "Run sander (y/n): "
+set yn = $<
+if ( $yn == n ) exit
+
+sander:
+if ( $?SANDER ) then
+   set sander = $SANDER
+else 
+   set sander = `which sander`
+endif
+
+$sander -O -i input/mdin -inf Amber_output/mdinfo \
+   -c Amber_output/methane2.inpcrd \
+   -p Amber_output/methane2.prmtop \
+   -o Amber_output/stdout |& tee mdout
+
+    mv charmm_gold Amber_output/methane2_amber.frcdmp
+
+
+echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
+../ffcompare charmm_output/methane2.frcdmp Amber_output/methane2_amber.frcdmp
+echo "----------------------------------------------------------------"
+

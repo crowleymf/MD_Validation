@@ -1,0 +1,189 @@
+
+          -------------------------------------------------------
+          Amber 11 SANDER                              2010
+          -------------------------------------------------------
+
+| Run on 10/13/2011 at 10:19:53
+  [-O]verwriting output
+
+File Assignments:
+|  MDIN: input/mdin                                                            
+| MDOUT: Amber_output/stdout                                                   
+|INPCRD: Amber_output/ts_dp_6_600k.inpcrd                                      
+|  PARM: Amber_output/ts_dp_6.prmtop                                           
+|RESTRT: restrt                                                                
+|  REFC: refc                                                                  
+| MDVEL: mdvel                                                                 
+|  MDEN: mden                                                                  
+| MDCRD: mdcrd                                                                 
+|MDINFO: Amber_output/mdinfo                                                   
+|  MTMD: mtmd                                                                  
+|INPDIP: inpdip                                                                
+|RSTDIP: rstdip                                                                
+
+|INPTRA: inptraj                                                               
+|
+ 
+ Here is the input file:
+ 
+Dump forces and energies for one glucopyranose                                 
+                                                                               
+  &cntrl                                                                       
+	imin=1,irest=0,                                                               
+   maxcyc=0,ncyc=0,                                                            
+   ntb=0,                                                                      
+   igb=6,                                                                      
+   cut=999.0,                                                                  
+   ntpr=1,                                                                     
+                                                                               
+ /                                                                             
+                                                                               
+ &debugf                                                                       
+ do_charmm_dump_gold = 1                                                       
+ /                                                                             
+                                                                               
+
+--------------------------------------------------------------------------------
+   1.  RESOURCE   USE: 
+--------------------------------------------------------------------------------
+
+| Flags:                                                                        
+| New format PARM file being parsed.
+| Version =    1.000 Date = 06/11/03 Time = 12:02:08
+ NATOM  =     129 NTYPES =      10 NBONH =      62 MBONA  =      72
+ NTHETH =     140 MTHETA =     107 NPHIH =     312 MPHIA  =     276
+ NHPARM =       0 NPARM  =       0 NNB   =     766 NRES   =       6
+ NBONA  =      72 NTHETA =     107 NPHIA =     276 NUMBND =      16
+ NUMANG =      37 NPTRA  =     106 NATYP =      10 NPHB   =       0
+ IFBOX  =       0 NMXRS  =      23 IFCAP =       0 NEXTRA =       0
+ NCOPY  =       0
+
+ Implicit solvent radii are modified Bondi radii (mbondi)                                                   
+| Force field information read from topology file: 
+|  CHARMM 321       * $Id: top_allxx_sugar.inp,v 1.98 2011-07-20 15:03:53 prabhu  
+|
+|CHARMM: CHARMM force field in use. 
+|CHARMM: Overriding default value of chngmask.
+|CHARMM: Setting chngmask = 0.
+
+|     Memory Use     Allocated
+|     Real                9167
+|     Hollerith            395
+|     Integer            27407
+|     Max Pairs              1
+|     nblistReal             0
+|     nblist Int             0
+|       Total              180 kbytes
+
+| Note: 1-4 EEL scale factors are being read from the topology file.
+
+| Note: 1-4 VDW scale factors are being read from the topology file.
+| Duplicated    0 dihedrals
+| Duplicated    0 dihedrals
+
+--------------------------------------------------------------------------------
+   2.  CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+****  6MER GLUCOSE IN VACUUM TEST CASE                                          
+
+General flags:
+     imin    =       1, nmropt  =       0
+
+Nature and format of input:
+     ntx     =       1, irest   =       0, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       1, ntpr    =       1, ntrx    =       1, ntwr    =     500
+     iwrap   =       0, ntwx    =       0, ntwv    =       0, ntwe    =       0
+     ioutfm  =       0, ntwprt  =       0, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       1, ntb     =       0, igb     =       6, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     = 999.00000, intdiel =   1.00000
+     saltcon =   0.00000, offset  =   0.09000, gbalpha=    1.00000
+     gbbeta  =   0.00000, gbgamma =   0.00000, surften =   0.00500
+     rdt     =   0.00000, rgbmax  =  25.00000  extdiel =  78.50000
+     alpb  =        0
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       0
+
+Energy minimization:
+     maxcyc  =       0, ncyc    =       0, ntmin   =       1
+     dx0     =   0.01000, drms    =   0.00010
+|  INFO: Old style inpcrd file read
+
+
+--------------------------------------------------------------------------------
+   3.  ATOMIC COORDINATES AND VELOCITIES
+--------------------------------------------------------------------------------
+
+inpcrd generated from psfprm utility:****  6MER GLUCOSE IN VACUUM TEST CASE     
+ begin time read from input coords =     0.000 ps
+
+ Number of triangulated 3-point waters found:        0
+
+--------------------------------------------------------------------------------
+   4.  RESULTS
+--------------------------------------------------------------------------------
+
+
+
+   NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
+      1       7.5443E+02     2.4426E+01     8.9893E+01     O3         14
+
+ BOND    =       60.4632  ANGLE   =       71.3605  DIHED      =      195.0265
+ UB      =        8.9997  IMP     =        0.0000  CMAP       =        0.0000
+ VDWAALS =      -12.9568  EEL     =     -457.6702  EGB        =        0.0000
+ 1-4 VDW =       35.8929  1-4 EEL =      853.3163  RESTRAINT  =        0.0000
+
+
+  Maximum number of minimization cycles reached.
+
+
+                    FINAL RESULTS
+
+
+
+   NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
+      1       7.5443E+02     2.4426E+01     8.9893E+01     O3         14
+
+ BOND    =       60.4632  ANGLE   =       71.3605  DIHED      =      195.0265
+ UB      =        8.9997  IMP     =        0.0000  CMAP       =        0.0000
+ VDWAALS =      -12.9568  EEL     =     -457.6702  EGB        =        0.0000
+ 1-4 VDW =       35.8929  1-4 EEL =      853.3163  RESTRAINT  =        0.0000
+
+--------------------------------------------------------------------------------
+   5.  TIMINGS
+--------------------------------------------------------------------------------
+
+|    Read coords time           0.00 ( 3.81% of Total)
+|    Fast Water setup           0.00 ( 0.10% of Total)
+|                Calc gb off-diag           0.00 (99.75% of Gen B)
+|                Other                      0.00 ( 0.25% of Gen B)
+|             Gen Born time              0.00 (100.0% of Nonbo)
+|             IPS excludes               0.00 ( 0.06% of Nonbo)
+|          Nonbond force              0.00 (40.12% of Force)
+|          Bond/Angle/Dihedral        0.00 (12.88% of Force)
+|          Other                      0.00 (47.00% of Force)
+|       Force time                 0.00 (100.0% of Runmd)
+|    Runmd Time                 0.00 (33.14% of Total)
+|    Other                      0.01 (62.96% of Total)
+| Total time                 0.01 (99.42% of ALL  )
+
+| Highest rstack allocated:          0
+| Highest istack allocated:          0
+
+| Final Performance Info:
+| -----------------------------------------------------
+| Average timings for all steps:
+|     Elapsed(s) =       0.00 Per Step(ms) =       4.97
+|         ns/day =      17.39   seconds/ns =    4967.99
+| -----------------------------------------------------
+
+|           Job began  at 10:19:53.223  on 10/13/2011
+|           Setup done at 10:19:53.231  on 10/13/2011
+|           Run   done at 10:19:53.235  on 10/13/2011
+|     wallclock() was called      35 times

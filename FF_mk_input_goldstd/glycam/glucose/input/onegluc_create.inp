@@ -1,0 +1,24 @@
+*One beta-Glucopyranose test case
+*
+
+read rtf   card name "toppar/top_GLYCAM_04_b14.rtf"
+read param card name "toppar/par_GLYCAM_06.prm"
+
+read sequence pdb name pdb/gluc_glycam06.pdb
+
+
+generate gla first none last none
+autogenerate angl dihe
+write psf card name charmm_output/onegluc_c36.psf
+
+read coor pdb name pdb/gluc_glycam06.pdb
+
+mini sd nstep 100
+mini conj nstep 500 nprint 100
+
+write coor pdb name pdb/onegluc_min.pdb
+
+dyna nstep 1000 nprint 100 start leap firstt 600 finalt 600
+write coor pdb name pdb/onegluc_600k.pdb
+
+stop
