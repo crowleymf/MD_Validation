@@ -1,4 +1,0 @@
-source leaprc.gaff
-a = loadmol2 methane.mol2
-saveamberparm a meth_amber.prmtop meth_amber.inpcrd
-quit
