@@ -1,0 +1,50 @@
+* DHFR Gas Phase Minimization
+*
+
+
+set name dhfr
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Read in Topology and parameter file for ALL27
+
+read rtf   card name toppar/top_all27_prot_na.rtf
+read param card name toppar/par_all27_prot_na.prm
+
+
+! Read in DHFR Gas Phase PDB
+    open unit 3 read card name pdb/@name_initial.pdb
+    read sequ pdb unit 3
+    close unit 3
+    generate DHFR first nter last cter setup
+    autogenerate angl dihe
+
+    read coor pdb name pdb/@name_initial.pdb
+
+    write psf card name pdb/@name.psf
+    write psf card xplor name pdb/@name_xplor.psf
+
+  update bycb  vswitch  switch -
+         cutnb 9999.0   ctofnb 9998.0   ctonnb 9997.0 
+
+!  mini sd nstep 200 tolgrd 0.0001 nprint 50
+!  write coor pdb name pdb/@name_min.pdb
+
+  read coor pdb name pdb/@name_min.pdb
+  ener
+  open unit 20 form write name charmm_output/@name_min_chm.frcdmp
+  frcdump unit 20
+  close unit 20
+
+!---- Get energy and forces for 600k structure-----------
+!dyna nstep 200 nprint 20 start leap firstt 600 finalt 600
+!write coor pdb  name pdb/@name_600k.pdb
+
+read coor pdb  name pdb/@name_600k.pdb
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswitch
+
+open unit 20 form write name charmm_output/@name_600k_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+
+stop
+
