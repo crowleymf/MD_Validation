@@ -1,0 +1,10 @@
+source  leaprc.Glycam_06
+amber_seq = sequence { ROH 0GB } 
+
+
+
+charge amber_seq
+saveamberparm amber_seq prmTop.top prmCoord.crd
+savepdb amber_seq  prm.pdb
+quit
+

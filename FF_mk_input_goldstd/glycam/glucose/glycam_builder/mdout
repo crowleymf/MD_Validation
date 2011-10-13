@@ -1,0 +1,179 @@
+
+          -------------------------------------------------------
+          Amber 11 SANDER                              2010
+          -------------------------------------------------------
+
+| Run on 10/13/2011 at 09:25:42
+  [-O]verwriting output
+
+File Assignments:
+|  MDIN: mdin                                                                  
+| MDOUT: mdout                                                                 
+|INPCRD: glycam_10_13_2011_85_MIN.crd                                          
+|  PARM: glycam_10_13_2011_85.top                                              
+|RESTRT: restrt                                                                
+|  REFC: refc                                                                  
+| MDVEL: mdvel                                                                 
+|  MDEN: mden                                                                  
+| MDCRD: mdcrd                                                                 
+|MDINFO: mdinfo                                                                
+|  MTMD: mtmd                                                                  
+|INPDIP: inpdip                                                                
+|RSTDIP: rstdip                                                                
+
+|INPTRA: inptraj                                                               
+|
+ 
+ Here is the input file:
+ 
+Dump forces and energies for one glucopyranose                                 
+                                                                               
+  &cntrl                                                                       
+	imin=1,irest=0,                                                               
+   maxcyc=0,ncyc=0,                                                            
+   ntb=0,                                                                      
+   igb=6,                                                                      
+   cut=999.0,                                                                  
+   ntpr=1,                                                                     
+                                                                               
+ /                                                                             
+                                                                               
+ &debugf                                                                       
+ do_charmm_dump_gold = 1                                                       
+ /                                                                             
+                                                                               
+
+--------------------------------------------------------------------------------
+   1.  RESOURCE   USE: 
+--------------------------------------------------------------------------------
+
+| Flags:                                                                        
+| New format PARM file being parsed.
+| Version =    1.000 Date = 10/13/11 Time = 11:08:02
+ NATOM  =      24 NTYPES =       6 NBONH =      12 MBONA  =      12
+ NTHETH =      25 MTHETA =      17 NPHIH =      45 MPHIA  =      33
+ NHPARM =       0 NPARM  =       0 NNB   =     131 NRES   =       2
+ NBONA  =      12 NTHETA =      17 NPHIA =      33 NUMBND =       6
+ NUMANG =      13 NPTRA  =      18 NATYP =       6 NPHB   =       0
+ IFBOX  =       0 NMXRS  =      22 IFCAP =       0 NEXTRA =       0
+ NCOPY  =       0
+
+ Implicit solvent radii are modified Bondi radii (mbondi)                                                   
+
+|     Memory Use     Allocated
+|     Real                1829
+|     Hollerith             76
+|     Integer            21200
+|     Max Pairs              1
+|     nblistReal             0
+|     nblist Int             0
+|       Total               97 kbytes
+
+| Note: 1-4 EEL scale factors were NOT found in the topology file.
+|       Using default value of 1.2.
+
+| Note: 1-4 VDW scale factors were NOT found in the topology file.
+|       Using default value of 2.0.
+| Duplicated    0 dihedrals
+| Duplicated    0 dihedrals
+
+--------------------------------------------------------------------------------
+   2.  CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+ROH                                                                             
+
+General flags:
+     imin    =       1, nmropt  =       0
+
+Nature and format of input:
+     ntx     =       1, irest   =       0, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       1, ntpr    =       1, ntrx    =       1, ntwr    =     500
+     iwrap   =       0, ntwx    =       0, ntwv    =       0, ntwe    =       0
+     ioutfm  =       0, ntwprt  =       0, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       1, ntb     =       0, igb     =       6, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     = 999.00000, intdiel =   1.00000
+     saltcon =   0.00000, offset  =   0.09000, gbalpha=    1.00000
+     gbbeta  =   0.00000, gbgamma =   0.00000, surften =   0.00500
+     rdt     =   0.00000, rgbmax  =  25.00000  extdiel =  78.50000
+     alpb  =        0
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       0
+
+Energy minimization:
+     maxcyc  =       0, ncyc    =       0, ntmin   =       1
+     dx0     =   0.01000, drms    =   0.00010
+|  INFO: Old style inpcrd file read
+
+
+--------------------------------------------------------------------------------
+   3.  ATOMIC COORDINATES AND VELOCITIES
+--------------------------------------------------------------------------------
+
+ROH                                                                             
+ begin time read from input coords =     0.000 ps
+
+ Number of triangulated 3-point waters found:        0
+
+--------------------------------------------------------------------------------
+   4.  RESULTS
+--------------------------------------------------------------------------------
+
+
+
+   NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
+      1       8.9666E+01     3.4461E+00     9.4679E+00     C3         17
+
+ BOND    =        0.8928  ANGLE   =        1.0104  DIHED      =        4.0432
+ VDWAALS =       -1.6820  EEL     =     -112.3799  EGB        =        0.0000
+ 1-4 VDW =        2.9064  1-4 EEL =      194.8755  RESTRAINT  =        0.0000
+
+
+  Maximum number of minimization cycles reached.
+
+
+                    FINAL RESULTS
+
+
+
+   NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
+      1       8.9666E+01     3.4461E+00     9.4679E+00     C3         17
+
+ BOND    =        0.8928  ANGLE   =        1.0104  DIHED      =        4.0432
+ VDWAALS =       -1.6820  EEL     =     -112.3799  EGB        =        0.0000
+ 1-4 VDW =        2.9064  1-4 EEL =      194.8755  RESTRAINT  =        0.0000
+
+--------------------------------------------------------------------------------
+   5.  TIMINGS
+--------------------------------------------------------------------------------
+
+|    Read coords time           0.00 ( 7.82% of Total)
+|    Fast Water setup           0.00 ( 0.28% of Total)
+|          Nonbond force              0.00 (25.96% of Force)
+|          Bond/Angle/Dihedral        0.00 (62.37% of Force)
+|          Other                      0.00 (11.67% of Force)
+|       Force time                 0.00 (100.0% of Runmd)
+|    Runmd Time                 0.00 ( 6.66% of Total)
+|    Other                      0.00 (85.24% of Total)
+| Total time                 0.00 (98.18% of ALL  )
+
+| Highest rstack allocated:          0
+| Highest istack allocated:          0
+
+| Final Performance Info:
+| -----------------------------------------------------
+| Average timings for all steps:
+|     Elapsed(s) =       0.00 Per Step(ms) =       0.96
+|         ns/day =      89.72   seconds/ns =     963.03
+| -----------------------------------------------------
+
+|           Job began  at 09:25:42.841  on 10/13/2011
+|           Setup done at 09:25:42.844  on 10/13/2011
+|           Run   done at 09:25:42.845  on 10/13/2011
+|     wallclock() was called      35 times

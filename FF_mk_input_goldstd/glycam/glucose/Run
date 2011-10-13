@@ -1,0 +1,67 @@
+#! /bin/csh
+#set echo
+
+set chm = ~crowley/charmm/CURRENT/em64t/exec/em64t/charmm
+set sander = sander
+
+
+$chm -i input/onegluc_create.inp | tee charmm_output/OUT.create
+$chm -i input/ener.inp | tee charmm_output/OUT.ener
+
+chamber -nocmap -vmd \
+     -top    toppar/top_all36_carb.rtf \
+     -param  toppar/par_all36_carb.prm \
+     -psf    charmm_output/onegluc_c36.psf \
+     -crd    pdb/onegluc_min.pdb \
+     -p      Amber_output/onegluc.prmtop \
+     -inpcrd Amber_output/onegluc.inpcrd
+
+
+echo -n "Run sander (y/n): "
+set yn = $<
+if ( $yn == n ) exit
+
+sander:
+$sander -O -o stdout \
+       -i input/onegluc.mdin \
+       -p Amber_output/onegluc.prmtop \
+       -c Amber_output/onegluc.inpcrd \
+       -r Amber_output/onegluc.restrt \
+       | tee Amber_output/onegluc.out
+
+/bin/rm mdinfo
+/bin/mv charmm_gold Amber_output/onegluc_min_amber.frcdmp
+/bin/mv vmd_prmtop  Amber_output/onegluc.vmd_prmtop
+
+chamber -nocmap -vmd \
+     -top    toppar/top_all36_carb.rtf \
+     -param  toppar/par_all36_carb.prm \
+     -psf    charmm_output/onegluc_c36.psf \
+     -crd    pdb/onegluc_600k.pdb \
+     -p      Amber_output/onegluc.prmtop \
+     -inpcrd Amber_output/onegluc.inpcrd
+
+$sander -O -o stdout \
+       -i input/onegluc.mdin \
+       -p Amber_output/onegluc.prmtop \
+       -c Amber_output/onegluc.inpcrd \
+       -r Amber_output/onegluc.restrt \
+       | tee Amber_output/onegluc.out
+
+
+/bin/rm mdinfo
+/bin/mv charmm_gold Amber_output/onegluc_600k_amber.frcdmp
+/bin/mv vmd_prmtop  Amber_output/onegluc.vmd_prmtop
+
+echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
+../ffcompare charmm_output/onegluc_min_chm.frcdmp \
+             Amber_output/onegluc_min_amber.frcdmp
+
+echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
+../ffcompare charmm_output/onegluc_600k_chm.frcdmp \
+             Amber_output/onegluc_600k_amber.frcdmp
+echo "----------------------------------------------------------------"
