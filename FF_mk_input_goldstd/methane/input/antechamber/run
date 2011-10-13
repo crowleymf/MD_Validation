@@ -1,9 +1,0 @@
-#! /bin/csh
-
-antechamber -i ../methane.pdb -fi pdb -o methane.mol2 -fo mol2 -c bcc -s 2
-
-tleap -f leap.in
-
-
-sander -O -p meth_amber.prmtop -c meth_amber.inpcrd -o stdout | tee mdout
-
