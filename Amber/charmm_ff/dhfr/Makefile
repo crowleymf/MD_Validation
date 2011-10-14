@@ -1,8 +1,18 @@
+all:
+	Run
+
 clean:
 	-/bin/rm -f  *~ */*~ \
-	   charmm_output/*   \
-	   Amber_output/*    \
 	   mdcrd	     \
 	   mdinfo	     \
 	   mdout	     \
 	   restrt
+
+allclean:
+	-/bin/rm -f  *~ */*~ \
+	   Amber_output/*    \
+	   mdcrd	     \
+	   mdinfo	     \
+	   mdout	     \
+	   restrt            \
+	   dhfr*

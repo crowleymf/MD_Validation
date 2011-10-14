@@ -2,21 +2,16 @@
 
 set name=dhfr
 
-charmm -i  input/$name.inp | tee charmm_output/charmm.out
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/dhfr/output/* .
 
-#  if ( ! -e charmm_output/methane2.psf) cp SAVED/methane.psf SAVED/charmm.out charmm_output
 
 chamber -cmap  \
     -p Amber_output/$name.prmtop \
     -inpcrd Amber_output/${name}_min.inpcrd \
-    -crd pdb/${name}_min.pdb \
-    -psf pdb/$name.psf \
-    -top   toppar/top_all27_prot_na.rtf \
-    -param toppar/par_all27_prot_na.prm
-
-echo -n "Run sander (y/n): "
-set yn = $<
-if ( $yn == n ) exit
+    -crd ${name}_min.pdb \
+    -psf $name.psf \
+    -top   ../../../toppar/top_all27_prot_na.rtf \
+    -param ../../../toppar/par_all27_prot_na.prm
 
 sander:
 if ( $?SANDER ) then
@@ -25,10 +20,10 @@ else
    set sander = `which sander`
 endif
 
-$sander -O -i input/mdin -inf Amber_output/mdinfo \
+$sander -O -i input/mdin -inf mdinfo \
    -c Amber_output/${name}_min.inpcrd \
    -p Amber_output/${name}.prmtop \
-   -o Amber_output/stdout |& tee mdout
+   -o stdout |& tee mdout
 
     mv charmm_gold Amber_output/${name}_min_amber.frcdmp
 
@@ -36,28 +31,28 @@ $sander -O -i input/mdin -inf Amber_output/mdinfo \
 chamber -cmap  \
     -p Amber_output/$name.prmtop \
     -inpcrd Amber_output/${name}_600k.inpcrd \
-    -crd pdb/${name}_600k.pdb \
-    -psf pdb/$name.psf \
-    -top   toppar/top_all27_prot_na.rtf \
-    -param toppar/par_all27_prot_na.prm
+    -crd ${name}_600k.pdb \
+    -psf $name.psf \
+    -top   ../../../toppar/top_all27_prot_na.rtf \
+    -param ../../../toppar/par_all27_prot_na.prm
 
-$sander -O -i input/mdin -inf Amber_output/mdinfo \
+$sander -O -i input/mdin -inf mdinfo \
    -c Amber_output/${name}_600k.inpcrd \
    -p Amber_output/$name.prmtop \
-   -o Amber_output/stdout |& tee mdout
+   -o stdout |& tee mdout
 
     mv charmm_gold Amber_output/${name}_600k_amber.frcdmp
 
 echo "----------------------------------------------------------------"
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/${name}_min_chm.frcdmp \
+../../../ffcompare ${name}_min_chm.frcdmp \
               Amber_output/${name}_min_amber.frcdmp
 echo "----------------------------------------------------------------"
 
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/${name}_600k_chm.frcdmp \
+../../../ffcompare ${name}_600k_chm.frcdmp \
               Amber_output/${name}_600k_amber.frcdmp
 echo "----------------------------------------------------------------"
 
