@@ -2,24 +2,19 @@
 /bin/cp ../../../FF_mk_input_goldstd/charmm_ff/nacl/output/* .
 
 chamber -nocmap \
-     -top    toppar/top_all27_prot_na.rtf \
-     -param  toppar/par_all27_prot_na.prm \
-     -psf    charmm_output/nacl.psf \
-     -crd    pdb/nacl.pdb \
+     -top    ../../../toppar/top_all27_prot_na.rtf \
+     -param  ../../../toppar/par_all27_prot_na.prm \
+     -psf    nacl.psf \
+     -crd    nacl.pdb \
      -p      Amber_output/nacl.prmtop \
      -inpcrd Amber_output/nacl.inpcrd
 
 
-echo -n "Run sander (y/n): "
-set yn = $<
-if ( $yn == n ) exit
-
-sander:
-$sander -O -o stdout \
+sander -O -o stdout \
        -i input/mdin \
        -p Amber_output/nacl.prmtop \
        -c Amber_output/nacl.inpcrd \
-       -r Amber_output/nacl.restrt \
+       -r nacl.restrt \
        | tee Amber_output/nacl.out
 
 /bin/rm mdinfo
@@ -29,6 +24,6 @@ $sander -O -o stdout \
 echo "----------------------------------------------------------------"
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare Amber_output/nacl_amber.frcdmp charmm_output/nacl.frcdmp
+../../../ffcompare Amber_output/nacl_amber.frcdmp nacl_chm.frcdmp
 
 echo "----------------------------------------------------------------"
