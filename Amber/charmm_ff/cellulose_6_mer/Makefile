@@ -1,3 +1,6 @@
+all:
+	Run
+
 clean:
 	-/bin/rm -f  *~ */*~ \
 	   mdcrd	     \
