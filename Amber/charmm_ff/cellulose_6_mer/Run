@@ -2,21 +2,15 @@
 
 set name=ts_dp_6
 
-charmm -i  input/$name.inp | tee charmm_output/charmm.out
-
-#  if ( ! -e charmm_output/methane2.psf) cp SAVED/methane.psf SAVED/charmm.out charmm_output
+cp ../../../FF_mk_input_goldstd/charmm_ff/cellulose_6_mer/output/* .
 
 chamber -nocmap  \
     -p Amber_output/$name.prmtop \
     -inpcrd Amber_output/${name}_min.inpcrd \
-    -crd pdb/${name}_min.pdb \
-    -psf pdb/$name.psf \
-    -top   toppar/top_all36_carb.rtf \
-    -param toppar/par_all36_carb.prm
-
-echo -n "Run sander (y/n): "
-set yn = $<
-if ( $yn == n ) exit
+    -crd ${name}_min.pdb \
+    -psf $name.psf \
+    -top   ../../../toppar/top_all36_carb.rtf \
+    -param ../../../toppar/par_all36_carb.prm
 
 sander:
 if ( $?SANDER ) then
@@ -36,10 +30,10 @@ $sander -O -i input/mdin -inf Amber_output/mdinfo \
 chamber -nocmap  \
     -p Amber_output/$name.prmtop \
     -inpcrd Amber_output/${name}_600k.inpcrd \
-    -crd pdb/${name}_600k.pdb \
-    -psf pdb/$name.psf \
-    -top   toppar/top_all36_carb.rtf \
-    -param toppar/par_all36_carb.prm
+    -crd ${name}_600k.pdb \
+    -psf $name.psf \
+    -top   ../../../toppar/top_all36_carb.rtf \
+    -param ../../../toppar/par_all36_carb.prm
 
 $sander -O -i input/mdin -inf Amber_output/mdinfo \
    -c Amber_output/${name}_600k.inpcrd \
@@ -51,13 +45,13 @@ $sander -O -i input/mdin -inf Amber_output/mdinfo \
 echo "----------------------------------------------------------------"
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/${name}_min_chm.frcdmp \
+../../../ffcompare ${name}_min_chm.frcdmp \
               Amber_output/${name}_min_amber.frcdmp
 echo "----------------------------------------------------------------"
 
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/${name}_600k_chm.frcdmp \
+../../../ffcompare ${name}_600k_chm.frcdmp \
               Amber_output/${name}_600k_amber.frcdmp
 echo "----------------------------------------------------------------"
 

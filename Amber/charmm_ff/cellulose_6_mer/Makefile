@@ -1,9 +1,14 @@
 clean:
 	-/bin/rm -f  *~ */*~ \
-	   charmm_output/*   \
-	   Amber_output/*    \
-	   pdb/*	     \
 	   mdcrd	     \
 	   mdinfo	     \
 	   mdout	     \
 	   restrt
+allclean:
+	-/bin/rm -f  *~ */*~ \
+	   Amber_output/*    \
+	   mdcrd	     \
+	   mdinfo	     \
+	   mdout	     \
+	   restrt            \
+	   ts_*
