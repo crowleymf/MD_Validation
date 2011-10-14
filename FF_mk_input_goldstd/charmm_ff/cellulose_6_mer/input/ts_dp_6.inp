@@ -49,6 +49,7 @@ coor dupl sele segid bios .and. .not. (type HO1 .or. type O1 ) end -
 
 delete atom sele segid bios end
 write psf card  name output/@name.psf
+write psf card  xplor name output/@name_xplor.psf
 
 !---- Get energy and forces for minimized structure-----------
 mini sd nstep 100 nprint 20
