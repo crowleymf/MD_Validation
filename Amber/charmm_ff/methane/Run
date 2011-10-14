@@ -1,41 +1,62 @@
 #! /bin/csh 
 
-#--  use charmm to make a psf for methane, and a pdb file
-#    produces methane.psf, methane.cor, and methane.pdb
+set stop = 6
+if ( $1 != "") set stop = $1
 
-charmm < input/methane.inp | tee charmm_output/charmm.out
-
-#if ( ! -e charmm_output/methane.psf) cp SAVED/methane.psf SAVED/charmm.out .
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/methane/output/* .
 
 chamber -nocmap  \
     -p      Amber_output/methane.prmtop \
     -inpcrd Amber_output/methane.inpcrd \
-    -crd    pdb/methane.pdb \
-    -psf    charmm_output/methane.psf \
-    -top    toppar/methane.rtf \
-    -param  toppar/methane.prm
+    -crd    methane.pdb \
+    -psf    methane.psf \
+    -top    ../../../toppar/methane.rtf \
+    -param  ../../../toppar/methane.prm
 
-
-echo -n "Run sander (y/n): "
-set yn = $<
-if ( $yn == n ) exit
-
-sander:
+if($stop == 1) exit
 if ( $?SANDER ) then
    set sander = $SANDER
 else 
    set sander = `which sander`
 endif
 
-$sander -O -i input/mdin -inf Amber_output/mdinfo \
+$sander -O -i input/mdin -inf mdinfo \
    -c Amber_output/methane.inpcrd \
-   -r Amber_output/methane.restrt \
+   -r methane.restrt \
    -p Amber_output/methane.prmtop \
-   -o stdout |& tee Amber_output/mdout
+   -o stdout |& tee mdout
 mv charmm_gold Amber_output/methane_amber.frcdmp
+
+if($stop == 2) exit
+
+chamber -nocmap  \
+    -p Amber_output/methane2.prmtop \
+    -inpcrd Amber_output/methane2.inpcrd \
+    -crd methane2.pdb \
+    -psf methane2.psf \
+    -top   ../../../toppar/methane.rtf \
+    -param ../../../toppar/methane.prm
+
+
+if($stop == 3) exit
+
+$sander -O -i input/mdin -inf mdinfo \
+   -c Amber_output/methane2.inpcrd \
+   -p Amber_output/methane2.prmtop \
+   -o stdout |& tee mdout
+
+    mv charmm_gold Amber_output/methane2_amber.frcdmp
+
+if($stop == 4) exit
 
 echo "----------------------------------------------------------------"
 echo " "
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/methane.frcdmp Amber_output/methane_amber.frcdmp
+../../../ffcompare methane_chm.frcdmp Amber_output/methane_amber.frcdmp
 echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
+../../../ffcompare methane2.frcdmp Amber_output/methane2_amber.frcdmp
+echo "----------------------------------------------------------------"
+
+

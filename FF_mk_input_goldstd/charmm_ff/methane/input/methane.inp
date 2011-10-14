@@ -14,6 +14,7 @@ generate meth first none last none setup warn
 auto angle dihe
 
 write psf card name output/methane.psf
+read coor pdb name methane.pdb
 write coor pdb name output/methane.pdb
 read coor pdb name methane.pdb
 
