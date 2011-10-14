@@ -2,8 +2,8 @@
 *
 
 set name ts_dp_6
- read rtf   card name toppar/top_all36_carb.rtf
- read param card name toppar/par_all36_carb.prm
+ read rtf   card name ../../../toppar/top_all36_carb.rtf
+ read param card name ../../../toppar/par_all36_carb.prm
 
 !----- Set up a cellobiose for setting coordinates of polymer --------
 read sequence bglc 2
@@ -15,12 +15,10 @@ label backcoor
 define bad sele .not. initialized end
 if ?nsel .gt. 0 print coor sele bad end
 mini sd nstep 100 nprint 50
-write coor pdb name pdb/bios.pdb
-write psf card name pdb/bios.psf
 
 !---------- generate the polymer psf -------------------------------
-  set numRes 6
- set 9  10.3810
+set numRes 6
+set 9  10.3810
 
 set segname 6mer
 
@@ -50,27 +48,27 @@ coor dupl sele segid bios .and. .not. (type HO1 .or. type O1 ) end -
  coor trans ydir -@9 factor 2 sele resid 5:6 end
 
 delete atom sele segid bios end
-write psf card  name pdb/@name.psf
+write psf card  name output/@name.psf
 
 !---- Get energy and forces for minimized structure-----------
 mini sd nstep 100 nprint 20
-write coor pdb  name pdb/@name_min.pdb
+write coor pdb  name output/@name_min.pdb
 
-read coor pdb  name pdb/@name_min.pdb
+read coor pdb  name output/@name_min.pdb
 ener cutnb 999 ctofnb 998 ctonnb 997 switch vswitch
 
-open unit 20 form write name charmm_output/@name_min_chm.frcdmp
+open unit 20 form write name output/@name_min_chm.frcdmp
 frcdump unit 20
 close unit 20
 
 !---- Get energy and forces for 600k structure-----------
 dyna nstep 1000 nprint 1000 start leap firstt 600 finalt 600
-write coor pdb  name pdb/@name_600k.pdb
+write coor pdb  name output/@name_600k.pdb
 
-read coor pdb  name pdb/@name_600k.pdb
+read coor pdb  name output/@name_600k.pdb
 ener cutnb 999 ctofnb 998 ctonnb 997 switch vswitch
 
-open unit 20 form write name charmm_output/@name_600k_chm.frcdmp
+open unit 20 form write name output/@name_600k_chm.frcdmp
 frcdump unit 20
 close unit 20
 
