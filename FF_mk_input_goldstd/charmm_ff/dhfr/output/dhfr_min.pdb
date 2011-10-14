@@ -1,5 +1,5 @@
 REMARK  DHFR GAS PHASE MINIMIZATION                                                   
-REMARK   DATE:    10/12/11     22:31:48      CREATED BY USER: crowley                 
+REMARK   DATE:    10/14/11     11:11:33      CREATED BY USER: crowley                 
 ATOM      1  N   MET     1      38.240  20.240  39.461  1.00  0.00      DHFR
 ATOM      2  HT1 MET     1      37.891  20.829  40.255  1.00  0.00      DHFR
 ATOM      3  HT2 MET     1      39.197  20.577  39.238  1.00  0.00      DHFR

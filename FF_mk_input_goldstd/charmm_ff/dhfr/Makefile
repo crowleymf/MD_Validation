@@ -1,8 +1,10 @@
+all:
+	charmm -i input/dhfr.inp
+
 clean:
+	-/bin/rm -f  *~ */*~ 
+
+allclean:
 	-/bin/rm -f  *~ */*~ \
-	   charmm_output/*   \
-	   Amber_output/*    \
-	   mdcrd	     \
-	   mdinfo	     \
-	   mdout	     \
-	   restrt
+	   output/*   
+
