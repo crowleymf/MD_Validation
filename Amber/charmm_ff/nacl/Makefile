@@ -1,5 +1,10 @@
+all:
+	Run
+
 clean:
-	-/bin/rm Amber_output/*
-	-/bin/rm charmm_output/*
-	-/bin/rm pdb/nacl9999.pdb
 	-/bin/rm *~ */*~
+
+allclean:
+	-/bin/rm Amber_output/*
+	-/bin/rm *~ */*~
+

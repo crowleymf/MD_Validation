@@ -1,14 +1,7 @@
 #! /bin/csh
-set echo
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/nacl/output/* .
 
-set chm = ~crowley/charmm/CURRENT/em64t/exec/em64t/charmm
-set sander = sander
-
-
-$chm -i input/create_nacl_psf.inp | tee charmm_output/OUT.create
-$chm -i input/ener.inp | tee charmm_output/OUT.ener
-
-chamber -nocmap -vmd \
+chamber -nocmap \
      -top    toppar/top_all27_prot_na.rtf \
      -param  toppar/par_all27_prot_na.prm \
      -psf    charmm_output/nacl.psf \

@@ -10,6 +10,7 @@ read sequ cla 1
 generate nacl first none last none setup
 
 write psf card name output/nacl.psf
+write psf card xplor name output/nacl_xplor.psf
 
 read coor pdb name nacl.pdb
 write coor pdb name output/nacl.pdb
