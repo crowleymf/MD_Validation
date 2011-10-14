@@ -1,0 +1,23 @@
+**
+*
+
+read rtf   card name ../../../toppar/top_all27_prot_na.rtf
+read param card name ../../../toppar/par_all27_prot_na.prm
+
+read sequ sod 1
+read sequ cla 1 
+
+generate nacl first none last none setup
+
+write psf card name output/nacl.psf
+
+read coor pdb name nacl.pdb
+write coor pdb name output/nacl.pdb
+
+ener cutnb 999 ctofnb 998 ctonnb 997 vswi swit
+
+open unit 1 form write name output/nacl_chm.frcdmp
+frcdmp unit 1
+close unit 1
+
+stop
