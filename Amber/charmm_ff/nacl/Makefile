@@ -6,5 +6,5 @@ clean:
 
 allclean:
 	-/bin/rm Amber_output/*
-	-/bin/rm *~ */*~
+	-/bin/rm *~ */*~ nacl*
 
