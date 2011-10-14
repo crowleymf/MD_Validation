@@ -1,8 +1,12 @@
+all:
+	charmm -i input/methane.inp  | tee output/charmm.out
+	charmm -i input/methane2.inp | tee output/charmm.out2
+
 clean:
+	-/bin/rm -f  *~ */*~ fort* output/charmm*
+
+
+allclean:
 	-/bin/rm -f  *~ */*~ \
-	   charmm_output/* \
-	   Amber_output/* \
-	   mdcrd	    \
-	   mdinfo	    \
-	   mdout	    \
-	   restrt
+	   output/* \
+
