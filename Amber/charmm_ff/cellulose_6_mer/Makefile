@@ -6,9 +6,10 @@ clean:
 	   restrt
 allclean:
 	-/bin/rm -f  *~ */*~ \
-	   Amber_output/*    \
+	   Amber_output/[a-oq-z]*    \
 	   mdcrd	     \
 	   mdinfo	     \
 	   mdout	     \
 	   restrt            \
 	   ts_*
+
