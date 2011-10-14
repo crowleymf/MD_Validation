@@ -1,3 +1,5 @@
+ff:
+	charmm -i  input/ts_dp_6.inp
 
 
 clean:
@@ -6,10 +8,5 @@ clean:
 
 allclean:
 	-/bin/rm -f  *~ */*~ \
-	   charmm_output/*   \
-	   Amber_output/*    \
-	   pdb/*	     \
-	   mdcrd	     \
-	   mdinfo	     \
-	   mdout	     \
-	   restrt
+	   output/*   
+
