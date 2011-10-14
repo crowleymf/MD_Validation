@@ -1,5 +1,9 @@
+all:
+	charmm -i create_nacl_psf.inp
+
 clean:
-	-/bin/rm Amber_output/*
-	-/bin/rm charmm_output/*
-	-/bin/rm pdb/nacl9999.pdb
+	-/bin/rm *~ */*~
+
+allclean:
+	-/bin/rm output/*
 	-/bin/rm *~ */*~
