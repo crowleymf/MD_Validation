@@ -1,0 +1,27 @@
+PSF
+
+       2 !NTITLE
+ REMARKS CONTROL PSF methane2_ctrl.psf
+ REMARKS CREATED BY charmm2lammps v1.8.2.5 beta ON Mon Nov 21 00:03:23 EST 2011
+
+      10 !NATOM
+       1 METH 1    CH4  C1   2     -1.20000000e-01 12.0000           0
+       2 METH 1    CH4  H11  1      3.00000000e-02 1.00783           0
+       3 METH 1    CH4  H12  1      3.00000000e-02 1.00783           0
+       4 METH 1    CH4  H13  1      3.00000000e-02 1.00783           0
+       5 METH 1    CH4  H14  1      3.00000000e-02 1.00783           0
+       6 METH 2    CH4  C1   2     -1.20000000e-01 12.0000           0
+       7 METH 2    CH4  H11  1      3.00000000e-02 1.00783           0
+       8 METH 2    CH4  H12  1      3.00000000e-02 1.00783           0
+       9 METH 2    CH4  H13  1      3.00000000e-02 1.00783           0
+      10 METH 2    CH4  H14  1      3.00000000e-02 1.00783           0
+
+       8 !NBOND: bonds
+       1       2       1       3       1       4       1       5
+       6       7       6       8       6       9       6      10
+
+      12 !NTHETA: angles
+       2       1       3       2       1       4       2       1       5
+       3       1       4       3       1       5       4       1       5
+       7       6       8       7       6       9       7       6      10
+       8       6       9       8       6      10       9       6      10

@@ -1,0 +1,68 @@
+LAMMPS (12 Oct 2011)
+# Created by charmm2lammps v1.8.1 on Thu Aug  7 12:20:08 PDT 2008
+
+units           real
+
+atom_style      full
+bond_style      harmonic
+angle_style     charmm
+dihedral_style  charmm
+pair_style      lj/charmm/coul/charmm 99 100
+boundary        s s s
+
+read_data       ../input/onegluc_min.data
+  4 = max bonds/atom
+  6 = max angles/atom
+  19 = max dihedrals/atom
+  orthogonal box = (19.271 51.739 92.817) to (24.695 56.5 98.493)
+  1 by 1 by 1 processor grid
+  24 atoms
+  24 bonds
+  42 angles
+  95 dihedrals
+  4 = max # of 1-2 neighbors
+  7 = max # of 1-3 neighbors
+  16 = max # of 1-4 neighbors
+  18 = max # of special neighbors
+
+special_bonds   charmm
+velocity        all create 0.0 12345678 dist uniform
+
+thermo          1
+thermo_style    multi
+timestep        0.5
+thermo_style    custom pe ebond eangle edihed eimp evdwl ecoul
+thermo_modify   line multi format float %1.15e
+
+dump            forces all custom 1 onegluc_min.forces id fx fy fz
+dump_modify     forces format "%5d %1.15e %1.15e %1.15e" sort id
+
+
+run             0
+WARNING: No fixes defined, atoms won't move (verlet.cpp:52)
+Memory usage per processor = 0.96405 Mbytes
+---------------- Step        0 ----- CPU =      0.0000 (sec) ----------------
+PotEng   = 1.077962417003472e+02 E_bond   = 1.821788528098264e+00 E_angle  = 2.350951096626950e+00 
+E_dihed  = 2.892190221938166e+01 E_impro  = 0.000000000000000e+00 E_vdwl   = 3.390668948327059e+00 
+E_coul   = 7.131093090791320e+01 
+Loop time of 1.90735e-06 on 1 procs for 0 steps with 24 atoms
+
+Pair  time (%) = 0 (0)
+Bond  time (%) = 0 (0)
+Neigh time (%) = 0 (0)
+Comm  time (%) = 0 (0)
+Outpt time (%) = 0 (0)
+Other time (%) = 1.90735e-06 (100)
+
+Nlocal:    24 ave 24 max 24 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    147 ave 147 max 147 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 147
+Ave neighs/atom = 6.125
+Ave special neighs/atom = 10.75
+Neighbor list builds = 0
+Dangerous builds = 0

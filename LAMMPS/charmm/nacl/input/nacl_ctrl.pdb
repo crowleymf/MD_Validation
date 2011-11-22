@@ -1,0 +1,7 @@
+REMARK  
+REMARK  CONTROL PDB nacl_ctrl.pdb
+REMARK  CREATED BY charmm2lammps v1.8.2.5 beta ON Sun Nov 20 23:41:30 EST 2011
+REMARK  
+ATOM      1  SOD SOD     1           0       0       0  1.00   0.0      NACL
+ATOM      2  CLA CLA     2          10       0       0  1.00   0.0      NACL
+END

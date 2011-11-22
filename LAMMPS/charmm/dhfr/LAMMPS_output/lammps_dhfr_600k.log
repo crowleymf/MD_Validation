@@ -1,0 +1,47 @@
+LAMMPS (12 Oct 2011)
+Scanning data file ...
+  4 = max bonds/atom
+  6 = max angles/atom
+  18 = max dihedrals/atom
+  2 = max impropers/atom
+Reading data file ...
+  orthogonal box = (9.529 10.456 16.114) to (57.068 49.426 49.987)
+  1 by 1 by 1 processor grid
+  2489 atoms
+  2523 bonds
+  4561 angles
+  6995 dihedrals
+  408 impropers
+Finding 1-2 1-3 1-4 neighbors ...
+  4 = max # of 1-2 neighbors
+  9 = max # of 1-3 neighbors
+  19 = max # of 1-4 neighbors
+  21 = max # of special neighbors
+WARNING: No fixes defined, atoms won't move (verlet.cpp:52)
+Setting up run ...
+Memory usage per processor = 14.4352 Mbytes
+---------------- Step        0 ----- CPU =      0.0000 (sec) ----------------
+PotEng   = 2.672766461870621e+02 E_bond   = 1.188671825418424e+03 E_angle  = 1.714829390122596e+03 
+E_dihed  = 1.046896647647673e+03 E_impro  = 1.167734287181192e+02 E_vdwl   = -5.208802721520636e+02 
+E_coul   = -3.279014373567687e+03 
+Loop time of 2.14577e-06 on 1 procs for 0 steps with 2489 atoms
+
+Pair  time (%) = 0 (0)
+Bond  time (%) = 0 (0)
+Neigh time (%) = 0 (0)
+Comm  time (%) = 0 (0)
+Outpt time (%) = 0 (0)
+Other time (%) = 2.14577e-06 (100)
+
+Nlocal:    2489 ave 2489 max 2489 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    775579 ave 775579 max 775579 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 775579
+Ave neighs/atom = 311.603
+Ave special neighs/atom = 10.9602
+Neighbor list builds = 0
+Dangerous builds = 0

@@ -1,0 +1,10 @@
+REMARK  
+REMARK  CONTROL PDB methane1_ctrl.pdb
+REMARK  CREATED BY charmm2lammps v1.8.2.5 beta ON Mon Nov 21 00:02:58 EST 2011
+REMARK  
+ATOM      1  C1  CH4     1       1.215   0.011       0  1.00   0.0      METH
+ATOM      2  H11 CH4     1       1.465   1.065       0  1.00   0.0      METH
+ATOM      3  H12 CH4     1       0.004   -0.01       0  1.00   0.0      METH
+ATOM      4  H13 CH4     1       1.495  -0.505  -0.907  1.00   0.0      METH
+ATOM      5  H14 CH4     1       1.495  -0.505   0.907  1.00   0.0      METH
+END

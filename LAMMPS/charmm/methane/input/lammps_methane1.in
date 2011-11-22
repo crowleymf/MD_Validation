@@ -1,0 +1,28 @@
+# Created by charmm2lammps v1.8.1 on Thu Aug  7 12:20:08 PDT 2008
+
+units           real
+
+atom_style      full
+bond_style      harmonic
+angle_style     charmm
+dihedral_style  none
+improper_style  none
+pair_style      lj/charmm/coul/charmm 99 100
+boundary        s s s
+
+read_data       ../input/methane1.data
+
+special_bonds   charmm
+velocity        all create 0.0 12345678 dist uniform
+
+thermo          1
+thermo_style    multi
+timestep        0.5
+thermo_style    custom pe ebond eangle edihed eimp evdwl ecoul
+thermo_modify   line multi format float %1.15e
+
+dump            forces all custom 1 methane1.forces id fx fy fz
+dump_modify     forces format "%5d %1.15e %1.15e %1.15e" sort id
+
+
+run             0

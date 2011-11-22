@@ -1,0 +1,46 @@
+LAMMPS (12 Oct 2011)
+Scanning data file ...
+  4 = max bonds/atom
+  6 = max angles/atom
+  19 = max dihedrals/atom
+Reading data file ...
+  orthogonal box = (0.588 -27.328 -7.93) to (6.61 4.3 -0.134)
+  1 by 1 by 1 processor grid
+  129 atoms
+  134 bonds
+  247 angles
+  570 dihedrals
+Finding 1-2 1-3 1-4 neighbors ...
+  4 = max # of 1-2 neighbors
+  7 = max # of 1-3 neighbors
+  18 = max # of 1-4 neighbors
+  21 = max # of special neighbors
+129 atoms in group glc6mer
+WARNING: No fixes defined, atoms won't move (verlet.cpp:52)
+Setting up run ...
+Memory usage per processor = 0.626911 Mbytes
+---------------- Step        0 ----- CPU =      0.0000 (sec) ----------------
+PotEng   = 7.439299534076438e+02 E_bond   = 6.204733638410889e+01 E_angle  = 8.511676732172927e+01 
+E_dihed  = 1.916512631153470e+02 E_impro  = 0.000000000000000e+00 E_vdwl   = 2.574346887517788e+01 
+E_coul   = 3.793711177112808e+02 
+Loop time of 2.14577e-06 on 1 procs for 0 steps with 129 atoms
+
+Pair  time (%) = 0 (0)
+Bond  time (%) = 0 (0)
+Neigh time (%) = 0 (0)
+Comm  time (%) = 0 (0)
+Outpt time (%) = 0 (0)
+Other time (%) = 2.14577e-06 (100)
+
+Nlocal:    129 ave 129 max 129 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    7497 ave 7497 max 7497 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 7497
+Ave neighs/atom = 58.1163
+Ave special neighs/atom = 11.7674
+Neighbor list builds = 0
+Dangerous builds = 0

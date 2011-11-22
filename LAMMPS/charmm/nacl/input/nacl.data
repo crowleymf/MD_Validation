@@ -1,0 +1,33 @@
+Created by charmm2lammps v1.8.2.5 beta on Sun Nov 20 23:41:30 EST 2011
+
+           2  atoms
+           0  bonds
+           0  angles
+           0  dihedrals
+           0  impropers
+
+           2  atom types
+           0  bond types
+           0  angle types
+           0  dihedral types
+           0  improper types
+
+          -5           15 xlo xhi
+          -5           15 ylo yhi
+          -5           15 zlo zhi
+
+Masses
+
+       1   22.98977
+       2      35.45
+
+Pair Coeffs
+
+       1     0.0469   2.429926     0.0469   2.429926
+       2       0.15    4.04468       0.15    4.04468
+
+Atoms
+
+       1       1     1         1           0           0           0
+       2       2     2        -1          10           0           0
+

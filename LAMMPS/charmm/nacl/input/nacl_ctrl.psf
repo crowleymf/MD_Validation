@@ -1,0 +1,9 @@
+PSF
+
+       2 !NTITLE
+ REMARKS CONTROL PSF nacl_ctrl.psf
+ REMARKS CREATED BY charmm2lammps v1.8.2.5 beta ON Sun Nov 20 23:41:30 EST 2011
+
+       2 !NATOM
+       1 NACL 1    SOD  SOD  190    1.00000000e+00 22.9898           0
+       2 NACL 2    CLA  CLA  195   -1.00000000e+00 35.4500           0

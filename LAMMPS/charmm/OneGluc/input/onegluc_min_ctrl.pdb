@@ -1,0 +1,29 @@
+REMARK  
+REMARK  CONTROL PDB onegluc_min_ctrl.pdb
+REMARK  CREATED BY charmm2lammps v1.8.2.5 beta ON Sun Nov 20 20:13:35 EST 2011
+REMARK  
+ATOM      1  C1  BGL     1      20.909  52.734  96.053  1.00  23.6      GLA 
+ATOM      2  H1  BGL     1       21.45  51.841  96.445  1.00   0.0      GLA 
+ATOM      3  O1  BGL     1      19.539  52.544  96.273  1.00  23.6      GLA 
+ATOM      4  HO1 BGL     1      19.271  51.844  95.668  1.00   0.0      GLA 
+ATOM      5  C5  BGL     1      22.791  54.097  96.565  1.00  23.6      GLA 
+ATOM      6  H5  BGL     1      23.317  53.183  96.932  1.00   0.0      GLA 
+ATOM      7  O5  BGL     1      21.376   53.91  96.718  1.00  23.6      GLA 
+ATOM      8  C2  BGL     1      21.161  52.873  94.558  1.00  23.6      GLA 
+ATOM      9  H2  BGL     1      20.597  53.769    94.2  1.00   0.0      GLA 
+ATOM     10  O2  BGL     1      20.693  51.739  93.819  1.00  23.6      GLA 
+ATOM     11  HO2 BGL     1      21.019  51.845  92.914  1.00   0.0      GLA 
+ATOM     12  C3  BGL     1      22.636  53.108  94.296  1.00  23.6      GLA 
+ATOM     13  H3  BGL     1      23.201  52.206  94.638  1.00   0.0      GLA 
+ATOM     14  O3  BGL     1      22.899  53.275  92.903  1.00  23.6      GLA 
+ATOM     15  HO3 BGL     1      23.828  53.526  92.817  1.00   0.0      GLA 
+ATOM     16  C4  BGL     1      23.117  54.301  95.094  1.00  23.6      GLA 
+ATOM     17  H4  BGL     1       22.57  55.203  94.724  1.00   0.0      GLA 
+ATOM     18  O4  BGL     1      24.513  54.524  94.918  1.00  23.6      GLA 
+ATOM     19  HO4 BGL     1      24.695   55.46  95.075  1.00  22.0      GLA 
+ATOM     20  C6  BGL     1      23.205  55.251  97.454  1.00  23.6      GLA 
+ATOM     21  H61 BGL     1      24.316  55.317  97.493  1.00   0.0      GLA 
+ATOM     22  H62 BGL     1      22.842   55.08  98.493  1.00   0.0      GLA 
+ATOM     23  O6  BGL     1      22.695  56.495  96.973  1.00  23.6      GLA 
+ATOM     24  HO6 BGL     1      21.736    56.5  97.084  1.00   0.0      GLA 
+END

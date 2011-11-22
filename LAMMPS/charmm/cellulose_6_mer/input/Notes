@@ -1,0 +1,23 @@
+################################## NOTES #######################################
+
+LAMMPS version used for the benchmark: release Oct 12th 2011
+
+In oder to use the CHARMM FF, one first needs to convert CHARMM top/param files 
+and as well as PDB and PSF files into a LAMMPS *.data file, which contains all
+FF parameters and initial coordiates of the system. This is done with the Perl
+script "xhu_ch2lmp_v3.3.pl".
+
+Assuming the user provides the files: 
+
+top_charmmff.rtf
+par_charmmff.prm
+my_system.pdb
+my_system.psf
+
+The command to run the Perl script to convert these files into LAMMPS is:
+
+./xhu_ch2lmp_v3.3.pl [-option[=#] ..] charmmff my_system
+
+The command to run LAMMPS benchmark:
+
+lmp_openmpi_12Oct2011 < LAMMPS_benchmark_input.in

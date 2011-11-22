@@ -1,0 +1,71 @@
+LAMMPS (12 Oct 2011)
+# Created by charmm2lammps v1.8.1 on Thu Aug  7 12:20:08 PDT 2008
+
+units           real
+
+atom_style      full
+bond_style      harmonic
+angle_style     charmm
+dihedral_style  charmm
+improper_style  harmonic
+pair_style      lj/charmm/coul/charmm 11.5 12.5
+boundary        s s s
+
+read_data       ../input/dhfr_min.data
+  4 = max bonds/atom
+  6 = max angles/atom
+  18 = max dihedrals/atom
+  2 = max impropers/atom
+  orthogonal box = (9.702 9.275 16.447) to (57.114 49.347 50.068)
+  1 by 1 by 1 processor grid
+  2489 atoms
+  2523 bonds
+  4561 angles
+  6995 dihedrals
+  408 impropers
+  4 = max # of 1-2 neighbors
+  9 = max # of 1-3 neighbors
+  19 = max # of 1-4 neighbors
+  21 = max # of special neighbors
+
+special_bonds   charmm
+velocity        all create 0.0 12345678 dist uniform
+
+thermo          1
+thermo_style    multi
+timestep        0.5
+thermo_style    custom pe ebond eangle edihed eimp evdwl ecoul
+thermo_modify   line multi format float %1.15e
+
+dump            forces all custom 1 dhfr_min.forces id fx fy fz
+dump_modify     forces format "%5d %1.15e %1.15e %1.15e" sort id
+
+
+run             0
+WARNING: No fixes defined, atoms won't move (verlet.cpp:52)
+Memory usage per processor = 14.4352 Mbytes
+---------------- Step        0 ----- CPU =      0.0000 (sec) ----------------
+PotEng   = -2.359118947080487e+03 E_bond   = 1.537576651733944e+02 E_angle  = 4.560937703594284e+02 
+E_dihed  = 7.454086241104574e+02 E_impro  = 2.157155289078517e+01 E_vdwl   = -7.074138713416594e+02 
+E_coul   = -3.028536688272892e+03 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 2489 atoms
+
+Pair  time (%) = 0 (0)
+Bond  time (%) = 0 (0)
+Neigh time (%) = 0 (0)
+Comm  time (%) = 0 (0)
+Outpt time (%) = 0 (0)
+Other time (%) = 9.53674e-07 (100)
+
+Nlocal:    2489 ave 2489 max 2489 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    783434 ave 783434 max 783434 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 783434
+Ave neighs/atom = 314.759
+Ave special neighs/atom = 10.9602
+Neighbor list builds = 0
+Dangerous builds = 0

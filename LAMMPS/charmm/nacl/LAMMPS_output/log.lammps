@@ -1,0 +1,64 @@
+LAMMPS (12 Oct 2011)
+# Created by charmm2lammps v1.8.1 on Thu Aug  7 12:20:08 PDT 2008
+
+units           real
+
+atom_style      full
+bond_style      none
+angle_style     none
+dihedral_style  none
+improper_style  none
+
+neighbor        0 nsq
+pair_style      lj/charmm/coul/charmm 99 100
+boundary        s s s
+
+read_data       ../input/nacl.data
+  orthogonal box = (-5 -5 -5) to (15 15 15)
+  1 by 1 by 1 processor grid
+  2 atoms
+  0 = max # of 1-2 neighbors
+  0 = max # of 1-3 neighbors
+  0 = max # of 1-4 neighbors
+  1 = max # of special neighbors
+
+special_bonds   charmm
+velocity        all create 0.0 12345678 dist uniform
+
+thermo          1
+thermo_style    multi
+timestep        0.5
+#thermo_style    custom pe ebond eangle edihed eimp evdwl ecoul
+thermo_style    custom pe evdwl ecoul
+thermo_modify   line multi format float %1.15e
+
+dump            forces all custom 1 nacl.forces id fx fy fz
+dump_modify     forces format "%5d %1.15e %1.15e %1.15e" sort id
+
+
+run             0
+WARNING: No fixes defined, atoms won't move (verlet.cpp:52)
+Memory usage per processor = 0.405041 Mbytes
+---------------- Step        0 ----- CPU =      0.0000 (sec) ----------------
+PotEng   = -3.320675673757965e+01 E_vdwl   = -3.857375796450510e-04 E_coul   = -3.320637100000000e+01 
+Loop time of 1.90735e-06 on 1 procs for 0 steps with 2 atoms
+
+Pair  time (%) = 0 (0)
+Bond  time (%) = 0 (0)
+Neigh time (%) = 0 (0)
+Comm  time (%) = 0 (0)
+Outpt time (%) = 0 (0)
+Other time (%) = 1.90735e-06 (100)
+
+Nlocal:    2 ave 2 max 2 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    1 ave 1 max 1 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 1
+Ave neighs/atom = 0.5
+Ave special neighs/atom = 0
+Neighbor list builds = 0
+Dangerous builds = 0
