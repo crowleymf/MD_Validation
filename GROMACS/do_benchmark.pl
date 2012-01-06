@@ -89,9 +89,9 @@ $command = "integrator = md \n".
 #           "tc_grps = System \n".
 #           "ld_seed = 49753 \n".
 #           "ref_t = 300 \n".
-           "gen_vel = yes \n".
-           "gen_seed = 73927 \n".
-           "gen_temp = 300 \n";
+           "gen_vel = no \n";
+#           "gen_seed = 73927 \n".
+#           "gen_temp = 300 \n";
 
 open(MDP, "> benchmark.mdp")
     or die "\nCannot write \"benchmark.mdp\": $!\n\n";
@@ -255,7 +255,6 @@ foreach $line (@raw_data) {
 close(OUTPUT);
 
 # clean up
-system("rm tmp_ener.xvg ener.tmp forces.xvg force.pdb confout.gro ener.edr ".
-       "mdout.mdp traj.trr");
+system("rm tmp_ener.xvg ener.tmp forces.xvg force.pdb");
 
 # END OF THE PROGRAM
