@@ -84,11 +84,11 @@ $command = "integrator = md \n".
            "rvdw_switch = 98 \n".
            "rvdw = 99 \n".
            "pbc = no \n".
-           "tcoupl = v-rescale \n".
-           "tau_t = 0.001 \n".
-           "tc_grps = System \n".
-           "ld_seed = 49753 \n".
-           "ref_t = 300 \n".
+           "tcoupl = no \n".
+#           "tau_t = 0.001 \n".
+#           "tc_grps = System \n".
+#           "ld_seed = 49753 \n".
+#           "ref_t = 300 \n".
            "gen_vel = yes \n".
            "gen_seed = 73927 \n".
            "gen_temp = 300 \n";
