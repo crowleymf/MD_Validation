@@ -242,6 +242,12 @@ foreach $line (@raw_data) {
 
     if ($line !~ m/@/ && $line !~ m/#/) {
         ($atomid,$force_x,$force_y,$force_z) = split(" ",$line);
+
+# Convert kJ/(mol*nm) (gromacs force unit) to kcal/(mol*A)
+        $force_x = $force_x * 0.0239001;
+        $force_y = $force_y * 0.0239001;
+        $force_z = $force_z * 0.0239001;
+
         printf(OUTPUT "%7d   %7.15e   %7.15e   %7.15e \n",$atomid,$force_x,$force_y,$force_z);
     }
 }
