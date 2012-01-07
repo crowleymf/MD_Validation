@@ -1,12 +1,12 @@
-Log file opened on Sat Jan  7 16:54:11 2012
-Host: virtual-baumhaus  pid: 5109  nodeid: 0  nnodes:  1
+Log file opened on Sat Jan  7 17:04:12 2012
+Host: virtual-baumhaus  pid: 5287  nodeid: 0  nnodes:  1
 The Gromacs distribution was built Tue Aug 16 09:54:23 EDT 2011 by
 xhu@virtual-baumhaus [CMAKE] (Linux 2.6.38-10-generic x86_64)
 
 
                          :-)  G  R  O  M  A  C  S  (-:
 
-               GRoups of Organic Molecules in ACtion for Science
+           Glycine aRginine prOline Methionine Alanine Cystine Serine
 
                             :-)  VERSION 4.5.4  (-:
 
@@ -252,7 +252,7 @@ We have the following groups for center of mass motion removal:
 There are: 33 Atoms
 Initial temperature: 0 K
 
-Started mdrun on node 0 Sat Jan  7 16:54:12 2012
+Started mdrun on node 0 Sat Jan  7 17:04:12 2012
 
            Step           Time         Lambda
               0        0.00000        0.00000
@@ -324,14 +324,14 @@ Grid: 3 x 2 x 2 cells
 
  Computing:         Nodes     Number     G-Cycles    Seconds     %
 -----------------------------------------------------------------------
- Neighbor search        1          1        0.000        0.0     0.6
- Force                  1          1        0.019        0.0    93.9
- Write traj.            1          1        0.001        0.0     3.9
- Update                 1          1        0.000        0.0     0.1
- Rest                   1                   0.000        0.0     1.5
+ Neighbor search        1          1        0.000        0.0    12.2
+ Force                  1          1        0.000        0.0    24.0
+ Write traj.            1          1        0.001        0.0    43.5
+ Update                 1          1        0.000        0.0     1.1
+ Rest                   1                   0.000        0.0    19.2
 -----------------------------------------------------------------------
- Total                  1                   0.020        0.0   100.0
+ Total                  1                   0.002        0.0   100.0
 -----------------------------------------------------------------------
 
 nodetime = 0! Infinite Giga flopses!
-Finished mdrun on node 0 Sat Jan  7 16:54:12 2012
+Finished mdrun on node 0 Sat Jan  7 17:04:12 2012
