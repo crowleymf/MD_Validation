@@ -13,6 +13,4 @@ rvdw_switch = 98
 rvdw = 99 
 pbc = no 
 tcoupl = no 
-gen_vel = yes 
-gen_seed = 73927 
-gen_temp = 300 
+gen_vel = no 
