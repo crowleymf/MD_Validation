@@ -1,12 +1,12 @@
-Log file opened on Sat Jan  7 17:25:35 2012
-Host: virtual-baumhaus  pid: 5591  nodeid: 0  nnodes:  1
+Log file opened on Sat Jan  7 19:17:53 2012
+Host: virtual-baumhaus  pid: 6859  nodeid: 0  nnodes:  1
 The Gromacs distribution was built Tue Aug 16 09:54:23 EDT 2011 by
 xhu@virtual-baumhaus [CMAKE] (Linux 2.6.38-10-generic x86_64)
 
 
                          :-)  G  R  O  M  A  C  S  (-:
 
-                Gravel Rubs Often Many Awfully Cauterized Sores
+               Giving Russians Opium May Alter Current Situation
 
                             :-)  VERSION 4.5.4  (-:
 
@@ -198,7 +198,7 @@ Input Parameters:
    userreal3            = 0
    userreal4            = 0
 grpopts:
-   nrdf:          79
+   nrdf:        6243
    ref_t:           0
    tau_t:           0
 anneal:          No
@@ -224,11 +224,27 @@ ann_npoints:           0
    scalefactor          = 1
 qm_opts:
    ngQM                 = 0
+
+Initializing Domain Decomposition on 4 nodes
+Dynamic load balancing: auto
+Will sort the charge groups at every domain (re)decomposition
+Initial maximum inter charge-group distances:
+    two-body bonded interactions: 0.424 nm, LJ-14, atoms 233 241
+  multi-body bonded interactions: 0.484 nm, CMAP Dih., atoms 2122 2144
+Minimum cell size due to bonded interactions: 0.532 nm
+Maximum distance for 5 constraints, at 120 deg. angles, all-trans: 0.222 nm
+Estimated maximum distance required for P-LINCS: 0.222 nm
+Scaling the initial minimum size with 1/0.8 (option -dds) = 1.25
+Optimizing the DD grid for 4 cells with a minimum initial size of 0.665 nm
+The maximum allowed number of cells is: X 5 Y 4 Z 3
+Domain decomposition grid 4 x 1 x 1, separate PME nodes 0
+Domain decomposition nodeid 0, coordinates 0 0 0
+
 Table routines are used for coulomb: FALSE
 Table routines are used for vdw:     TRUE
 Using shifted Lennard-Jones, switch between 98 and 99 nm
 Cut-off's:   NS: 99   Coulomb: 99   LJ: 99
-System total charge: 0.000
+System total charge: -11.000
 Generated table with 50000 data points for COUL.
 Tabscale = 500 points/nm
 Generated table with 50000 data points for LJ6Switch.
@@ -247,39 +263,69 @@ Testing x86_64 SSE2 support... present.
 
 
 
-Initializing LINear Constraint Solver
+Initializing Parallel LINear Constraint Solver
 
 ++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
-B. Hess and H. Bekker and H. J. C. Berendsen and J. G. E. M. Fraaije
-LINCS: A Linear Constraint Solver for molecular simulations
-J. Comp. Chem. 18 (1997) pp. 1463-1472
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 116-122
 -------- -------- --- Thank You --- -------- --------
 
-The number of constraints is 17
+The number of constraints is 1221
+There are inter charge-group constraints,
+will communicate selected coordinates each lincs iteration
+
+Linking all bonded interactions to atoms
+
+The initial number of communication pulses is: X 3
+The initial domain decomposition cell size is: X 0.94 nm
+
+The maximum allowed distance for charge groups involved in interactions is:
+                 non-bonded interactions          99.000 nm
+(the following are initial values, they could change due to box deformation)
+            two-body bonded interactions  (-rdd)  99.000 nm
+          multi-body bonded interactions  (-rdd)   0.939 nm
+  atoms separated by up to 5 constraints  (-rcon)  0.939 nm
+
+When dynamic load balancing gets turned on, these settings will change to:
+The maximum number of communication pulses is: X 3
+The minimum size for domain decomposition cells is 0.711 nm
+The requested allowed shrink of DD cells (option -dds) is: 0.80
+The allowed shrink of domain decomposition cells is: X 0.76
+The maximum allowed distance for charge groups involved in interactions is:
+                 non-bonded interactions          99.000 nm
+            two-body bonded interactions  (-rdd)  99.000 nm
+          multi-body bonded interactions  (-rdd)   0.711 nm
+  atoms separated by up to 5 constraints  (-rcon)  0.711 nm
+
+
+Making 1D domain decomposition grid 4 x 1 x 1, home cell index 0 0 0
+
 Center of mass motion removal mode is Linear
 We have the following groups for center of mass motion removal:
   0:  rest
-There are: 33 Atoms
+There are: 2489 Atoms
+Charge group distribution at step 0: 579 682 666 562
+Grid: 7 x 6 x 5 cells
 
 Constraining the starting coordinates (step 0)
 
 Constraining the coordinates at t0-dt (step 0)
-RMS relative constraint deviation after constraining: 1.09e-07
-Initial temperature: 9.49682e-09 K
+RMS relative constraint deviation after constraining: 6.62e-07
+Initial temperature: 7.07171e-07 K
 
-Started mdrun on node 0 Sat Jan  7 17:25:35 2012
+Started mdrun on node 0 Sat Jan  7 19:17:53 2012
 
            Step           Time         Lambda
               0        0.00000        0.00000
 
-Grid: 2 x 2 x 2 cells
    Energies (kJ/mol)
            Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
-    3.95559e+01    1.94076e+02    9.48974e+01    3.45837e+01   -1.52827e+01
+    6.26354e+02    1.93102e+03    3.12065e+03    9.16810e+01   -7.96760e+02
           LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)      Potential
-    1.62208e+01    1.16089e+03    2.04100e+01   -1.39815e+03    1.47201e+02
+    1.48103e+03    2.70789e+04   -4.52466e+03   -3.78944e+04   -8.88620e+03
     Kinetic En.   Total Energy    Temperature Pressure (bar)   Constr. rmsd
-    3.67295e+00    1.50874e+02    1.11836e+01    0.00000e+00    1.40159e-07
+    2.08647e+00   -8.88411e+03    8.03918e-02    0.00000e+00    8.82113e-07
 
 	<======  ###############  ==>
 	<====  A V E R A G E S  ====>
@@ -289,16 +335,16 @@ Grid: 2 x 2 x 2 cells
 
    Energies (kJ/mol)
            Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
-    3.95559e+01    1.94076e+02    9.48974e+01    3.45837e+01   -1.52827e+01
+    6.26354e+02    1.93102e+03    3.12065e+03    9.16810e+01   -7.96760e+02
           LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)      Potential
-    1.62208e+01    1.16089e+03    2.04100e+01   -1.39815e+03    1.47201e+02
+    1.48103e+03    2.70789e+04   -4.52466e+03   -3.78944e+04   -8.88620e+03
     Kinetic En.   Total Energy    Temperature Pressure (bar)   Constr. rmsd
-    3.67295e+00    1.50874e+02    1.11836e+01    0.00000e+00    0.00000e+00
+    2.08647e+00   -8.88411e+03    8.03918e-02    0.00000e+00    0.00000e+00
 
    Total Virial (kJ/mol)
-   -2.26877e+02   -3.29389e+02    1.64413e+02
-   -3.29389e+02   -5.10820e+01   -1.15349e+01
-    1.64413e+02   -1.15349e+01   -1.55732e+02
+    2.22817e+03   -3.71383e+01    4.16345e+02
+   -3.71295e+01    1.63377e+03    5.28635e+02
+    4.16358e+02    5.28636e+02    1.93696e+03
 
    Pressure (bar)
     0.00000e+00    0.00000e+00    0.00000e+00
@@ -306,7 +352,7 @@ Grid: 2 x 2 x 2 cells
     0.00000e+00    0.00000e+00    0.00000e+00
 
    Total Dipole (D)
-   -7.09739e+00   -8.87214e+00   -4.12389e+00
+   -1.05997e+03   -1.49461e+03   -1.41986e+03
 
 
 	M E G A - F L O P S   A C C O U N T I N G
@@ -317,41 +363,58 @@ Grid: 2 x 2 x 2 cells
 
  Computing:                               M-Number         M-Flops  % Flops
 -----------------------------------------------------------------------------
- LJ                                       0.000057           0.002     2.7
- Coulomb + VdW(T)                         0.000365           0.022    30.4
- Outer nonbonded loop                     0.000033           0.000     0.5
- 1,4 nonbonded interactions               0.000074           0.007     9.4
- NS-Pairs                                 0.000561           0.012    16.6
- CG-CoM                                   0.000033           0.000     0.1
- Bonds                                    0.000015           0.001     1.2
- Propers                                  0.000076           0.017    24.6
- Impropers                                0.000005           0.001     1.5
- Virial                                   0.000078           0.001     2.0
- Stop-CM                                  0.000033           0.000     0.5
- Calc-Ekin                                0.000066           0.002     2.5
- Lincs                                    0.000051           0.003     4.3
- Lincs-Mat                                0.000432           0.002     2.4
- Constraint-V                             0.000068           0.001     0.8
- Constraint-Vir                           0.000017           0.000     0.6
- (null)                                   0.000001           0.000     0.0
+ LJ                                       0.004561           0.151     0.1
+ VdW(T)                                   0.049260           2.660     1.1
+ Coulomb + VdW(T)                         3.033416         178.972    71.6
+ Outer nonbonded loop                     0.004859           0.049     0.0
+ 1,4 nonbonded interactions               0.006556           0.590     0.2
+ NS-Pairs                                 3.098805          65.075    26.0
+ Reset In Box                             0.002489           0.007     0.0
+ CG-CoM                                   0.004978           0.015     0.0
+ Bonds                                    0.001302           0.077     0.0
+ Propers                                  0.007000           1.603     0.6
+ Impropers                                0.000418           0.087     0.0
+ Virial                                   0.002669           0.048     0.0
+ Stop-CM                                  0.002489           0.025     0.0
+ Calc-Ekin                                0.004978           0.134     0.1
+ Lincs                                    0.003942           0.237     0.1
+ Lincs-Mat                                0.021240           0.085     0.0
+ Constraint-V                             0.005256           0.042     0.0
+ Constraint-Vir                           0.001314           0.032     0.0
+ (null)                                   0.000157           0.000     0.0
 -----------------------------------------------------------------------------
- Total                                                       0.071   100.0
+ Total                                                     249.887   100.0
 -----------------------------------------------------------------------------
+
+
+    D O M A I N   D E C O M P O S I T I O N   S T A T I S T I C S
+
+ av. #atoms communicated per step for force:  2 x 3700.0
+ av. #atoms communicated per step for LINCS:  2 x 140.0
 
 
      R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
 
  Computing:         Nodes     Number     G-Cycles    Seconds     %
 -----------------------------------------------------------------------
- Neighbor search        1          1        0.000        0.0     5.3
- Force                  1          1        0.001        0.0    17.3
- Write traj.            1          1        0.002        0.0    56.6
- Update                 1          1        0.000        0.0     1.2
- Constraints            1          1        0.000        0.0     1.7
- Rest                   1                   0.001        0.0    17.8
+ Domain decomp.         4          1        0.025        0.0     2.5
+ Comm. coord.           4          1        0.000        0.0     0.0
+ Neighbor search        4          1        0.489        0.2    48.6
+ Force                  4          1        0.163        0.1    16.2
+ Wait + Comm. F         4          1        0.274        0.1    27.2
+ Write traj.            4          1        0.014        0.0     1.4
+ Update                 4          1        0.000        0.0     0.0
+ Constraints            4          1        0.027        0.0     2.7
+ Comm. energies         4          2        0.013        0.0     1.3
+ Rest                   4                   0.001        0.0     0.1
 -----------------------------------------------------------------------
- Total                  1                   0.003        0.0   100.0
+ Total                  4                   1.006        0.5   100.0
 -----------------------------------------------------------------------
 
-nodetime = 0! Infinite Giga flopses!
-Finished mdrun on node 0 Sat Jan  7 17:25:35 2012
+	Parallel run - timing based on wallclock.
+
+               NODE (s)   Real (s)      (%)
+       Time:      0.115      0.115    100.0
+               (Mnbf/s)   (GFlops)   (ns/day)  (hour/ns)
+Performance:     26.939      2.180      0.754     31.834
+Finished mdrun on node 0 Sat Jan  7 19:17:53 2012

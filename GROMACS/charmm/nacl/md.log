@@ -1,12 +1,12 @@
-Log file opened on Sat Jan  7 17:25:35 2012
-Host: virtual-baumhaus  pid: 5591  nodeid: 0  nnodes:  1
+Log file opened on Sat Jan  7 18:43:11 2012
+Host: virtual-baumhaus  pid: 6441  nodeid: 0  nnodes:  1
 The Gromacs distribution was built Tue Aug 16 09:54:23 EDT 2011 by
 xhu@virtual-baumhaus [CMAKE] (Linux 2.6.38-10-generic x86_64)
 
 
                          :-)  G  R  O  M  A  C  S  (-:
 
-                Gravel Rubs Often Many Awfully Cauterized Sores
+                  Green Red Orange Magenta Azure Cyan Skyblue
 
                             :-)  VERSION 4.5.4  (-:
 
@@ -198,7 +198,7 @@ Input Parameters:
    userreal3            = 0
    userreal4            = 0
 grpopts:
-   nrdf:          79
+   nrdf:           3
    ref_t:           0
    tau_t:           0
 anneal:          No
@@ -235,51 +235,28 @@ Generated table with 50000 data points for LJ6Switch.
 Tabscale = 500 points/nm
 Generated table with 50000 data points for LJ12Switch.
 Tabscale = 500 points/nm
-Generated table with 50000 data points for 1-4 COUL.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for 1-4 LJ6.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for 1-4 LJ12.
-Tabscale = 500 points/nm
 Configuring nonbonded kernels...
 Configuring standard C nonbonded kernels...
 Testing x86_64 SSE2 support... present.
 
 
-
-Initializing LINear Constraint Solver
-
-++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
-B. Hess and H. Bekker and H. J. C. Berendsen and J. G. E. M. Fraaije
-LINCS: A Linear Constraint Solver for molecular simulations
-J. Comp. Chem. 18 (1997) pp. 1463-1472
--------- -------- --- Thank You --- -------- --------
-
-The number of constraints is 17
 Center of mass motion removal mode is Linear
 We have the following groups for center of mass motion removal:
   0:  rest
-There are: 33 Atoms
+There are: 2 Atoms
+Initial temperature: 0 K
 
-Constraining the starting coordinates (step 0)
-
-Constraining the coordinates at t0-dt (step 0)
-RMS relative constraint deviation after constraining: 1.09e-07
-Initial temperature: 9.49682e-09 K
-
-Started mdrun on node 0 Sat Jan  7 17:25:35 2012
+Started mdrun on node 0 Sat Jan  7 18:43:11 2012
 
            Step           Time         Lambda
               0        0.00000        0.00000
 
 Grid: 2 x 2 x 2 cells
    Energies (kJ/mol)
-           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
-    3.95559e+01    1.94076e+02    9.48974e+01    3.45837e+01   -1.52827e+01
-          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)      Potential
-    1.62208e+01    1.16089e+03    2.04100e+01   -1.39815e+03    1.47201e+02
-    Kinetic En.   Total Energy    Temperature Pressure (bar)   Constr. rmsd
-    3.67295e+00    1.50874e+02    1.11836e+01    0.00000e+00    1.40159e-07
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.61393e-03   -1.38935e+02   -1.38937e+02    3.46086e-04   -1.38937e+02
+    Temperature Pressure (bar)
+    2.77495e-02    0.00000e+00
 
 	<======  ###############  ==>
 	<====  A V E R A G E S  ====>
@@ -288,17 +265,15 @@ Grid: 2 x 2 x 2 cells
 	Statistics over 1 steps using 1 frames
 
    Energies (kJ/mol)
-           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
-    3.95559e+01    1.94076e+02    9.48974e+01    3.45837e+01   -1.52827e+01
-          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)      Potential
-    1.62208e+01    1.16089e+03    2.04100e+01   -1.39815e+03    1.47201e+02
-    Kinetic En.   Total Energy    Temperature Pressure (bar)   Constr. rmsd
-    3.67295e+00    1.50874e+02    1.11836e+01    0.00000e+00    0.00000e+00
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.61393e-03   -1.38935e+02   -1.38937e+02    3.46086e-04   -1.38937e+02
+    Temperature Pressure (bar)
+    2.77495e-02    0.00000e+00
 
    Total Virial (kJ/mol)
-   -2.26877e+02   -3.29389e+02    1.64413e+02
-   -3.29389e+02   -5.10820e+01   -1.15349e+01
-    1.64413e+02   -1.15349e+01   -1.55732e+02
+    6.94725e+01    0.00000e+00    0.00000e+00
+    0.00000e+00    0.00000e+00    0.00000e+00
+    0.00000e+00    0.00000e+00    0.00000e+00
 
    Pressure (bar)
     0.00000e+00    0.00000e+00    0.00000e+00
@@ -306,7 +281,7 @@ Grid: 2 x 2 x 2 cells
     0.00000e+00    0.00000e+00    0.00000e+00
 
    Total Dipole (D)
-   -7.09739e+00   -8.87214e+00   -4.12389e+00
+   -4.80321e+01    0.00000e+00    0.00000e+00
 
 
 	M E G A - F L O P S   A C C O U N T I N G
@@ -317,25 +292,15 @@ Grid: 2 x 2 x 2 cells
 
  Computing:                               M-Number         M-Flops  % Flops
 -----------------------------------------------------------------------------
- LJ                                       0.000057           0.002     2.7
- Coulomb + VdW(T)                         0.000365           0.022    30.4
- Outer nonbonded loop                     0.000033           0.000     0.5
- 1,4 nonbonded interactions               0.000074           0.007     9.4
- NS-Pairs                                 0.000561           0.012    16.6
- CG-CoM                                   0.000033           0.000     0.1
- Bonds                                    0.000015           0.001     1.2
- Propers                                  0.000076           0.017    24.6
- Impropers                                0.000005           0.001     1.5
- Virial                                   0.000078           0.001     2.0
- Stop-CM                                  0.000033           0.000     0.5
- Calc-Ekin                                0.000066           0.002     2.5
- Lincs                                    0.000051           0.003     4.3
- Lincs-Mat                                0.000432           0.002     2.4
- Constraint-V                             0.000068           0.001     0.8
- Constraint-Vir                           0.000017           0.000     0.6
- (null)                                   0.000001           0.000     0.0
+ Coulomb + VdW(T)                         0.000001           0.000     5.3
+ Outer nonbonded loop                     0.000002           0.000     1.8
+ NS-Pairs                                 0.000003           0.000     5.6
+ CG-CoM                                   0.000002           0.000     0.5
+ Virial                                   0.000047           0.001    75.4
+ Stop-CM                                  0.000002           0.000     1.8
+ Calc-Ekin                                0.000004           0.000     9.6
 -----------------------------------------------------------------------------
- Total                                                       0.071   100.0
+ Total                                                       0.001   100.0
 -----------------------------------------------------------------------------
 
 
@@ -343,15 +308,17 @@ Grid: 2 x 2 x 2 cells
 
  Computing:         Nodes     Number     G-Cycles    Seconds     %
 -----------------------------------------------------------------------
- Neighbor search        1          1        0.000        0.0     5.3
- Force                  1          1        0.001        0.0    17.3
- Write traj.            1          1        0.002        0.0    56.6
- Update                 1          1        0.000        0.0     1.2
- Constraints            1          1        0.000        0.0     1.7
- Rest                   1                   0.001        0.0    17.8
+ Neighbor search        1          1        0.000        0.0     7.4
+ Force                  1          1        0.000        0.0     3.5
+ Write traj.            1          1        0.001        0.0    59.1
+ Update                 1          1        0.000        0.0     2.1
+ Rest                   1                   0.000        0.0    27.9
 -----------------------------------------------------------------------
- Total                  1                   0.003        0.0   100.0
+ Total                  1                   0.001        0.0   100.0
 -----------------------------------------------------------------------
 
-nodetime = 0! Infinite Giga flopses!
-Finished mdrun on node 0 Sat Jan  7 17:25:35 2012
+               NODE (s)   Real (s)      (%)
+       Time:      0.010      0.001   1968.2
+               (Mnbf/s)   (MFlops)   (ns/day)  (hour/ns)
+Performance:      0.000      0.112      8.640      2.778
+Finished mdrun on node 0 Sat Jan  7 18:43:11 2012

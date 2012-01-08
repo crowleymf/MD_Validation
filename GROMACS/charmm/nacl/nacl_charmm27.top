@@ -1,0 +1,43 @@
+;
+;	File 'nacl_charmm27.top' was generated
+;	By user: xhu (1000)
+;	On host: virtual-baumhaus
+;	At date: Sat Jan  7 18:43:11 2012
+;
+;	This is a standalone topology file
+;
+;	It was generated using program:
+;	pdb2gmx - VERSION 4.5.4
+;
+;	Command line was:
+;	/usr/local/gromacs/bin/pdb2gmx -f nacl.pdb -ff charmm27 -p nacl_charmm27.top -o nacl_charmm27.gro 
+;
+;	Force field was read from the standard Gromacs share directory.
+;
+
+; Include forcefield parameters
+#include "charmm27.ff/forcefield.itp"
+
+[ moleculetype ]
+; Name            nrexcl
+Other               3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue   1 SOD rtp SOD  q +1.0
+     1        SOD      1    SOD    SOD      1          1    22.9898   ; qtot 1
+; residue   2 CLA rtp CLA  q -1.0
+     2        CLA      2    CLA    CLA      2         -1      35.45   ; qtot 0
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre.itp"
+#endif
+
+[ system ]
+; Name
+Protein
+
+[ molecules ]
+; Compound        #mols
+Other               1
