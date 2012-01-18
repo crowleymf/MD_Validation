@@ -2363,8 +2363,9 @@ sub CharmmCmap
                                                 $PHI_PSI_matrix[$crossterm_counter-1][0] = 6;
                                                 $crossterm_type6_flag = 1;
                                         }
-			     }	
-			     push(@PHI_PSI_matrix,[$crossterm_type,$cur_PHI_dihe,$cur_PSI_dihe]);
+			     }
+                             # push(@PHI_PSI_matrix,[$crossterm_type,$cur_PHI_dihe,$cur_PSI_dihe]);	
+			     push(@PHI_PSI_matrix,[$crossterm_type,$phi1,$phi2,$phi3,$phi4,$psi4]);
 			     $crossterm_counter++;
 
 			     $crossterm_CA_charge = 0;
@@ -2378,7 +2379,7 @@ sub CharmmCmap
 	#
 	# Read the PDB file and find out TER in the ATOM list:
 	my @pdb_data;
-	open(PDB,"> $project.pdb")
+	open(PDB,"< $project.pdb")
 		or die "WARNING: Can not open file \"$project.pdb\"! (required if the -cmap option is used)\n";
 	@pdb_data = <PDB>;
 	foreach $line (@raw_data) {
@@ -2391,11 +2392,11 @@ sub CharmmCmap
 	my $pair_counter = 0;
 	my $ncrosstermtypes = $crossterm_type1_flag + $crossterm_type2_flag + $crossterm_type3_flag + 
                               $crossterm_type4_flag + $crossterm_type5_flag + $crossterm_type6_flag;
-	print "\nWriting \"corrected_$project.data\" with section\"CMAP\"...\n";
+	print "\nWriting \"$project\_cmap.data\" with section \"CMAP\"...\n";
 	
 	# Writing the new lammps data file
-	open(REWRITE,"> $project_cmap.data")
-		or die "Can not write file \"corrected_$project.data\"!\n";
+	open(REWRITE,"> $project\_cmap.data")
+		or die "Can not write file \"$project\_cmap.data\"!\n";
 	foreach $line (@raw_data) {
 		printf(REWRITE "$line\n");
 		if ($line =~ m/dihedrals/) {
