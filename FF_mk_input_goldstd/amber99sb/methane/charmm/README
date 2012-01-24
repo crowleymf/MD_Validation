@@ -1,0 +1,12 @@
+Methane and two methanes validation test.
+
+"make" will generate the charmm files necessary for other programs in the output/ directory
+
+"make clean" will remove superfluous files
+
+"make allclean" will remove all files that "make" produces leaving just charmm input
+
+Run: one methane
+Run2: run after Run, copies one methane onto the first and moves it 4A away then runs the test.
+
+

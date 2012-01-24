@@ -1,0 +1,6 @@
+source leaprc.ff99sb
+source leaprc.gaff
+loadoff eth.lib
+ETHN = loadpdb ethane_600k.pdb
+saveamberparm ETHN eth_600k_amber.prmtop eth_600k_amber.inpcrd
+quit

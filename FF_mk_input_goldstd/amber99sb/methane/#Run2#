@@ -1,0 +1,7 @@
+#! /bin/csh
+
+tleap -f leap2.in
+exit
+/bin/rm forcedump.dat
+sander -O -p meth2_amber.prmtop -c meth2_amber.inpcrd -o stdout | tee mdout
+

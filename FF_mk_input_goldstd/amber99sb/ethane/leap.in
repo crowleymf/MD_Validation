@@ -1,0 +1,6 @@
+source leaprc.ff99sb
+source leaprc.gaff
+ETH = loadmol2 ethane.mol2
+saveoff ETH eth.lib 
+saveamberparm ETH eth_amber.prmtop eth_amber.inpcrd
+quit

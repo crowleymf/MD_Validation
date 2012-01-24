@@ -1,0 +1,6 @@
+source leaprc.ff99sb
+source leaprc.gaff
+loadoff ch4.lib
+a = loadpdb charmm/methane2.pdb
+saveamberparm a meth2_amber.prmtop meth2_amber.inpcrd
+quit

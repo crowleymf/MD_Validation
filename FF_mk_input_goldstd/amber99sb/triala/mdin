@@ -1,0 +1,19 @@
+Dynamic Simulation with Constant Volume
+ &cntrl
+  ntwx = 500, ntpr = 500, 
+  ntt = 0, temp0 = 300.0, tempi = 300.0, tautp = 1.0, 
+  dielc = 1, cut = 1000.0, 
+  ntb = 0, ntc = 1, ntf = 1, 
+  nstlim = 500, dt = 0.0020, 
+  ntp = 0, 
+  igb=6
+  ibelly = 0, ntr = 0, 
+  imin = 0, irest = 0, ntx = 1, nmropt = 0, 
+  scee=1.0, scnb=1.0
+ /
+
+ &debugf
+   do_debugf=1
+   dumpfrc=1
+ /
+    
