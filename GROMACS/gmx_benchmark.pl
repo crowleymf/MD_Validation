@@ -71,7 +71,6 @@ close(STRUCT);
 ## MDP
 ## specify the md protocol input options for the benchmark run:
 $command = "integrator = md \n".
-           "nsteps = 0 \n".
            "nstlog = 1 \n".
            "nstenergy = 1 \n".
            "nstfout = 1 \n".
@@ -86,11 +85,8 @@ $command = "integrator = md \n".
            "pbc = no \n".
            "tcoupl = no \n".
            "gen_vel = no \n".
-           "constraints = hbonds \n".
-           "constraint_algorithm = LINCS \n".
-           "shake_tol = 0.0001 \n".
-           "lincs_order = 4 \n".
-           "lincs_iter = 1 \n";
+           "constraints = none \n".
+            "nsteps = 0\n";
 
 open(MDP, "> benchmark.mdp")
     or die "\nCannot write \"benchmark.mdp\": $!\n\n";
@@ -243,7 +239,7 @@ foreach $line (@raw_data) {
     if ($line !~ m/@/ && $line !~ m/#/) {
         ($atomid,$force_x,$force_y,$force_z) = split(" ",$line);
 
-# Convert kJ/(mol*nm) (gromacs force unit) to kcal/(mol*A)
+        # Convert kJ/(mol*nm) (gromacs force unit) to kcal/(mol*A)
         $force_x = $force_x * 0.0239001;
         $force_y = $force_y * 0.0239001;
         $force_z = $force_z * 0.0239001;
