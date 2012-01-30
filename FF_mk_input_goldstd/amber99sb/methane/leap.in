@@ -1,0 +1,7 @@
+source leaprc.ff99sb
+source leaprc.gaff
+CH4 = loadmol2 methane.mol2
+saveoff CH4 ch4.lib 
+a = loadpdb methane.pdb
+saveamberparm a meth_amber.prmtop meth_amber.inpcrd
+quit

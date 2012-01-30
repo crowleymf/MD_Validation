@@ -1,0 +1,17 @@
+* Methane parameters from amber ff99sb
+*
+BONDS
+HC   CT    340.000     1.090 
+
+ANGLES
+HC   CT   HC    35.00    109.50    
+
+DIHEDRALS
+
+NONBONDED nbxmod  5 atom cdiel shift vatom vdistance vswitch -
+cutnb 14.0 ctofnb 12.0 ctonnb 10.0 eps 1.0 e14fac 1.0 wmin 1.5 
+CT     0.000000  -0.109400     1.9080000  
+HC     0.000000  -0.015700     1.487000 
+
+END
+

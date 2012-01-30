@@ -1,0 +1,37 @@
+**
+*
+
+read rtf card name toppar/ff99.rtf
+read rtf   card name toppar/methane.rtf append
+read param card name toppar/ff99.prm
+
+read sequence card
+* methane
+*
+1
+ch4 ch4
+
+generate meth first none last none setup warn
+auto angle dihe
+
+read coor pdb name methane.pdb
+coor stat sele type C* end
+coor trans xdir -?xave ydir -?yave zdir -?zave
+coor dupl sele resid 1 end sele resid 2 end
+coor trans xdir 4 sele resid 2 end
+write coor pdb name methane2.pdb
+
+write psf card name output/methane2.psf
+
+read coor pdb name methane2.pdb
+update cutnb 999.0 ctofnb 998.0 ctonnb 997.0
+fast off
+ener cutnb 999 ctofnb 998 ctonnb 997 swit  vswi
+
+open unit 11 form write name output/methane2.frcdmp
+frcd unit 11
+close unit 11
+
+
+stop
+

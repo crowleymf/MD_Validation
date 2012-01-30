@@ -1,0 +1,16 @@
+#! /bin/csh -x 
+
+antechamber -i ethane.pdb -fi pdb -o ethane.mol2 -fo mol2 -c bcc -s 2
+
+tleap -f leap.in
+tleap -f leap_600k.in
+
+# Get sander output with force dump for 300k ethane 
+sander -O -p eth_amber.prmtop -c eth_amber.inpcrd -o stdout | tee mdout
+/bin/mv forcedump.dat forcedump_ethane.dat
+
+# Get sander output with force dump for 600k ethane 
+sander -O -p eth_600k_amber.prmtop -c eth_600k_amber.inpcrd -o stdout | tee mdout.600k
+mv forcedump.dat forcedump_ethane600k.dat
+
+

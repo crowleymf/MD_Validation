@@ -1,0 +1,16 @@
+**
+*
+
+read rtf   card name ../toppar/triala.rtf
+read param card name ../toppar/triala99.prm
+!read param card name ../toppar/cornell_all.prm
+
+read sequence ala 3
+generate aal 
+autogenerate angl dihe
+write psf card name triala.psf
+read coor pdb name ../pdb/triala.pdb
+
+nbond cutnb 102 ctofnb 100 ctonnb 98 swit vswit
+energy
+stop

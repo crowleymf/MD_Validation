@@ -1,0 +1,42 @@
+**
+*
+bomlev -1
+read rtf   card name toppar/ff99.rtf   !methane.rtf
+read rtf append card name toppar/alkane.rtf
+read param card name toppar/ff99.prm   !methane.prm
+
+read sequence card
+* ethane
+*
+1
+eth
+
+generate ethn first none last none setup warn
+auto angle dihe
+
+write psf card name output/ethane.psf
+read coor pdb name ../ethane.pdb
+write coor pdb name output/methane.pdb
+!read coor pdb name ../ethane.pdb
+
+fast off
+set e14fac .8333333333333
+ener e14fac @e14fac cutnb 999 ctofnb 998 ctonnb 997
+
+open unit 11 form write name output/methane_chm.frcdmp
+frcd unit 11
+close unit 11
+
+!---- Get energy and forces for 600k structure-----------
+!dyna nstep 1000 nprint 1000 start leap firstt 600 finalt 600
+!write coor pdb  name output/ethane_600k.pdb
+read  coor pdb  name output/ethane_600k.pdb
+
+ener cutnb 999 ctofnb 998 ctonnb 997
+
+open unit 11 form write name output/ethane_600_chm.frcdmp
+frcd unit 11
+close unit 11
+
+stop
+
