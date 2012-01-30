@@ -67,10 +67,10 @@ current version was further modified by myself. Here, the Ryckaert-Bellemans
 dihedrals representation in the output *.top file was changed to the standard
 dihedral representation using the equation V_dihe = K*(1+cos(n*phi-phi_s)),
 where K, n and phi_s are given as force field parameters. The change was made
-to ensure the both AMBER and GROMACS will yield the same dihedral energy term
+to ensure that both AMBER and GROMACS will yield the same dihedral energy term
 for the same structure and (AMBER) force field parameters.
 
 Usage example:
 
-./amb2gmx.pl --prmtop amber-prmtop-filename --crd amber-crd-filename --outname outname [--debug] [--help]
+./amb2gmx.pl --prmtop prmtop-file --crd crd-file --outname outname
 
