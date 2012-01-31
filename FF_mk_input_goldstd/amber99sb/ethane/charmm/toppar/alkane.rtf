@@ -1,9 +1,10 @@
-* Methane
+* topologies for amber ff alkanes
 *
 36  1
 
-!MASS  1 HC     1.00783 H
-!MASS  2 CT    12.00000 C
+MASS  1 gHC     1.00783 H
+MASS  2 gCT    12.00000 C
+MASS  4 gC3    12.00000 C
 
 RESI CH4        0.00 
 GROUP
@@ -19,31 +20,19 @@ BOND C1  H11  C1  H12  C1  H13  C1  H14
  IC H12  H11 *C1   H14   0.0000  0.0000 -120.000  0.0000  0.0000
  IC H11  H12 *C1   H14   0.0000  0.0000 120.000  0.0000  0.0000
 
-RESI CH4        0.00 
-GROUP
-ATOM C1   CT    -0.1068
-ATOM H11  HC     0.0267
-ATOM H12  HC     0.0267
-ATOM H13  HC     0.0267
-ATOM H14  HC     0.0267
-
-BOND C1  H11  C1  H12  C1  H13  C1  H14
-
- IC H12  H11 *C1   H13   0.0000  0.0000 120.0000  0.0000  0.0000
- IC H12  H11 *C1   H14   0.0000  0.0000 -120.000  0.0000  0.0000
- IC H11  H12 *C1   H14   0.0000  0.0000 120.000  0.0000  0.0000
 
 !========ETHANE =================================
+! created by antechamber
 RESI ETH        0.00 
 GROUP
-ATOM C1   CT    -0.0951
-ATOM H11  HC     0.0317
-ATOM H12  HC     0.0317
-ATOM H13  HC     0.0317
-ATOM C2   CT    -0.0951
-ATOM H21  HC     0.0317
-ATOM H22  HC     0.0317
-ATOM H23  HC     0.0317
+ATOM C1   gc3    -0.0951
+ATOM H11  ghc     0.0317
+ATOM H12  ghc     0.0317
+atom h13  ghc     0.0317
+atom c2   gc3    -0.0951
+atom h21  ghc     0.0317
+atom h22  ghc     0.0317
+atom h23  ghc     0.0317
 
 BOND C1  H11  C1  H12  C1  H13
 BOND C2  H21  C2  H22  C2  H23
