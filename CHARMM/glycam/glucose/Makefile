@@ -1,3 +1,6 @@
+nothing:
+	
+
 clean:
 	-/bin/rm Amber_output/*
 	-/bin/rm charmm_output/*
