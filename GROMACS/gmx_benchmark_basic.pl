@@ -35,9 +35,9 @@ my $natoms;
 # parse the command line input
 my $nargs=@ARGV;
 
-if ($nargs!=3) { 
-        die "\nSynthax error: 1 arguments required!\n".
-            "Example: ./gmx_benchmark_basic.pl filename.tpr force_field system_name\n\n";
+if ($nargs!=2) { 
+        die "\nSynthax error: 2 arguments required!\n".
+            "Example: ./gmx_benchmark_basic.pl filename.tpr system_name\n\n";
 }
 
 $tpr_file = $ARGV[0];
@@ -45,12 +45,7 @@ if ($tpr_file !~ /[A-Za-z0-9-]+.tpr/) {
     die "\nInput error: GROMACS tpr file name is incorrect\n\n!";
 }
 
-$forcefield = $ARGV[1];
-if ($forcefield !~ /[A-Za-z0-9-]/) {
-    die "\nInput error: force field name must be a string\n\n!";
-}
-
-$system_name = $ARGV[2];
+$system_name = $ARGV[1];
 if ($system_name !~ /[A-Za-z0-9-]/) {
     die "\nInput error: system name must be a string\n\n!";
 }
@@ -197,7 +192,7 @@ foreach $line (@raw_data) {
     if ($line !~ m/@/ && $line !~ m/#/) {
         ($atomid,$force_x,$force_y,$force_z) = split(" ",$line);
 
-# Convert kJ/(mol*nm) (gromacs force unit) to kcal/(mol*A)
+        # Convert kJ/(mol*nm) (gromacs force unit) to kcal/(mol*A)
         $force_x = $force_x * 0.0239001;
         $force_y = $force_y * 0.0239001;
         $force_z = $force_z * 0.0239001;

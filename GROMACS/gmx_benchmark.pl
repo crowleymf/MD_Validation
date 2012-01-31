@@ -39,7 +39,7 @@ if ($nargs!=3) {
 }
 
 $input_struct = $ARGV[0];
-if ($input_struct !~ /[A-Za-z0-9-]+.pdb/) {
+if ($input_struct !~ /[A-Za-z0-9-]+.gro/) {
     die "\nInput error: input structure must be a *.gro file\n\n!";
 }
 
