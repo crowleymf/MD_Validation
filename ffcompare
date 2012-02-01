@@ -1,5 +1,4 @@
 #!/usr/bin/perl -w
-# $Header: /export/cvs/ffvalidate/tool/ffcompare,v 1.2 2011/10/07 14:48:48 mgarraha Exp $
 # Compares CHARMM 'FRCD' force dumps to similarly formatted
 # outputs of other MD programs.
 # Mike Garrahan, May 2009
@@ -183,6 +182,7 @@ sub diffFrcd(\%\%$) {
         print "Energies found only in $fn2: @only2\n";
     }
     print "Relative error in energy:\n";
+    my @okterms = ();
     for my $enkey (sort keys %$energies1) {
         if (exists $energies2->{$enkey}) {
             my $e1 = $energies1->{$enkey};
@@ -195,7 +195,14 @@ sub diffFrcd(\%\%$) {
             if (abs($eerr) > $tol) {
                 printf "  %-4s %14.6e\n", $enkey, $eerr;
             }
+            else {
+               push @okterms, $enkey;
+            }
         }
+    }
+    if (@okterms) {
+        printf "Energy terms agreeing within %8.2e:\n", $tol;
+        print "  ", join("  ", @okterms), "\n";
     }
 
     my $forces1 = $frcd1->{'FORCE'};
