@@ -4,6 +4,7 @@
 # set chm = <path_to_charmm>
 set chm = charmm
 set sander = sander
+set toppar = ../../../toppar
 
 ### if ( ! -e `which $chm` ) then
 ###     echo ""
@@ -22,8 +23,8 @@ set sander = sander
 ### endif
   
   chamber -nocmap -vmd \
-       -top    toppar/top_all36_carb.rtf \
-       -param  toppar/par_all36_carb.prm \
+       -top    $toppar/top_all36_carb.rtf \
+       -param  $toppar/par_all36_carb.prm \
        -psf    charmm_output/onegluc_c36.psf \
        -crd    pdb/onegluc_min.pdb \
        -p      Amber_output/onegluc.prmtop \

@@ -1,11 +1,31 @@
-Test case for c36 carbohydrate force field.
-Currently only Amber is tested against charmm.
+Test case for c36 carbohydrate force field: one glucose molecule in vacuum.
 
-Run script will do the whole test except the comparison.
-     Edit the Run script to set your path to the charmm executable.
+To run:
+make
+
+To clean up:
+make clean
+
+
+First the prmtop and inpcrd are created from saved charmm output in
+charmm_output/SAVED/onegluc_c36.psf 
+and the topology and parameter files in MD_Validation/toppar
+par_all36_carb.prm and top_all36_carb.rtf
+
+Force dump comparison output is in charmm_output/SAVED
+onegluc_600k_chm.frcdmp  and  onegluc_min_chm.frcdmp
+
+Run script will do the whole test copying the needed files out of
+SAVED directories to needed spots.
+
 Requires in your path: chamber, sander
 
-OUtput to compare is in Amber_output/ and charmm_output/ with file extension: frcdmp.
+Output to compare is in Amber_output/ with file extension: frcdmp.
 
-Sample output of current versions of charmm and amber are in the SAVED directories.
+Sample output of current versions of charmm and amber 
+are in the SAVED directories.
 
+To make new pdb, psf, and frcdmp files, see the method in
+MD_Validation/FF_mk_input_goldstd/charmm_ff/OneGluc
+Then copy the necessary pdb, psf, and frcdmp files out of the 
+pdb and charmm_output directories into the SAVED dirs here.
