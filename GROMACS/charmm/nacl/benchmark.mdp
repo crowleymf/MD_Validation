@@ -1,5 +1,4 @@
 integrator = md 
-nsteps = 0 
 nstlog = 1 
 nstenergy = 1 
 nstfout = 1 
@@ -14,8 +13,5 @@ rvdw = 99
 pbc = no 
 tcoupl = no 
 gen_vel = no 
-constraints = hbonds 
-constraint_algorithm = LINCS 
-shake_tol = 0.0001 
-lincs_order = 4 
-lincs_iter = 1 
+constraints = none 
+nsteps = 0

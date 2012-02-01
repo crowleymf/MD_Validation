@@ -35,12 +35,12 @@ my $nargs=@ARGV;
 
 if ($nargs!=3) { 
         die "\nSynthax error: 3 arguments required!\n".
-            "Example: ./gmx_benchmark.pl struct.gro force_field system_name\n\n";
+            "Example: ./gmx_benchmark.pl struct.pdb force_field system_name\n\n";
 }
 
 $input_struct = $ARGV[0];
-if ($input_struct !~ /[A-Za-z0-9-]+.gro/) {
-    die "\nInput error: input structure must be a *.gro file\n\n!";
+if ($input_struct !~ /[A-Za-z0-9-]+.pdb/) {
+    die "\nInput error: input structure must be a *.pdb file\n\n!";
 }
 
 $forcefield = $ARGV[1];
@@ -54,13 +54,19 @@ if ($system_name !~ /[A-Za-z0-9-]/) {
 }
 
 # create gromacs toplogy  and structure files
-$command = "echo 6 | $gmx_path/pdb2gmx ".
+$command = "echo 6 | $gmx_path/pdb2gmx_d -ignh ".
            "-f $input_struct ".
            "-ff $forcefield ".
            "-p $system_name\_$forcefield.top ".
            "-o $system_name\_$forcefield.gro";
 $output = `$command`;
 print "$output\n";
+
+#$command = "$gmx_path/editconf_d ".
+#           "-f $system_name\_$forcefield.pdb ".
+#           "-o $system_name\_$forcefield.gro";
+#$output = `$command`;
+#print "$output\n";
 
 # get the total atom number
 open(STRUCT, "< $system_name\_$forcefield.gro");
@@ -94,7 +100,7 @@ printf(MDP "$command");
 close(MDP);
 
 # create the gromacs tpr file
-$command = "$gmx_path/grompp ".
+$command = "$gmx_path/grompp_d ".
            "-f benchmark.mdp ".
            "-p $system_name\_$forcefield.top ".
            "-c $system_name\_$forcefield.gro ".
@@ -104,12 +110,12 @@ print "$output\n";
 
 # run benchmark only if tpr file generation successful
 die "#@# Error: grompp failed to generate the tpr file\n\n" if ($? != 0); 
-$command = "$gmx_path/mdrun -s benchmark.tpr";
+$command = "$gmx_path/mdrun_d -s benchmark.tpr";
 $output = `$command`;
 print"$output\n";
 
 # read out the energies
-$command = "echo 1 2 3 4 5 6 7 8 9 10 | g_energy ".
+$command = "echo 1 2 3 4 5 6 7 8 9 10 | g_energy_d ".
            "-f ener.edr -o tmp_ener.xvg > ener.tmp";
 $output = `$command`;
 print "$output\n";
@@ -202,7 +208,7 @@ $vdw = $lj + $lj14;
 $elec = $coulomb + $coulomb14;
 
 # write out forces
-$command = "echo 0 | g_traj ".
+$command = "echo 0 | g_traj_d ".
            "-f traj.trr ".
            "-s benchmark.tpr ".
            "-af forces.xvg";

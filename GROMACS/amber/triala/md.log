@@ -1,12 +1,12 @@
-Log file opened on Fri Jan  6 02:18:25 2012
-Host: virtual-baumhaus  pid: 11186  nodeid: 0  nnodes:  1
-The Gromacs distribution was built Tue Aug 16 09:54:23 EDT 2011 by
-xhu@virtual-baumhaus [CMAKE] (Linux 2.6.38-10-generic x86_64)
+Log file opened on Tue Jan 31 20:17:09 2012
+Host: virtual-baumhaus  pid: 8193  nodeid: 0  nnodes:  1
+The Gromacs distribution was built Tue Jan 31 18:55:31 EST 2012 by
+xhu@virtual-baumhaus [CMAKE] (Linux 3.0.0-15-generic x86_64)
 
 
                          :-)  G  R  O  M  A  C  S  (-:
 
-                   Good gRace! Old Maple Actually Chews Slate
+                      GROwing Monsters And Cloning Shrimps
 
                             :-)  VERSION 4.5.4  (-:
 
@@ -28,7 +28,7 @@ xhu@virtual-baumhaus [CMAKE] (Linux 2.6.38-10-generic x86_64)
          as published by the Free Software Foundation; either version 2
              of the License, or (at your option) any later version.
 
-                     :-)  /usr/local/gromacs/bin/mdrun  (-:
+          :-)  /usr/local/gromacs/bin/mdrun_d (double precision)  (-:
 
 
 ++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
@@ -229,18 +229,18 @@ Table routines are used for vdw:     TRUE
 Using shifted Lennard-Jones, switch between 98 and 99 nm
 Cut-off's:   NS: 99   Coulomb: 99   LJ: 99
 System total charge: 0.000
-Generated table with 50000 data points for COUL.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for LJ6Switch.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for LJ12Switch.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for 1-4 COUL.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for 1-4 LJ6.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for 1-4 LJ12.
-Tabscale = 500 points/nm
+Generated table with 200000 data points for COUL.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for LJ6Switch.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for LJ12Switch.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for 1-4 COUL.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for 1-4 LJ6.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for 1-4 LJ12.
+Tabscale = 2000 points/nm
 Configuring nonbonded kernels...
 Configuring standard C nonbonded kernels...
 Testing x86_64 SSE2 support... present.
@@ -252,7 +252,7 @@ We have the following groups for center of mass motion removal:
 There are: 33 Atoms
 Initial temperature: 0 K
 
-Started mdrun on node 0 Fri Jan  6 02:18:25 2012
+Started mdrun on node 0 Tue Jan 31 20:17:09 2012
 
            Step           Time         Lambda
               0        0.00000        0.00000
@@ -260,11 +260,11 @@ Started mdrun on node 0 Fri Jan  6 02:18:25 2012
 Grid: 2 x 2 x 2 cells
    Energies (kJ/mol)
            Bond          Angle    Proper Dih.  Improper Dih.          LJ-14
-    1.07673e+02    1.99712e+02    1.14405e+02    2.01874e+01    6.50357e+01
+    1.03582e+02    2.01209e+02    1.14545e+02    1.93212e+01    6.66296e+01
      Coulomb-14        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.
-    9.64442e+02    2.30744e+01   -1.40164e+03    9.28939e+01    1.36281e+01
+    9.65172e+02    2.39603e+01   -1.40205e+03    9.23674e+01    1.35146e+01
    Total Energy    Temperature Pressure (bar)
-    1.06522e+02    3.41474e+01    0.00000e+00
+    1.05882e+02    3.38629e+01    0.00000e+00
 
 	<======  ###############  ==>
 	<====  A V E R A G E S  ====>
@@ -274,16 +274,16 @@ Grid: 2 x 2 x 2 cells
 
    Energies (kJ/mol)
            Bond          Angle    Proper Dih.  Improper Dih.          LJ-14
-    1.07673e+02    1.99712e+02    1.14405e+02    2.01874e+01    6.50357e+01
+    1.03582e+02    2.01209e+02    1.14545e+02    1.93212e+01    6.66296e+01
      Coulomb-14        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.
-    9.64442e+02    2.30744e+01   -1.40164e+03    9.28939e+01    1.36281e+01
+    9.65172e+02    2.39603e+01   -1.40205e+03    9.23674e+01    1.35146e+01
    Total Energy    Temperature Pressure (bar)
-    1.06522e+02    3.41474e+01    0.00000e+00
+    1.05882e+02    3.38629e+01    0.00000e+00
 
    Total Virial (kJ/mol)
-   -2.05213e+02   -4.25149e+02    2.87861e+02
-   -4.25149e+02    6.97044e+01    1.57207e+02
-    2.87861e+02    1.57207e+02   -3.44617e+01
+   -2.09878e+02   -4.18613e+02    2.88880e+02
+   -4.18613e+02    7.46013e+01    1.68529e+02
+    2.88880e+02    1.68529e+02   -1.54966e+01
 
    Pressure (bar)
     0.00000e+00    0.00000e+00    0.00000e+00
@@ -291,7 +291,7 @@ Grid: 2 x 2 x 2 cells
     0.00000e+00    0.00000e+00    0.00000e+00
 
    Total Dipole (D)
-   -6.95534e+00   -8.75737e+00   -4.16187e+00
+   -6.96401e+00   -8.70229e+00   -4.23473e+00
 
 
 	M E G A - F L O P S   A C C O U N T I N G
@@ -322,14 +322,14 @@ Grid: 2 x 2 x 2 cells
 
  Computing:         Nodes     Number     G-Cycles    Seconds     %
 -----------------------------------------------------------------------
- Neighbor search        1          1        0.000        0.0     6.0
- Force                  1          1        0.000        0.0    14.9
- Write traj.            1          1        0.001        0.0    61.1
+ Neighbor search        1          1        0.000        0.0     8.6
+ Force                  1          1        0.000        0.0    19.1
+ Write traj.            1          1        0.001        0.0    52.5
  Update                 1          1        0.000        0.0     1.2
- Rest                   1                   0.000        0.0    16.8
+ Rest                   1                   0.000        0.0    18.7
 -----------------------------------------------------------------------
- Total                  1                   0.002        0.0   100.0
+ Total                  1                   0.001        0.0   100.0
 -----------------------------------------------------------------------
 
 nodetime = 0! Infinite Giga flopses!
-Finished mdrun on node 0 Fri Jan  6 02:18:25 2012
+Finished mdrun on node 0 Tue Jan 31 20:17:09 2012

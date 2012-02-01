@@ -1,12 +1,12 @@
-Log file opened on Sat Jan  7 17:25:35 2012
-Host: virtual-baumhaus  pid: 5591  nodeid: 0  nnodes:  1
-The Gromacs distribution was built Tue Aug 16 09:54:23 EDT 2011 by
-xhu@virtual-baumhaus [CMAKE] (Linux 2.6.38-10-generic x86_64)
+Log file opened on Tue Jan 31 19:54:22 2012
+Host: virtual-baumhaus  pid: 7551  nodeid: 0  nnodes:  1
+The Gromacs distribution was built Tue Jan 31 18:55:31 EST 2012 by
+xhu@virtual-baumhaus [CMAKE] (Linux 3.0.0-15-generic x86_64)
 
 
                          :-)  G  R  O  M  A  C  S  (-:
 
-                Gravel Rubs Often Many Awfully Cauterized Sores
+           Glycine aRginine prOline Methionine Alanine Cystine Serine
 
                             :-)  VERSION 4.5.4  (-:
 
@@ -28,7 +28,7 @@ xhu@virtual-baumhaus [CMAKE] (Linux 2.6.38-10-generic x86_64)
          as published by the Free Software Foundation; either version 2
              of the License, or (at your option) any later version.
 
-                     :-)  /usr/local/gromacs/bin/mdrun  (-:
+          :-)  /usr/local/gromacs/bin/mdrun_d (double precision)  (-:
 
 
 ++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
@@ -198,7 +198,7 @@ Input Parameters:
    userreal3            = 0
    userreal4            = 0
 grpopts:
-   nrdf:          79
+   nrdf:          96
    ref_t:           0
    tau_t:           0
 anneal:          No
@@ -228,58 +228,43 @@ Table routines are used for coulomb: FALSE
 Table routines are used for vdw:     TRUE
 Using shifted Lennard-Jones, switch between 98 and 99 nm
 Cut-off's:   NS: 99   Coulomb: 99   LJ: 99
-System total charge: 0.000
-Generated table with 50000 data points for COUL.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for LJ6Switch.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for LJ12Switch.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for 1-4 COUL.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for 1-4 LJ6.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for 1-4 LJ12.
-Tabscale = 500 points/nm
+System total charge: -0.000
+Generated table with 200000 data points for COUL.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for LJ6Switch.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for LJ12Switch.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for 1-4 COUL.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for 1-4 LJ6.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for 1-4 LJ12.
+Tabscale = 2000 points/nm
 Configuring nonbonded kernels...
 Configuring standard C nonbonded kernels...
 Testing x86_64 SSE2 support... present.
 
 
-
-Initializing LINear Constraint Solver
-
-++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
-B. Hess and H. Bekker and H. J. C. Berendsen and J. G. E. M. Fraaije
-LINCS: A Linear Constraint Solver for molecular simulations
-J. Comp. Chem. 18 (1997) pp. 1463-1472
--------- -------- --- Thank You --- -------- --------
-
-The number of constraints is 17
 Center of mass motion removal mode is Linear
 We have the following groups for center of mass motion removal:
   0:  rest
 There are: 33 Atoms
+Initial temperature: 0 K
 
-Constraining the starting coordinates (step 0)
-
-Constraining the coordinates at t0-dt (step 0)
-RMS relative constraint deviation after constraining: 1.09e-07
-Initial temperature: 9.49682e-09 K
-
-Started mdrun on node 0 Sat Jan  7 17:25:35 2012
+Started mdrun on node 0 Tue Jan 31 19:54:22 2012
 
            Step           Time         Lambda
               0        0.00000        0.00000
 
-Grid: 2 x 2 x 2 cells
+Grid: 3 x 2 x 2 cells
    Energies (kJ/mol)
            Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
-    3.95559e+01    1.94076e+02    9.48974e+01    3.45837e+01   -1.52827e+01
+    6.40156e+00    5.99198e+01    5.96795e+01    1.37497e+00   -2.18414e+00
           LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)      Potential
-    1.62208e+01    1.16089e+03    2.04100e+01   -1.39815e+03    1.47201e+02
-    Kinetic En.   Total Energy    Temperature Pressure (bar)   Constr. rmsd
-    3.67295e+00    1.50874e+02    1.11836e+01    0.00000e+00    1.40159e-07
+    8.77861e+00    1.16328e+03   -5.45688e+00   -1.12758e+03    1.64216e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.83855e-02    1.64314e+02    2.46521e-01    0.00000e+00
 
 	<======  ###############  ==>
 	<====  A V E R A G E S  ====>
@@ -289,16 +274,16 @@ Grid: 2 x 2 x 2 cells
 
    Energies (kJ/mol)
            Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
-    3.95559e+01    1.94076e+02    9.48974e+01    3.45837e+01   -1.52827e+01
+    6.40156e+00    5.99198e+01    5.96795e+01    1.37497e+00   -2.18414e+00
           LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)      Potential
-    1.62208e+01    1.16089e+03    2.04100e+01   -1.39815e+03    1.47201e+02
-    Kinetic En.   Total Energy    Temperature Pressure (bar)   Constr. rmsd
-    3.67295e+00    1.50874e+02    1.11836e+01    0.00000e+00    0.00000e+00
+    8.77861e+00    1.16328e+03   -5.45688e+00   -1.12758e+03    1.64216e+02
+    Kinetic En.   Total Energy    Temperature Pressure (bar)
+    9.83855e-02    1.64314e+02    2.46521e-01    0.00000e+00
 
    Total Virial (kJ/mol)
-   -2.26877e+02   -3.29389e+02    1.64413e+02
-   -3.29389e+02   -5.10820e+01   -1.15349e+01
-    1.64413e+02   -1.15349e+01   -1.55732e+02
+    1.11003e+02    6.83933e+01    5.40416e+00
+    6.83933e+01    4.88295e+01    1.27287e+01
+    5.40416e+00    1.27287e+01   -2.32761e+01
 
    Pressure (bar)
     0.00000e+00    0.00000e+00    0.00000e+00
@@ -306,7 +291,7 @@ Grid: 2 x 2 x 2 cells
     0.00000e+00    0.00000e+00    0.00000e+00
 
    Total Dipole (D)
-   -7.09739e+00   -8.87214e+00   -4.12389e+00
+   -3.55274e+01   -2.76751e+01    4.78880e-01
 
 
 	M E G A - F L O P S   A C C O U N T I N G
@@ -317,25 +302,21 @@ Grid: 2 x 2 x 2 cells
 
  Computing:                               M-Number         M-Flops  % Flops
 -----------------------------------------------------------------------------
- LJ                                       0.000057           0.002     2.7
- Coulomb + VdW(T)                         0.000365           0.022    30.4
+ LJ                                       0.000057           0.002     2.8
+ Coulomb + VdW(T)                         0.000365           0.022    32.6
  Outer nonbonded loop                     0.000033           0.000     0.5
- 1,4 nonbonded interactions               0.000074           0.007     9.4
- NS-Pairs                                 0.000561           0.012    16.6
+ 1,4 nonbonded interactions               0.000074           0.007    10.1
+ NS-Pairs                                 0.000561           0.012    17.8
  CG-CoM                                   0.000033           0.000     0.1
- Bonds                                    0.000015           0.001     1.2
- Propers                                  0.000076           0.017    24.6
- Impropers                                0.000005           0.001     1.5
- Virial                                   0.000078           0.001     2.0
+ Bonds                                    0.000032           0.002     2.9
+ Propers                                  0.000076           0.017    26.3
+ Impropers                                0.000005           0.001     1.6
+ Virial                                   0.000078           0.001     2.1
  Stop-CM                                  0.000033           0.000     0.5
- Calc-Ekin                                0.000066           0.002     2.5
- Lincs                                    0.000051           0.003     4.3
- Lincs-Mat                                0.000432           0.002     2.4
- Constraint-V                             0.000068           0.001     0.8
- Constraint-Vir                           0.000017           0.000     0.6
+ Calc-Ekin                                0.000066           0.002     2.7
  (null)                                   0.000001           0.000     0.0
 -----------------------------------------------------------------------------
- Total                                                       0.071   100.0
+ Total                                                       0.066   100.0
 -----------------------------------------------------------------------------
 
 
@@ -343,15 +324,14 @@ Grid: 2 x 2 x 2 cells
 
  Computing:         Nodes     Number     G-Cycles    Seconds     %
 -----------------------------------------------------------------------
- Neighbor search        1          1        0.000        0.0     5.3
- Force                  1          1        0.001        0.0    17.3
- Write traj.            1          1        0.002        0.0    56.6
+ Neighbor search        1          1        0.000        0.0    11.3
+ Force                  1          1        0.000        0.0    23.9
+ Write traj.            1          1        0.001        0.0    44.3
  Update                 1          1        0.000        0.0     1.2
- Constraints            1          1        0.000        0.0     1.7
- Rest                   1                   0.001        0.0    17.8
+ Rest                   1                   0.000        0.0    19.3
 -----------------------------------------------------------------------
- Total                  1                   0.003        0.0   100.0
+ Total                  1                   0.001        0.0   100.0
 -----------------------------------------------------------------------
 
 nodetime = 0! Infinite Giga flopses!
-Finished mdrun on node 0 Sat Jan  7 17:25:35 2012
+Finished mdrun on node 0 Tue Jan 31 19:54:22 2012
