@@ -1,28 +1,28 @@
 REMARK ONE BETA-GLUCOPYRANOSE TEST CASE                                               
-REMARK   DATE:     2/ 1/12     16:19:28      CREATED BY USER: mcrowley                
-ATOM      1  C1  BGLC    1      20.957  52.757  95.967  1.00 23.63      GLA 
-ATOM      2  H1  BGLC    1      21.471  51.824  96.286  1.00  0.00      GLA 
-ATOM      3  O1  BGLC    1      19.576  52.538  96.304  1.00 23.63      GLA 
-ATOM      4  HO1 BGLC    1      19.527  52.840  97.179  1.00  0.00      GLA 
-ATOM      5  C5  BGLC    1      22.783  54.164  96.504  1.00 23.63      GLA 
-ATOM      6  H5  BGLC    1      23.326  53.329  96.923  1.00  0.00      GLA 
-ATOM      7  O5  BGLC    1      21.382  53.930  96.677  1.00 23.63      GLA 
-ATOM      8  C2  BGLC    1      21.223  52.898  94.452  1.00 23.63      GLA 
-ATOM      9  H2  BGLC    1      20.749  53.845  94.119  1.00  0.00      GLA 
-ATOM     10  O2  BGLC    1      20.740  51.755  93.753  1.00 23.63      GLA 
-ATOM     11  HO2 BGLC    1      19.769  51.697  93.885  1.00  0.00      GLA 
-ATOM     12  C3  BGLC    1      22.683  53.182  94.264  1.00 23.63      GLA 
-ATOM     13  H3  BGLC    1      23.293  52.263  94.563  1.00  0.00      GLA 
-ATOM     14  O3  BGLC    1      22.995  53.295  92.918  1.00 23.63      GLA 
-ATOM     15  HO3 BGLC    1      22.807  52.357  92.556  1.00  0.00      GLA 
-ATOM     16  C4  BGLC    1      23.232  54.346  95.054  1.00 23.63      GLA 
-ATOM     17  H4  BGLC    1      22.887  55.344  94.675  1.00  0.00      GLA 
-ATOM     18  O4  BGLC    1      24.637  54.406  94.913  1.00 23.63      GLA 
-ATOM     19  HO4 BGLC    1      24.795  54.643  94.054  1.00 22.02      GLA 
-ATOM     20  C6  BGLC    1      23.077  55.225  97.424  1.00 23.63      GLA 
-ATOM     21  H61 BGLC    1      24.139  55.385  97.483  1.00  0.00      GLA 
-ATOM     22  H62 BGLC    1      22.725  54.822  98.438  1.00  0.00      GLA 
-ATOM     23  O6  BGLC    1      22.401  56.463  97.234  1.00 23.63      GLA 
-ATOM     24  HO6 BGLC    1      21.468  56.505  97.464  1.00  0.00      GLA 
+REMARK   DATE:     2/ 1/12     16:33:42      CREATED BY USER: mcrowley                
+ATOM      1  C1  BGLC    1      20.990  52.698  96.084  1.00 23.63      GLA 
+ATOM      2  H1  BGLC    1      21.667  51.975  96.453  1.00  0.00      GLA 
+ATOM      3  O1  BGLC    1      19.616  52.262  96.298  1.00 23.63      GLA 
+ATOM      4  HO1 BGLC    1      19.567  51.624  95.573  1.00  0.00      GLA 
+ATOM      5  C5  BGLC    1      22.773  54.162  96.594  1.00 23.63      GLA 
+ATOM      6  H5  BGLC    1      23.350  53.337  96.973  1.00  0.00      GLA 
+ATOM      7  O5  BGLC    1      21.359  53.915  96.719  1.00 23.63      GLA 
+ATOM      8  C2  BGLC    1      21.189  52.900  94.606  1.00 23.63      GLA 
+ATOM      9  H2  BGLC    1      20.581  53.859  94.363  1.00  0.00      GLA 
+ATOM     10  O2  BGLC    1      20.598  51.930  93.760  1.00 23.63      GLA 
+ATOM     11  HO2 BGLC    1      20.821  51.993  92.810  1.00  0.00      GLA 
+ATOM     12  C3  BGLC    1      22.582  53.144  94.293  1.00 23.63      GLA 
+ATOM     13  H3  BGLC    1      23.104  52.121  94.553  1.00  0.00      GLA 
+ATOM     14  O3  BGLC    1      22.855  53.263  92.862  1.00 23.63      GLA 
+ATOM     15  HO3 BGLC    1      23.783  53.421  92.786  1.00  0.00      GLA 
+ATOM     16  C4  BGLC    1      23.138  54.302  95.139  1.00 23.63      GLA 
+ATOM     17  H4  BGLC    1      22.761  55.224  94.670  1.00  0.00      GLA 
+ATOM     18  O4  BGLC    1      24.534  54.321  94.982  1.00 23.63      GLA 
+ATOM     19  HO4 BGLC    1      24.801  55.250  94.869  1.00 22.02      GLA 
+ATOM     20  C6  BGLC    1      23.202  55.398  97.460  1.00 23.63      GLA 
+ATOM     21  H61 BGLC    1      24.221  55.525  97.397  1.00  0.00      GLA 
+ATOM     22  H62 BGLC    1      22.878  55.254  98.507  1.00  0.00      GLA 
+ATOM     23  O6  BGLC    1      22.683  56.581  96.905  1.00 23.63      GLA 
+ATOM     24  HO6 BGLC    1      21.736  56.713  96.922  1.00  0.00      GLA 
 TER      25      BGLC     1
 END

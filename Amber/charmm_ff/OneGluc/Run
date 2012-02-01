@@ -5,20 +5,29 @@
 set chm = charmm
 set sander = sander
 
-if ( ! -e `which $chm` ) then
-
-else
-$chm -i input/onegluc_create.inp | tee charmm_output/OUT.create
-$chm -i input/ener.inp | tee charmm_output/OUT.ener
-
-chamber -nocmap -vmd \
-     -top    toppar/top_all36_carb.rtf \
-     -param  toppar/par_all36_carb.prm \
-     -psf    charmm_output/onegluc_c36.psf \
-     -crd    pdb/onegluc_min.pdb \
-     -p      Amber_output/onegluc.prmtop \
-     -inpcrd Amber_output/onegluc.inpcrd
-endif
+### if ( ! -e `which $chm` ) then
+###     echo ""
+###     echo ""
+###     echo "============================================="
+###     echo "*** No path to charmm executable"
+###     echo "*** Copying needed files from charmm_output/SAVED"
+###     echo "============================================="
+###     echo ""
+    /bin/cp charmm_output/SAVED/* charmm_output/
+    /bin/cp pdb/SAVED/* pdb/
+    ###exit
+### else
+###   $chm -i input/onegluc_create.inp | tee charmm_output/OUT.create
+###   $chm -i input/ener.inp | tee charmm_output/OUT.ener
+### endif
+  
+  chamber -nocmap -vmd \
+       -top    toppar/top_all36_carb.rtf \
+       -param  toppar/par_all36_carb.prm \
+       -psf    charmm_output/onegluc_c36.psf \
+       -crd    pdb/onegluc_min.pdb \
+       -p      Amber_output/onegluc.prmtop \
+       -inpcrd Amber_output/onegluc.inpcrd
 
 echo -n "Run sander (y/n): "
 set yn = $<
