@@ -2,15 +2,15 @@
 ;	File 'nacl_charmm27.top' was generated
 ;	By user: xhu (1000)
 ;	On host: virtual-baumhaus
-;	At date: Sat Jan  7 18:43:11 2012
+;	At date: Tue Jan 31 20:12:39 2012
 ;
 ;	This is a standalone topology file
 ;
 ;	It was generated using program:
-;	pdb2gmx - VERSION 4.5.4
+;	pdb2gmx_d - VERSION 4.5.4
 ;
 ;	Command line was:
-;	/usr/local/gromacs/bin/pdb2gmx -f nacl.pdb -ff charmm27 -p nacl_charmm27.top -o nacl_charmm27.gro 
+;	/usr/local/gromacs/bin/pdb2gmx_d -f nacl.pdb -ff charmm27 -p nacl_charmm27.top -o nacl_charmm27.pdb 
 ;
 ;	Force field was read from the standard Gromacs share directory.
 ;

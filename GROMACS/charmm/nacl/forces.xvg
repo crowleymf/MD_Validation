@@ -1,0 +1,14 @@
+# This file was created Tue Jan 31 20:12:39 2012
+# by the following command:
+# g_traj_d -f traj.trr -s benchmark.tpr -af forces.xvg 
+#
+# g_traj_d is part of G R O M A C S:
+#
+# Giant Rising Ordinary Mutants for A Clerical Setup
+#
+@    title "average force"
+@    xaxis  label "Atom"
+@    yaxis  label ""
+@TYPE xy
+1         138.945       0.000       0.000
+2        -138.945       0.000       0.000

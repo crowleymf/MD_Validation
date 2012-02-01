@@ -1,0 +1,21 @@
+;
+;	File 'nacl_amber99sb.top' was generated
+;	By user: xhu (1000)
+;	On host: virtual-baumhaus
+;	At date: Tue Jan 31 20:51:54 2012
+;
+;	This is a standalone topology file
+;
+;	It was generated using program:
+;	pdb2gmx_d - VERSION 4.5.4
+;
+;	Command line was:
+;	/usr/local/gromacs/bin/pdb2gmx_d -ignh -f nacl.pdb -ff amber99sb -p nacl_amber99sb.top -o nacl_amber99sb.gro 
+;
+;	Force field was read from the standard Gromacs share directory.
+;
+
+; Include forcefield parameters
+#include "ions.itp"
+#include "amber99sb.ff/forcefield.itp"
+

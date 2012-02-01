@@ -1,0 +1,46 @@
+
+Using the Amber99sb force field in directory amber99sb.ff
+
+
+Select the Water Model:
+Reading dhfr_600k.pdb...
+Read 2489 atoms
+Analyzing pdb file
+Splitting PDB chains based on TER records or changing chain id.
+There are 1 chains and 0 blocks of water and 159 residues with 2489 atoms
+
+  chain  #res #atoms
+  1 ' '   159   2489  
+
+Reading residue database... (amber99sb)
+Processing chain 1 (2489 atoms, 159 residues)
+Identified residue MET1 as a starting terminus.
+Identified residue ARG159 as a ending terminus.
+
+                         :-)  G  R  O  M  A  C  S  (-:
+
+                     Gyas ROwers Mature At Cryogenic Speed
+
+                            :-)  VERSION 4.5.4  (-:
+
+        Written by Emile Apol, Rossen Apostolov, Herman J.C. Berendsen,
+      Aldert van Buuren, Pär Bjelkmar, Rudi van Drunen, Anton Feenstra, 
+        Gerrit Groenhof, Peter Kasson, Per Larsson, Pieter Meulenhoff, 
+           Teemu Murtola, Szilard Pall, Sander Pronk, Roland Schulz, 
+                Michael Shirts, Alfons Sijbers, Peter Tieleman,
+
+               Berk Hess, David van der Spoel, and Erik Lindahl.
+
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+            Copyright (c) 2001-2010, The GROMACS development team at
+        Uppsala University & The Royal Institute of Technology, Sweden.
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+          modify it under the terms of the GNU General Public License
+         as published by the Free Software Foundation; either version 2
+             of the License, or (at your option) any later version.
+
+          :-)  /usr/local/gromacs/bin/grompp_d (double precision)  (-:
+
+

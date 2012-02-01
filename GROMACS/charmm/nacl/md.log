@@ -1,12 +1,12 @@
-Log file opened on Sat Jan  7 18:43:11 2012
-Host: virtual-baumhaus  pid: 6441  nodeid: 0  nnodes:  1
-The Gromacs distribution was built Tue Aug 16 09:54:23 EDT 2011 by
-xhu@virtual-baumhaus [CMAKE] (Linux 2.6.38-10-generic x86_64)
+Log file opened on Tue Jan 31 20:12:39 2012
+Host: virtual-baumhaus  pid: 8027  nodeid: 0  nnodes:  1
+The Gromacs distribution was built Tue Jan 31 18:55:31 EST 2012 by
+xhu@virtual-baumhaus [CMAKE] (Linux 3.0.0-15-generic x86_64)
 
 
                          :-)  G  R  O  M  A  C  S  (-:
 
-                  Green Red Orange Magenta Azure Cyan Skyblue
+               Giant Rising Ordinary Mutants for A Clerical Setup
 
                             :-)  VERSION 4.5.4  (-:
 
@@ -28,7 +28,7 @@ xhu@virtual-baumhaus [CMAKE] (Linux 2.6.38-10-generic x86_64)
          as published by the Free Software Foundation; either version 2
              of the License, or (at your option) any later version.
 
-                     :-)  /usr/local/gromacs/bin/mdrun  (-:
+          :-)  /usr/local/gromacs/bin/mdrun_d (double precision)  (-:
 
 
 ++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
@@ -229,12 +229,12 @@ Table routines are used for vdw:     TRUE
 Using shifted Lennard-Jones, switch between 98 and 99 nm
 Cut-off's:   NS: 99   Coulomb: 99   LJ: 99
 System total charge: 0.000
-Generated table with 50000 data points for COUL.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for LJ6Switch.
-Tabscale = 500 points/nm
-Generated table with 50000 data points for LJ12Switch.
-Tabscale = 500 points/nm
+Generated table with 200000 data points for COUL.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for LJ6Switch.
+Tabscale = 2000 points/nm
+Generated table with 200000 data points for LJ12Switch.
+Tabscale = 2000 points/nm
 Configuring nonbonded kernels...
 Configuring standard C nonbonded kernels...
 Testing x86_64 SSE2 support... present.
@@ -246,7 +246,7 @@ We have the following groups for center of mass motion removal:
 There are: 2 Atoms
 Initial temperature: 0 K
 
-Started mdrun on node 0 Sat Jan  7 18:43:11 2012
+Started mdrun on node 0 Tue Jan 31 20:12:39 2012
 
            Step           Time         Lambda
               0        0.00000        0.00000
@@ -271,7 +271,7 @@ Grid: 2 x 2 x 2 cells
     2.77495e-02    0.00000e+00
 
    Total Virial (kJ/mol)
-    6.94725e+01    0.00000e+00    0.00000e+00
+    6.94726e+01    0.00000e+00    0.00000e+00
     0.00000e+00    0.00000e+00    0.00000e+00
     0.00000e+00    0.00000e+00    0.00000e+00
 
@@ -308,17 +308,14 @@ Grid: 2 x 2 x 2 cells
 
  Computing:         Nodes     Number     G-Cycles    Seconds     %
 -----------------------------------------------------------------------
- Neighbor search        1          1        0.000        0.0     7.4
- Force                  1          1        0.000        0.0     3.5
- Write traj.            1          1        0.001        0.0    59.1
- Update                 1          1        0.000        0.0     2.1
- Rest                   1                   0.000        0.0    27.9
+ Neighbor search        1          1        0.000        0.0     7.1
+ Force                  1          1        0.000        0.0     2.7
+ Write traj.            1          1        0.001        0.0    60.8
+ Update                 1          1        0.000        0.0     1.9
+ Rest                   1                   0.000        0.0    27.5
 -----------------------------------------------------------------------
  Total                  1                   0.001        0.0   100.0
 -----------------------------------------------------------------------
 
-               NODE (s)   Real (s)      (%)
-       Time:      0.010      0.001   1968.2
-               (Mnbf/s)   (MFlops)   (ns/day)  (hour/ns)
-Performance:      0.000      0.112      8.640      2.778
-Finished mdrun on node 0 Sat Jan  7 18:43:11 2012
+nodetime = 0! Infinite Giga flopses!
+Finished mdrun on node 0 Tue Jan 31 20:12:39 2012

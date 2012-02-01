@@ -2,15 +2,15 @@
 ;	File 'triala_600k_amber99sb.top' was generated
 ;	By user: xhu (1000)
 ;	On host: virtual-baumhaus
-;	At date: Fri Jan  6 02:18:25 2012
+;	At date: Tue Jan 31 20:17:09 2012
 ;
 ;	This is a standalone topology file
 ;
 ;	It was generated using program:
-;	pdb2gmx - VERSION 4.5.4
+;	pdb2gmx_d - VERSION 4.5.4
 ;
 ;	Command line was:
-;	/usr/local/gromacs/bin/pdb2gmx -f triala_600k.pdb -ff amber99sb -p triala_600k_amber99sb.top -o triala_600k_amber99sb.gro 
+;	/usr/local/gromacs/bin/pdb2gmx_d -f triala_600k.pdb -ff amber99sb -p triala_600k_amber99sb.top -o triala_600k_amber99sb.pdb 
 ;
 ;	Force field was read from the standard Gromacs share directory.
 ;
@@ -59,7 +59,7 @@ Protein             3
     30         HC      3    ALA    HB3     30     0.0764      1.008   ; qtot 0.8379
     31          C      3    ALA      C     31     0.7731      12.01   ; qtot 1.611
     32         O2      3    ALA    OC1     32    -0.8055         16   ; qtot 0.8055
-    33         O2      3    ALA    OC2     33    -0.8055         16   ; qtot 0
+    33         O2      3    ALA    OC2     33    -0.8055         16   ; qtot 6.661e-16
 
 [ bonds ]
 ;  ai    aj funct            c0            c1            c2            c3

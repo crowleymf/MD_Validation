@@ -2,7 +2,7 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: xhu (1000)
 ;	On host: virtual-baumhaus
-;	At date: Sat Jan  7 18:10:11 2012
+;	At date: Tue Jan 31 20:06:39 2012
 ;
 
 ; VARIOUS PREPROCESSING OPTIONS
@@ -204,21 +204,21 @@ gen-temp                 = 300
 gen-seed                 = 173529
 
 ; OPTIONS FOR BONDS    
-constraints              = hbonds
+constraints              = none
 ; Type of constraint algorithm
-constraint_algorithm     = LINCS
+constraint-algorithm     = Lincs
 ; Do not constrain the start configuration
 continuation             = no
 ; Use successive overrelaxation to reduce the number of shake iterations
 Shake-SOR                = no
 ; Relative tolerance of shake
-shake_tol                = 0.0001
+shake-tol                = 0.0001
 ; Highest order in the expansion of the constraint coupling matrix
-lincs_order              = 4
+lincs-order              = 4
 ; Number of iterations in the final step of LINCS. 1 is fine for
 ; normal simulations, but use 2 to conserve energy in NVE runs.
 ; For energy minimization with constraints it should be 4 to 8.
-lincs_iter               = 1
+lincs-iter               = 1
 ; Lincs will write a warning to the stderr if in one step a bond
 ; rotates over more degrees than
 lincs-warnangle          = 30
