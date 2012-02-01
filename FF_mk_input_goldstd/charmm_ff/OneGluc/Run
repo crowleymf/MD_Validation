@@ -1,12 +1,22 @@
 #! /bin/csh
 #set echo
 
-set chm = ~crowley/charmm/CURRENT/em64t/exec/em64t/charmm
+#set chm = <path_to_charmm>
+set chm = charmm
 set sander = sander
 
 
 $chm -i input/onegluc_create.inp | tee charmm_output/OUT.create
 $chm -i input/ener.inp | tee charmm_output/OUT.ener
+
+echo "    ... checking for chamber"
+if ( ! -e `which chamber` ) then
+    echo ""
+    echo "**** No chamber executable found *****"
+    echo "***  Exiting                     *****"
+    echo ""
+    exit 1
+endif
 
 chamber -nocmap -vmd \
      -top    toppar/top_all36_carb.rtf \
@@ -46,7 +56,7 @@ $sander -O -o stdout \
        -p Amber_output/onegluc.prmtop \
        -c Amber_output/onegluc.inpcrd \
        -r Amber_output/onegluc.restrt \
-       | tee Amber_output/onegluc.out
+       | tee Amber_output/onegluc_600k.out
 
 
 /bin/rm mdinfo
@@ -56,12 +66,12 @@ $sander -O -o stdout \
 echo "----------------------------------------------------------------"
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/onegluc_min_chm.frcdmp \
+../../../ffcompare charmm_output/onegluc_min_chm.frcdmp \
              Amber_output/onegluc_min_amber.frcdmp
 
 echo "----------------------------------------------------------------"
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/onegluc_600k_chm.frcdmp \
+../../../ffcompare charmm_output/onegluc_600k_chm.frcdmp \
              Amber_output/onegluc_600k_amber.frcdmp
 echo "----------------------------------------------------------------"
