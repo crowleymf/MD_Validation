@@ -3,17 +3,17 @@
            (CHARMM) - Developmental Version 37a1     August 15, 2011            
        Copyright(c) 1984-2001  President and Fellows of Harvard College
                               All Rights Reserved
-       Current operating system: Linux-2.6.18-53.1.14.el5(x86_64)@master        
-                 Created on 10/7/11 at 16:51:07 by user: crowley     
+              Current operating system: Darwin-10.4.2(x86_64)@mfc               
+                 Created on  2/1/12 at 14:13:01 by user: mcrowley    
 
-            Maximum number of ATOMS:    360720, and RESidues:      120240
+            Maximum number of ATOMS:     60120, and RESidues:       20040
  RDTITL> *ONE BETA-GLUCOPYRANOSE TEST CASE
  RDTITL> *
   
  CHARMM>     
   
  CHARMM>    read rtf   card name toppar/top_all36_carb.rtf
- VOPEN> Attempting to open::toppar/top_all36_carb.rtf::
+ VOPEN> Attempting to open::TOPPAR/TOP_ALL36_CARB.RTF::
  MAINIO> Residue topology file being read from unit  90.
  TITLE> * $ID: TOP_ALLXX_SUGAR.INP,V 1.98 2011-07-20 15:03:53 PRABHU EXP $
  TITLE> *>>>>>>>>>>>> ALL-HYDROGEN TOPOLOGIES USED IN THE <<<<<<<<<<<<<<<<
@@ -26,7 +26,7 @@
  VCLOSE: Closing unit   90 with status "KEEP"
   
  CHARMM>    read param card name toppar/par_all36_carb.prm
- VOPEN> Attempting to open::toppar/par_all36_carb.prm::
+ VOPEN> Attempting to open::TOPPAR/PAR_ALL36_CARB.PRM::
 
           PARAMETER FILE BEING READ FROM UNIT 90
  TITLE> * $ID: PAR_ALLXX_SUGAR.INP,V 1.126 2011-03-31 19:17:35 OGUVENCH EXP $
@@ -58,7 +58,7 @@
          Number of dihedrals     =       66   Number of impropers  =        0
          Number of cross-terms   =        0
          Number of HB acceptors  =        0   Number of HB donors  =        0
-         Number of NB exclusions =        0   Total charge =    0.00000
+         Number of NB exclusions =        0   Total charge =   -0.00000
  QXFORM> Expanded format used.
          More than 4 character atom type used.
   
@@ -73,7 +73,7 @@
          Number of dihedrals     =       66   Number of impropers  =        0
          Number of cross-terms   =        0
          Number of HB acceptors  =        0   Number of HB donors  =        0
-         Number of NB exclusions =        0   Total charge =    0.00000
+         Number of NB exclusions =        0   Total charge =   -0.00000
   
  CHARMM>    write psf card name charmm_output/onegluc_c36.psf
  VOPEN> Attempting to open::charmm_output/onegluc_c36.psf::
@@ -84,7 +84,7 @@
  CHARMM>     
   
  CHARMM>    read coor pdb name pdb/onegluc_start.pdb
- VOPEN> Attempting to open::pdb/onegluc_start.pdb::
+ VOPEN> Attempting to open::PDB/ONEGLUC_START.PDB::
   read CHARMM-pdb format
           SPATIAL COORDINATES BEING READ FROM UNIT 90
  TITLE>  ONE BETA-GLUCOPYRANOSE TEST CASE
@@ -228,11 +228,11 @@ MINI EXTERN>        3.40863     38.52338      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
 MINI>      200     75.02093      0.00000      0.00000      0.00000
 MINI INTERN>        1.81477      1.99668      0.35123     28.92610      0.00000
-MINI EXTERN>        3.40859     38.52356      0.00000      0.00000      0.00000
+MINI EXTERN>        3.40859     38.52357      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
 MINI>      200     75.02093      0.00000      0.00000      0.00000
 MINI INTERN>        1.81477      1.99668      0.35123     28.92610      0.00000
-MINI EXTERN>        3.40859     38.52356      0.00000      0.00000      0.00000
+MINI EXTERN>        3.40859     38.52357      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
 MINI>      300     75.02093      0.00000      0.00000      0.00000
 MINI INTERN>        1.81477      1.99668      0.35123     28.92610      0.00000
@@ -294,106 +294,100 @@ CONJ EXTERN>        3.40859     38.52357      0.00000      0.00000      0.00000
 
   TIME STEP =  2.04548E-02 AKMA       1.00000E-03 PS
 
-  RANDOM NUM. GEN. SEED(S) = 1193920755 1193920755 1193920755 1193920755
+  RANDOM NUM. GEN. SEED(S) = 985887661 985887661 985887661 985887661
  NUMBER OF DEGREES OF FREEDOM =     66
 
           GAUSSIAN OPTION                  IS            1
           VELOCITIES ASSIGNED AT TEMPERATURE =    750.0000
           SEED FOR RANDOM NUMBER GENERATOR IS:
-          SEEDS> 1193920755 1193920755 1193920755 1193920755
+          SEEDS> 985887661 985887661 985887661 985887661
 
      DETAILS ABOUT CENTRE OF MASS
      POSITION          :    22.123016        53.744066        95.446666    
-     VELOCITY          :   6.91142667E-02   6.71045762E-03   3.03576004E-02
-     ANGULAR MOMENTUM  :   -35.168181        18.504799       -1.7511657    
-     KINETIC ENERGY    :   0.51736052    
+     VELOCITY          :   6.22103626E-02  -2.52522741E-02  -1.93722345E-02
+     ANGULAR MOMENTUM  :   -79.411966       -24.968005        54.016467    
+     KINETIC ENERGY    :   0.43986484    
 DYNA DYN: Step         Time      TOTEner        TOTKe       ENERgy  TEMPerature
 DYNA PROP:             GRMS      HFCTote        HFCKe       EHFCor        VIRKe
 DYNA INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
 DYNA EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
 DYNA PRESS:            VIRE         VIRI       PRESSE       PRESSI       VOLUme
  ----------       ---------    ---------    ---------    ---------    ---------
-DYNA>        0      0.00000    124.62980     49.60887     75.02093    756.49454
-DYNA PROP>          0.00000    124.62980     49.60887      0.00000      0.00000
+DYNA>        0      0.00000    139.98414     64.96321     75.02093    990.63566
+DYNA PROP>          0.00000    139.98414     64.96321      0.00000      0.00000
 DYNA INTERN>        1.81477      1.99668      0.35123     28.92610      0.00000
 DYNA EXTERN>        3.40859     38.52357      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000      0.00000      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000     -0.00000      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
- UPDECI: Nonbond update at step        68
-DYNA>      100      0.10000    125.69536     22.68437    103.01099    345.91800
-DYNA PROP>         30.63335    125.56374     23.81841     -0.13162     -2.67426
-DYNA INTERN>       14.94699     10.04543      1.46175     27.94701      0.00000
-DYNA EXTERN>        7.21866     41.39116      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000      1.78284      0.00000      0.00000      0.00000
+ UPDECI: Nonbond update at step        75
+DYNA>      100      0.10000    141.20199     28.76229    112.43970    438.60127
+DYNA PROP>         28.04917    141.10433     29.95789     -0.09765    -78.47551
+DYNA INTERN>       17.01264     17.64944      2.24298     30.05326      0.00000
+DYNA EXTERN>        6.18776     39.29362      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000     52.31701      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
- UPDECI: Nonbond update at step       101
-DYNA>      200      0.20000    125.22174     30.33262     94.88911    462.54760
-DYNA PROP>         21.25217    125.69572     30.92849      0.47398    -92.29082
-DYNA INTERN>        6.95760     10.10149      0.79988     31.11690      0.00000
-DYNA EXTERN>        4.96525     40.94799      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000     61.52721      0.00000      0.00000      0.00000
+ UPDECI: Nonbond update at step       127
+ UPDECI: Nonbond update at step       195
+DYNA>      200      0.20000    141.03924     30.91517    110.12407    471.43093
+DYNA PROP>         30.12670    141.16269     32.12572      0.12345     34.03885
+DYNA INTERN>       16.70158     14.39252      2.40689     28.83183      0.00000
+DYNA EXTERN>        4.24235     43.54889      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000    -22.69257      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
- UPDECI: Nonbond update at step       216
- UPDECI: Nonbond update at step       249
-DYNA>      300      0.30000    125.17384     25.22757     99.94627    384.69978
-DYNA PROP>         23.03457    125.62660     25.81027      0.45276     69.47003
-DYNA INTERN>       11.57483     13.06216      0.81740     30.54627      0.00000
-DYNA EXTERN>        4.93873     39.00687      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000    -46.31335      0.00000      0.00000      0.00000
+DYNA>      300      0.30000    140.70552     31.98029    108.72524    487.67309
+DYNA PROP>         27.27217    141.15300     32.68983      0.44748    163.94889
+DYNA INTERN>       14.49034     17.98964      1.91742     30.41833      0.00000
+DYNA EXTERN>        5.86199     38.04751      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000   -109.29926      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
-DYNA>      400      0.40000    125.70803     25.49004    100.21799    388.70221
-DYNA PROP>         27.92548    125.60294     26.58848     -0.10509    152.85581
-DYNA INTERN>       17.25673     10.61127      1.25787     30.30047      0.00000
-DYNA EXTERN>        3.67479     37.11685      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000   -101.90387      0.00000      0.00000      0.00000
+DYNA>      400      0.40000    141.14219     28.75017    112.39202    438.41650
+DYNA PROP>         34.55716    141.12939     29.84769     -0.01281    144.27994
+DYNA INTERN>       19.38277     19.62271      1.98314     29.00419      0.00000
+DYNA EXTERN>        4.50525     37.89396      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000    -96.18663      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
- UPDECI: Nonbond update at step       439
-DYNA>      500      0.50000    125.06317     26.58738     98.47580    405.43566
-DYNA PROP>         20.93624    125.69335     27.02230      0.63017    -53.97699
-DYNA INTERN>        6.17541     11.81566      1.56630     30.88479      0.00000
-DYNA EXTERN>        6.43702     41.59662      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000     35.98466      0.00000      0.00000      0.00000
+ UPDECI: Nonbond update at step       418
+DYNA>      500      0.50000    140.63020     31.73628    108.89392    483.95219
+DYNA PROP>         23.59190    141.17295     32.33149      0.54276    114.61253
+DYNA INTERN>       12.96192     17.09679      1.58528     30.34578      0.00000
+DYNA EXTERN>        5.03963     41.86452      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000    -76.40835      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
- UPDECI: Nonbond update at step       505
- UPDECI: Nonbond update at step       539
- UPDECI: Nonbond update at step       583
-DYNA>      600      0.60000    125.41291     23.52415    101.88877    358.72391
-DYNA PROP>         24.75549    125.59662     24.44169      0.18371   -183.61071
-DYNA INTERN>        9.91572      7.26629      0.90415     30.22616      0.00000
-DYNA EXTERN>        8.92257     44.65387      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000    122.40714      0.00000      0.00000      0.00000
+ UPDECI: Nonbond update at step       596
+DYNA>      600      0.60000    141.01899     30.12178    110.89722    459.33235
+DYNA PROP>         25.62676    141.13065     31.07325      0.11165     66.62093
+DYNA INTERN>       15.08054     21.36276      2.02373     29.93337      0.00000
+DYNA EXTERN>        3.63709     38.85973      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000    -44.41395      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
- UPDECI: Nonbond update at step       646
-DYNA>      700      0.70000    125.59468     23.05357    102.54110    351.54801
-DYNA PROP>         28.00022    125.62556     24.14673      0.03089     56.57942
-DYNA INTERN>       14.41478     12.54640      1.45043     29.47205      0.00000
-DYNA EXTERN>        6.27803     38.37941      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000    -37.71962      0.00000      0.00000      0.00000
+ UPDECI: Nonbond update at step       644
+DYNA>      700      0.70000    140.79722     36.75004    104.04718    560.40796
+DYNA PROP>         22.35861    141.16672     37.41106      0.36950      8.09608
+DYNA INTERN>        9.93719     16.20324      1.65892     30.37141      0.00000
+DYNA EXTERN>        5.56401     40.31242      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000     -5.39738      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
- UPDECI: Nonbond update at step       753
- UPDECI: Nonbond update at step       787
-DYNA>      800      0.80000    125.16358     27.72747     97.43611    422.82115
-DYNA PROP>         20.60931    125.66894     28.27909      0.50536    139.09338
-DYNA INTERN>       12.41099      9.74707      0.86603     28.32121      0.00000
-DYNA EXTERN>        2.25813     43.83267      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000    -92.72892      0.00000      0.00000      0.00000
+ UPDECI: Nonbond update at step       744
+DYNA>      800      0.80000    141.08339     30.24015    110.84324    461.13739
+DYNA PROP>         28.68742    141.12496     31.21250      0.04158    133.82630
+DYNA INTERN>       19.33259     12.20198      2.01812     29.95883      0.00000
+DYNA EXTERN>        6.13182     41.19990      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000    -89.21753      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
- UPDECI: Nonbond update at step       830
- UPDECI: Nonbond update at step       874
-DYNA>      900      0.90000    125.41391     25.56723     99.84668    389.87926
-DYNA PROP>         27.90638    125.62470     26.38995      0.21079     47.02923
-DYNA INTERN>       11.99662     14.64030      0.63530     30.46661      0.00000
-DYNA EXTERN>        1.64579     40.46205      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000    -31.35282      0.00000      0.00000      0.00000
+ UPDECI: Nonbond update at step       804
+ UPDECI: Nonbond update at step       844
+DYNA>      900      0.90000    140.92826     36.95124    103.97702    563.47604
+DYNA PROP>         26.87715    141.14420     37.78379      0.21594    -19.81463
+DYNA INTERN>       11.52251     14.68892      1.75977     30.91942      0.00000
+DYNA EXTERN>        7.05928     38.02712      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000     13.20975      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
- UPDECI: Nonbond update at step       907
- UPDECI: Nonbond update at step       930
- UPDECI: Nonbond update at step       982
-DYNA>     1000      1.00000    125.51320     20.85967    104.65353    318.09283
-DYNA PROP>         27.26984    125.62349     21.78227      0.11029    -85.23397
-DYNA INTERN>        9.51494     10.95868      2.51089     31.62324      0.00000
-DYNA EXTERN>        8.01576     42.03003      0.00000      0.00000      0.00000
-DYNA PRESS>         0.00000     56.82265      0.00000      0.00000      0.00000
+ UPDECI: Nonbond update at step       909
+DYNA>     1000      1.00000    140.86576     35.72099    105.14477    544.71581
+DYNA PROP>         26.55648    141.15998     36.35248      0.29421   -154.34019
+DYNA INTERN>       11.94804     14.58283      2.05215     28.85974      0.00000
+DYNA EXTERN>        5.39253     42.30947      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000    102.89346      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
  DYNAMC> Averages for the last     1000  steps:
 AVER DYN: Step         Time      TOTEner        TOTKe       ENERgy  TEMPerature
@@ -402,29 +396,29 @@ AVER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
 AVER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
 AVER PRESS:            VIRE         VIRI       PRESSE       PRESSI       VOLUme
  ----------       ---------    ---------    ---------    ---------    ---------
-AVER>     1000      1.00000    125.37426     24.52273    100.85153    373.95151
-AVER PROP>         25.16718    125.63700     25.31206      0.26274     26.36357
-AVER INTERN>       12.14884     11.67058      1.32920     29.73275      0.00000
-AVER EXTERN>        4.77605     41.19411      0.00000      0.00000      0.00000
-AVER PRESS>         0.00000    -17.57571      0.00000      0.00000      0.00000
+AVER>     1000      1.00000    140.87472     32.40989    108.46483    494.22423
+AVER PROP>         26.86073    141.15008     33.23722      0.27537     32.60088
+AVER INTERN>       13.47906     17.03370      1.86358     30.37558      0.00000
+AVER EXTERN>        5.60047     40.11243      0.00000      0.00000      0.00000
+AVER PRESS>         0.00000    -21.73392      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
  DYNAMC> RMS fluctuations for the last     1000  steps:
-FLUC>     1000      1.00000      0.24426      3.34587      3.49869     51.02173
-FLUC PROP>          3.21931      0.03857      3.20740      0.27438    102.79417
-FLUC INTERN>        3.46411      2.28997      0.52467      1.37781      0.00000
-FLUC EXTERN>        2.35484      2.30921      0.00000      0.00000      0.00000
-FLUC PRESS>         0.00000     68.52945      0.00000      0.00000      0.00000
+FLUC>     1000      1.00000      0.17942      4.18773      4.28707     63.85938
+FLUC PROP>          2.81641      0.02390      4.09613      0.19804     80.11795
+FLUC INTERN>        3.05300      3.41981      0.66215      1.30617      0.00000
+FLUC EXTERN>        1.39440      1.95508      0.00000      0.00000      0.00000
+FLUC PRESS>         0.00000     53.41197      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
 
-     DRIFT/STEP (LAST-TOTAL):    1.59122305E-07   1.59122305E-07
-     E AT STEP 0            :     125.63692        125.63692    
-     CORR. COEFFICIENT      :    1.19084480E-03   1.19084480E-03
+     DRIFT/STEP (LAST-TOTAL):   -3.51849203E-06  -3.51849203E-06
+     E AT STEP 0            :     141.15185        141.15185    
+     CORR. COEFFICIENT      :   -4.24902261E-02  -4.24902261E-02
 
      DETAILS ABOUT CENTRE OF MASS
      POSITION          :    22.123016        53.744066        95.446666    
-     VELOCITY          :  -6.16248271E-17  -1.20723036E-15   9.85997233E-18
-     ANGULAR MOMENTUM  :   4.19228681E-13   3.31586257E-12  -4.03612500E-13
-     KINETIC ENERGY    :   1.31632734E-28
+     VELOCITY          :  -2.27511158E-16  -5.13257779E-16  -5.66332161E-16
+     ANGULAR MOMENTUM  :   2.57656722E-12  -2.54613780E-14  -1.67413889E-13
+     KINETIC ENERGY    :   5.72837946E-29
   
  CHARMM>    write coor pdb name pdb/onegluc_600k.pdb
  VOPEN> Attempting to open::pdb/onegluc_600k.pdb::
@@ -437,22 +431,21 @@ FLUC PRESS>         0.00000     68.52945      0.00000      0.00000      0.00000
   
  CHARMM>    stop
 $$$$$$  New timer profile $$$$$
-   First List                      0.00 Other:            0.00
       dynamc                          0.01 Other:            0.00
    Dynamics total                  0.01 Other:            0.00
    List time                       0.00 Other:            0.00
-      Nonbond force                   0.09 Other:            0.00
-         Bond energy                     0.02 Other:            0.00
-         Angle energy                    0.04 Other:            0.00
-         Dihedral energy                 0.08 Other:            0.00
+      Nonbond force                   0.04 Other:            0.00
+         Bond energy                     0.01 Other:            0.00
+         Angle energy                    0.03 Other:            0.00
+         Dihedral energy                 0.03 Other:            0.00
          Restraints energy               0.00 Other:            0.00
-      INTRNL energy                   0.15 Other:            0.01
-   Energy time                     0.25 Other:            0.01
- Total time                      0.54 Other:            0.28
+      INTRNL energy                   0.08 Other:            0.01
+   Energy time                     0.12 Other:            0.00
+ Total time                      0.41 Other:            0.28
 
                     NORMAL TERMINATION BY NORMAL STOP
                     NO WARNINGS WERE ISSUED
 
                     $$$$$ JOB ACCOUNTING INFORMATION $$$$$
-                     ELAPSED TIME:     0.54  SECONDS 
-                         CPU TIME:     0.54  SECONDS 
+                     ELAPSED TIME:     0.41  SECONDS 
+                         CPU TIME:     0.41  SECONDS 

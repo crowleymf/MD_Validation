@@ -3,10 +3,10 @@
            (CHARMM) - Developmental Version 37a1     August 15, 2011            
        Copyright(c) 1984-2001  President and Fellows of Harvard College
                               All Rights Reserved
-       Current operating system: Linux-2.6.18-53.1.14.el5(x86_64)@master        
-                 Created on 10/7/11 at 16:51:08 by user: crowley     
+              Current operating system: Darwin-10.4.2(x86_64)@mfc               
+                 Created on  2/1/12 at 14:13:02 by user: mcrowley    
 
-            Maximum number of ATOMS:    360720, and RESidues:      120240
+            Maximum number of ATOMS:     60120, and RESidues:       20040
  RDTITL> * MICROCANONICAL MD ON WHOLE SYSTEM
  RDTITL> * PROTEIN, CELLULOSE, AND WATER
  RDTITL> * TOTAL 711,887 ATOMS
@@ -47,11 +47,11 @@
  CHARMM>     
   
  CHARMM>    read psf card name charmm_output/onegluc_c36.psf
- VOPEN> Attempting to open::charmm_output/onegluc_c36.psf::
+ VOPEN> Attempting to open::CHARMM_OUTPUT/ONEGLUC_C36.PSF::
  MAINIO> Protein structure file being read from unit  90.
  PSFRD2> Reading PSF in the expanded format.
  TITLE>  *ONE BETA-GLUCOPYRANOSE TEST CASE
- TITLE>  *  DATE:    10/ 7/11     16:51: 7      CREATED BY USER: crowley
+ TITLE>  *  DATE:     2/ 1/12     14:13: 2      CREATED BY USER: mcrowley
  TITLE>  *
  PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
  PSFSUM> Summary of the structure file counters :
@@ -61,26 +61,26 @@
          Number of dihedrals     =       66   Number of impropers  =        0
          Number of cross-terms   =        0
          Number of HB acceptors  =        0   Number of HB donors  =        0
-         Number of NB exclusions =        0   Total charge =    0.00000
+         Number of NB exclusions =        0   Total charge =   -0.00000
  VCLOSE: Closing unit   90 with status "KEEP"
   
  CHARMM>     
   
  CHARMM>    read coor pdb name pdb/onegluc_min.pdb
- VOPEN> Attempting to open::pdb/onegluc_min.pdb::
+ VOPEN> Attempting to open::PDB/ONEGLUC_MIN.PDB::
   read CHARMM-pdb format
           SPATIAL COORDINATES BEING READ FROM UNIT 90
  TITLE>  ONE BETA-GLUCOPYRANOSE TEST CASE
- TITLE>    DATE:    10/ 7/11     16:51: 8      CREATED BY USER: CROWLEY
+ TITLE>    DATE:     2/ 1/12     14:13: 2      CREATED BY USER: MCROWLEY
  TITLE>  *
  VCLOSE: Closing unit   90 with status "KEEP"
   
  CHARMM>     
   
- CHARMM>    energy cutnb 999 ctofnb 998 ctonnb 997
+ CHARMM>    energy cutnb 999 ctofnb 998 ctonnb 997 swit vswit
 
  NONBOND OPTION FLAGS: 
-     ELEC     VDW      ATOMs    CDIElec  FSHIft   VATOm    VFSWIt  
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
      BYGRoup  NOEXtnd  NOEWald 
  CUTNB  =999.000 CTEXNB =999.000 CTONNB =997.000 CTOFNB =998.000
  CGONNB =  0.000 CGOFNB = 10.000
@@ -101,16 +101,16 @@ ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
 ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
 ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
  ----------       ---------    ---------    ---------    ---------    ---------
-ENER>        0    107.34961      0.00000      0.29701
+ENER>        0    107.79795      0.00000      0.29702
 ENER INTERN>        1.82179      2.00088      0.35008     28.92190      0.00000
-ENER EXTERN>        3.39068     70.86429      0.00000      0.00000      0.00000
+ENER EXTERN>        3.39068     71.31263      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
   
  CHARMM>     
   
- CHARMM>    open unit 11 form write name charmm_output/onegluc_min_chm.frcdump
- VOPEN> Attempting to open::charmm_output/onegluc_min_chm.frcdump::
- OPNLGU> Unit 11 opened for WRITE access to /home/crowley/charmm/Validate/vvv/OneGluc/charmm_output/onegluc_min_chm.frcdump
+ CHARMM>    open unit 11 form write name charmm_output/onegluc_min_chm.frcdmp
+ VOPEN> Attempting to open::charmm_output/onegluc_min_chm.frcdmp::
+ OPNLGU> Unit 11 opened for WRITE access to charmm_output/onegluc_min_chm.frcdmp
   
  CHARMM>    frcdump unit 11
  Energies and Forces dumped to unit     11
@@ -121,11 +121,11 @@ ENER EXTERN>        3.39068     70.86429      0.00000      0.00000      0.00000
  CHARMM>     
   
  CHARMM>    read coor pdb name pdb/onegluc_600k.pdb
- VOPEN> Attempting to open::pdb/onegluc_600k.pdb::
+ VOPEN> Attempting to open::PDB/ONEGLUC_600K.PDB::
   read CHARMM-pdb format
           SPATIAL COORDINATES BEING READ FROM UNIT 90
  TITLE>  ONE BETA-GLUCOPYRANOSE TEST CASE
- TITLE>    DATE:    10/ 7/11     16:51: 8      CREATED BY USER: CROWLEY
+ TITLE>    DATE:     2/ 1/12     14:13: 2      CREATED BY USER: MCROWLEY
  TITLE>  *
 
  ** WARNING ** Coordinates were overwritten for    24 atoms.
@@ -134,10 +134,10 @@ ENER EXTERN>        3.39068     70.86429      0.00000      0.00000      0.00000
   
  CHARMM>     
   
- CHARMM>    energy cutnb 999 ctofnb 998 ctonnb 997
+ CHARMM>    energy cutnb 999 ctofnb 998 ctonnb 997 swit vswit
 
  NONBOND OPTION FLAGS: 
-     ELEC     VDW      ATOMs    CDIElec  FSHIft   VATOm    VFSWIt  
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
      BYGRoup  NOEXtnd  NOEWald 
  CUTNB  =999.000 CTEXNB =999.000 CTONNB =997.000 CTOFNB =998.000
  CGONNB =  0.000 CGOFNB = 10.000
@@ -156,16 +156,16 @@ ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
 ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
 ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
  ----------       ---------    ---------    ---------    ---------    ---------
-ENER>        0    137.12802    -29.77841     26.13536
-ENER INTERN>        9.51430     10.95533      2.50659     31.62365      0.00000
-ENER EXTERN>        7.99424     74.53391      0.00000      0.00000      0.00000
+ENER>        0    137.95625    -30.15830     25.40841
+ENER INTERN>       11.92109     14.57648      2.04616     28.86231      0.00000
+ENER EXTERN>        5.38320     75.16701      0.00000      0.00000      0.00000
  ----------       ---------    ---------    ---------    ---------    ---------
   
  CHARMM>     
   
- CHARMM>    open unit 11 form write name charmm_output/onegluc_600k_chm.frcdump
- VOPEN> Attempting to open::charmm_output/onegluc_600k_chm.frcdump::
- OPNLGU> Unit 11 opened for WRITE access to /home/crowley/charmm/Validate/vvv/OneGluc/charmm_output/onegluc_600k_chm.frcdump
+ CHARMM>    open unit 11 form write name charmm_output/onegluc_600k_chm.frcdmp
+ VOPEN> Attempting to open::charmm_output/onegluc_600k_chm.frcdmp::
+ OPNLGU> Unit 11 opened for WRITE access to charmm_output/onegluc_600k_chm.frcdmp
   
  CHARMM>    frcdump unit 11
  Energies and Forces dumped to unit     11
@@ -177,19 +177,13 @@ ENER EXTERN>        7.99424     74.53391      0.00000      0.00000      0.00000
   
  CHARMM>    stop
 $$$$$$  New timer profile $$$$$
-   List time                       0.00 Other:            0.00
-      Nonbond force                   0.00 Other:            0.00
-         Bond energy                     0.00 Other:            0.00
-         Angle energy                    0.00 Other:            0.00
-         Dihedral energy                 0.00 Other:            0.00
-         Restraints energy               0.00 Other:            0.00
       INTRNL energy                   0.00 Other:            0.00
    Energy time                     0.00 Other:            0.00
- Total time                      0.27 Other:            0.27
+ Total time                      0.28 Other:            0.28
 
                     NORMAL TERMINATION BY NORMAL STOP
                     MOST SEVERE WARNING WAS AT LEVEL  2
 
                     $$$$$ JOB ACCOUNTING INFORMATION $$$$$
-                     ELAPSED TIME:     0.27  SECONDS 
-                         CPU TIME:     0.27  SECONDS 
+                     ELAPSED TIME:     0.28  SECONDS 
+                         CPU TIME:     0.28  SECONDS 

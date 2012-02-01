@@ -1,10 +1,13 @@
 #! /bin/csh
 #set echo
 
-set chm = ~crowley/charmm/CURRENT/em64t/exec/em64t/charmm
+# set chm = <path_to_charmm>
+set chm = charmm
 set sander = sander
 
+if ( ! -e `which $chm` ) then
 
+else
 $chm -i input/onegluc_create.inp | tee charmm_output/OUT.create
 $chm -i input/ener.inp | tee charmm_output/OUT.ener
 
@@ -15,7 +18,7 @@ chamber -nocmap -vmd \
      -crd    pdb/onegluc_min.pdb \
      -p      Amber_output/onegluc.prmtop \
      -inpcrd Amber_output/onegluc.inpcrd
-
+endif
 
 echo -n "Run sander (y/n): "
 set yn = $<
@@ -56,12 +59,12 @@ $sander -O -o stdout \
 echo "----------------------------------------------------------------"
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/onegluc_min_chm.frcdmp \
+../../../ffcompare charmm_output/onegluc_min_chm.frcdmp \
              Amber_output/onegluc_min_amber.frcdmp
 
 echo "----------------------------------------------------------------"
 echo ""
 echo "----------------------------------------------------------------"
-../ffcompare charmm_output/onegluc_600k_chm.frcdmp \
+../../../ffcompare charmm_output/onegluc_600k_chm.frcdmp \
              Amber_output/onegluc_600k_amber.frcdmp
 echo "----------------------------------------------------------------"
