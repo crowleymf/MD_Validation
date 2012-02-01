@@ -3,7 +3,7 @@
           Amber 11 SANDER                              2010
           -------------------------------------------------------
 
-| Run on 10/07/2011 at 16:51:11
+| Run on 02/01/2012 at 14:13:04
   [-O]verwriting output
 
 File Assignments:
@@ -23,9 +23,9 @@ File Assignments:
 
 |INPTRA: inptraj                                                               
 |
- 
+
  Here is the input file:
- 
+
 Dump forces and energies for one glucopyranose                                 
                                                                                
   &cntrl                                                                       
@@ -41,6 +41,7 @@ Dump forces and energies for one glucopyranose
  do_charmm_dump_gold = 1                                                       
  /                                                                             
                                                                                
+| WARNING: There is no need to set ntb.
 
 --------------------------------------------------------------------------------
    1.  RESOURCE   USE: 
@@ -131,12 +132,12 @@ inpcrd generated from psfprm utility:*ONE BETA-GLUCOPYRANOSE TEST CASE
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      1       1.3758E+02     2.6135E+01     7.7807E+01     O3         14
+      1       1.3796E+02     2.5408E+01     9.5469E+01     C1          1
 
- BOND    =        9.5143  ANGLE   =       10.9553  DIHED      =       31.6236
- UB      =        2.5066  IMP     =        0.0000  CMAP       =        0.0000
- VDWAALS =       -1.4065  EEL     =     -105.8187  EGB        =        0.0000
- 1-4 VDW =        9.4007  1-4 EEL =      180.8010  RESTRAINT  =        0.0000
+ BOND    =       11.9211  ANGLE   =       14.5765  DIHED      =       28.8623
+ UB      =        2.0462  IMP     =        0.0000  CMAP       =        0.0000
+ VDWAALS =       -1.9917  EEL     =     -109.7125  EGB        =        0.0000
+ 1-4 VDW =        7.3749  1-4 EEL =      184.8795  RESTRAINT  =        0.0000
 
 
   Maximum number of minimization cycles reached.
@@ -147,26 +148,26 @@ inpcrd generated from psfprm utility:*ONE BETA-GLUCOPYRANOSE TEST CASE
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      1       1.3758E+02     2.6135E+01     7.7807E+01     O3         14
+      1       1.3796E+02     2.5408E+01     9.5469E+01     C1          1
 
- BOND    =        9.5143  ANGLE   =       10.9553  DIHED      =       31.6236
- UB      =        2.5066  IMP     =        0.0000  CMAP       =        0.0000
- VDWAALS =       -1.4065  EEL     =     -105.8187  EGB        =        0.0000
- 1-4 VDW =        9.4007  1-4 EEL =      180.8010  RESTRAINT  =        0.0000
+ BOND    =       11.9211  ANGLE   =       14.5765  DIHED      =       28.8623
+ UB      =        2.0462  IMP     =        0.0000  CMAP       =        0.0000
+ VDWAALS =       -1.9917  EEL     =     -109.7125  EGB        =        0.0000
+ 1-4 VDW =        7.3749  1-4 EEL =      184.8795  RESTRAINT  =        0.0000
 
 --------------------------------------------------------------------------------
    5.  TIMINGS
 --------------------------------------------------------------------------------
 
-|    Read coords time           0.00 ( 5.60% of Total)
-|    Fast Water setup           0.00 ( 0.18% of Total)
-|          Nonbond force              0.00 ( 8.50% of Force)
-|          Bond/Angle/Dihedral        0.00 (21.36% of Force)
-|          Other                      0.00 (70.14% of Force)
+|    Read coords time           0.00 ( 0.25% of Total)
+|    Fast Water setup           0.00 ( 0.01% of Total)
+|          Nonbond force              0.00 ( 1.28% of Force)
+|          Bond/Angle/Dihedral        0.00 ( 3.89% of Force)
+|          Other                      0.00 (94.82% of Force)
 |       Force time                 0.00 (100.0% of Runmd)
-|    Runmd Time                 0.00 (15.11% of Total)
-|    Other                      0.00 (79.11% of Total)
-| Total time                 0.01 (98.68% of ALL  )
+|    Runmd Time                 0.00 ( 3.23% of Total)
+|    Other                      0.13 (96.51% of Total)
+| Total time                 0.13 (100.0% of ALL  )
 
 | Highest rstack allocated:          0
 | Highest istack allocated:          0
@@ -174,11 +175,11 @@ inpcrd generated from psfprm utility:*ONE BETA-GLUCOPYRANOSE TEST CASE
 | Final Performance Info:
 | -----------------------------------------------------
 | Average timings for all steps:
-|     Elapsed(s) =       0.00 Per Step(ms) =       1.43
-|         ns/day =      60.63   seconds/ns =    1425.03
+|     Elapsed(s) =       0.12 Per Step(ms) =     121.41
+|         ns/day =       0.71   seconds/ns =  121406.02
 | -----------------------------------------------------
 
-|           Job began  at 16:51:11.373  on 10/07/2011
-|           Setup done at 16:51:11.377  on 10/07/2011
-|           Run   done at 16:51:11.379  on 10/07/2011
+|           Job began  at 14:13:04.173  on 02/01/2012
+|           Setup done at 14:13:04.183  on 02/01/2012
+|           Run   done at 14:13:04.304  on 02/01/2012
 |     wallclock() was called      35 times
