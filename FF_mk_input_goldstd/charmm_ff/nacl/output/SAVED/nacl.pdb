@@ -1,0 +1,6 @@
+REMARK *                                                                              
+REMARK   DATE:     2/ 1/12     17:43:14      CREATED BY USER: mcrowley                
+ATOM      1  SOD SOD     1       0.000   0.000   0.000  1.00  0.00      NACL
+ATOM      2  CLA CLA     2      10.000   0.000   0.000  1.00  0.00      NACL
+TER       3      CLA      2
+END
