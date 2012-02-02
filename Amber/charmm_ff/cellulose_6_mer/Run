@@ -2,7 +2,7 @@
 
 set name=ts_dp_6
 
-cp ../../../FF_mk_input_goldstd/charmm_ff/cellulose_6_mer/output/* .
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/cellulose_6_mer/output/* .
 
 chamber -nocmap  \
     -p Amber_output/$name.prmtop \
