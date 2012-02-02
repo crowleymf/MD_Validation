@@ -5,6 +5,8 @@ if ( $1 != "") set stop = $1
 
 /bin/cp ../../../FF_mk_input_goldstd/charmm_ff/methane/output/* .
 
+if ( ! -d Amber_output ) mkdir Amber_output
+
 chamber -nocmap  \
     -p      Amber_output/methane.prmtop \
     -inpcrd Amber_output/methane.inpcrd \
