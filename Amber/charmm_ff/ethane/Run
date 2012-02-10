@@ -1,0 +1,68 @@
+#! /bin/csh 
+
+set stop = 6
+if ( $1 != "") set stop = $1
+
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/ethane/ethane.psf .
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/ethane/pdb/ethane.pdb .
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/ethane/pdb/ethane_600k.pdb .
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/ethane/charmm_output/* .
+
+
+if ( ! -d Amber_output ) mkdir Amber_output
+
+chamber -nocmap  \
+    -p      Amber_output/ethane.prmtop \
+    -inpcrd Amber_output/ethane.inpcrd \
+    -crd    ethane.pdb \
+    -psf    ethane.psf \
+    -top    ../../../toppar/top_all27_prot_na.rtf \
+    -param  ../../../toppar/par_all27_prot_na.prm
+
+if($stop == 1) exit
+if ( $?SANDER ) then
+   set sander = $SANDER
+else 
+   set sander = `which sander`
+endif
+
+$sander -O -i input/mdin -inf mdinfo \
+   -c Amber_output/ethane.inpcrd \
+   -r ethane.restrt \
+   -p Amber_output/ethane.prmtop \
+   -o stdout |& tee mdout
+mv charmm_gold Amber_output/ethane_amber.frcdmp
+
+if($stop == 2) exit
+
+chamber -nocmap  \
+    -p Amber_output/ethane.prmtop \
+    -inpcrd Amber_output/ethane_600k.inpcrd \
+    -crd ethane_600k.pdb \
+    -psf ethane.psf \
+    -top   ../../../toppar/top_all27_prot_na.rtf \
+    -param ../../../toppar/par_all27_prot_na.prm
+
+
+if($stop == 3) exit
+
+$sander -O -i input/mdin -inf mdinfo \
+   -c Amber_output/ethane_600k.inpcrd \
+   -p Amber_output/ethane.prmtop \
+   -o stdout |& tee mdout
+
+    mv charmm_gold Amber_output/ethane_600k_amber.frcdmp
+
+if($stop == 4) exit
+
+echo "----------------------------------------------------------------"
+echo " "
+echo "----------------------------------------------------------------"
+../../../ffcompare ethane_chm.frcdmp Amber_output/ethane_amber.frcdmp
+echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
+../../../ffcompare ethane_600k_chm.frcdmp Amber_output/ethane_600k_amber.frcdmp
+echo "----------------------------------------------------------------"
+
+
