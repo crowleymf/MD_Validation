@@ -1,5 +1,16 @@
 #! /bin/csh 
 
+tleap -f leap.cmd
+sander -O -p triala.top -c triala.crd -o stdout | tee mdout
+/bin/mv forcedump.dat forcedump_ethane.dat
+
+exit
+
+
+
+
+
+
 set name=triala
 
 charmm -i  input/$name.inp | tee charmm_output/charmm.out

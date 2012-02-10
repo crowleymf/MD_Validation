@@ -1,0 +1,65 @@
+**
+*
+bomlev -1
+
+set name ethane
+
+read rtf   card name ../../../toppar/top_all27_prot_na.rtf
+read rtf append card
+**
+*
+
+RESI ETH        0.00 
+GROUP
+ATOM C1   ct3     -0.0939
+ATOM H11  ha       0.0313
+ATOM H12  ha       0.0313
+atom h13  ha       0.0313
+atom c2   ct3     -0.0939
+atom h21  ha       0.0313
+atom h22  ha       0.0313
+atom h23  ha       0.0313
+
+BOND C1  H11  C1  H12  C1  H13
+BOND C2  H21  C2  H22  C2  H23
+BOND C1  C2
+
+
+END
+
+read param card name ../../../toppar/par_all27_prot_na.prm
+
+read sequence card
+* ethane
+*
+1
+eth
+
+generate eth first none last none setup warn
+auto angle dihe
+
+write psf card name @name.psf
+read coor pdb name @name.pdb
+write coor pdb name pdb/@name.pdb
+
+dyna nstep 1000 nprint 1000 start leap firstt 600 finalt 600
+write coor pdb  name pdb/@name_600k.pdb
+
+read coor pdb  name  pdb/@name.pdb
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+
+read coor pdb  name  pdb/@name_600k.pdb
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_600k_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+
+stop
+

@@ -1,9 +1,12 @@
 **
 *
 bomlev -1
-read rtf   card name toppar/ff99.rtf   !methane.rtf
-read rtf append card name toppar/alkane.rtf
-read param card name toppar/ff99.prm   !methane.prm
+read rtf   card name toppar/ethane.rtf
+!read rtf append card name toppar/alkane.rtf
+
+!read param card name toppar/ff99.prm 
+!read param card name toppar/gaff.prm append
+read param card name toppar/ethane.prm
 
 read sequence card
 * ethane
@@ -23,6 +26,7 @@ fast off
 set e14fac .8333333333333
 ener e14fac @e14fac cutnb 999 ctofnb 998 ctonnb 997
 
+stop
 open unit 11 form write name output/ethane_chm.frcdmp
 frcd unit 11
 close unit 11

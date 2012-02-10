@@ -1,3 +1,5 @@
+all:
+	Run
 clean:
 	-/bin/rm -f  *~ */*~ \
 	   charmm_output/*   \

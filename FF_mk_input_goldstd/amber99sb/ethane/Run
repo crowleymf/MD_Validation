@@ -2,6 +2,7 @@
 
 antechamber -i ethane.pdb -fi pdb -o ethane.mol2 -fo mol2 -c bcc -s 2
 
+
 tleap -f leap.in
 tleap -f leap_600k.in
 
