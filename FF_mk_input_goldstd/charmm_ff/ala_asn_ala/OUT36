@@ -1,0 +1,882 @@
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+            (CHARMM) - Developmental Version 38a2  February 15, 2013            
+                             Git commit ID 42dbfd3                              
+       Copyright(c) 1984-2001  President and Fellows of Harvard College
+                              All Rights Reserved
+                        Current operating system: nohost                        
+                 Created on  9/25/13 at  9:46:33 by user: mcrowley    
+
+            Maximum number of ATOMS:     60120, and RESidues:       20040
+ RDTITL> **
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    set name ana
+ Parameter: NAME <- "ANA"
+  
+ CHARMM>    set segn @name
+ Parameter: NAME -> "ANA"
+ Parameter: SEGN <- "ANA"
+  
+ CHARMM>    read rtf   card name toppar/top_all36_prot.rtf
+ VOPEN> Attempting to open::TOPPAR/TOP_ALL36_PROT.RTF::
+ MAINIO> Residue topology file being read from unit  90.
+ TITLE> *>>>>>>>>CHARMM36 ALL-HYDROGEN TOPOLOGY FILE FOR PROTEINS <<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> MAY 2011 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read param card name toppar/par_all36_prot.prm
+ VOPEN> Attempting to open::TOPPAR/PAR_ALL36_PROT.PRM::
+
+          PARAMETER FILE BEING READ FROM UNIT 90
+ TITLE> *>>>> CHARMM36 ALL-HYDROGEN PARAMETER FILE FOR PROTEINS <<<<<<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> FEB. 2012 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    read sequ card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> **
+ RDTITL> *
+  
+ SEQRDR>    3
+  
+ SEQRDR>    ALA ASN ALA
+
+          RESIDUE SEQUENCE --     3 RESIDUES
+          ALA ASN ALA 
+  
+ CHARMM>     
+  
+ CHARMM>    generate @segn first nter last cter
+ Parameter: SEGN -> "ANA"
+ THE PATCH 'NTER' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CTER' WILL BE USED FOR THE LAST  RESIDUE
+ GENPSF> Segment   1 has been generated. Its identifier is ANA.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        3
+         Number of atoms         =       37   Number of groups     =       11
+         Number of bonds         =       36   Number of angles     =       63
+         Number of dihedrals     =       84   Number of impropers  =        9
+         Number of cross-terms   =        1
+         Number of HB acceptors  =        5   Number of HB donors  =        7
+         Number of NB exclusions =        0   Total charge =   -0.00000
+  
+ CHARMM>    autogenerate angles dihe
+ AUTOGEN: All angles are removed and regenerated.
+ AUTOGEN: All dihedrals are removed and regenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        3
+         Number of atoms         =       37   Number of groups     =       11
+         Number of bonds         =       36   Number of angles     =       63
+         Number of dihedrals     =       84   Number of impropers  =        9
+         Number of cross-terms   =        1
+         Number of HB acceptors  =        5   Number of HB donors  =        7
+         Number of NB exclusions =        0   Total charge =   -0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    write psf card unit 1 name       charmm_output/@name.psf
+ Parameter: NAME -> "ANA"
+ VOPEN> Attempting to open::charmm_output/ana.psf::
+ RDTITL> WRITE PSF CARD XPLOR UNIT 1 NAME CHARMM_OUTPUT/ANA_XPLOR.PSF
+ RDTITL> No title read.
+ VCLOSE: Closing unit    1 with status "KEEP"
+  
+ CHARMM>    write psf card xplor unit 1 name charmm_output/@{name}_xplor.psf
+ Parameter: NAME -> "ANA"
+ VOPEN> Attempting to open::charmm_output/ana_xplor.psf::
+ RDTITL>  
+ RDTITL> No title read.
+ VCLOSE: Closing unit    1 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    ic gener
+
+               Generation complete. New IC table entries:
+
+   N     I       J       K       L   R(I(J/K)) T(I(JK/KJ)) PHI   T(JKL)   R(KL)
+
+    1   1 HT1   1 CA    1 *N    1 HT2    0.0000    0.00  120.00    0.00   0.0000
+    2   1 HT1   1 CA    1 *N    1 HT3    0.0000    0.00 -120.00    0.00   0.0000
+    3   1 HT1   1 N     1 CA    1 C      0.0000    0.00  180.00    0.00   0.0000
+    4   1 C     1 N     1 *CA   1 CB     0.0000    0.00  120.00    0.00   0.0000
+    5   1 CB    1 N     1 *CA   1 HA     0.0000    0.00 -120.00    0.00   0.0000
+    6   1 N     1 CA    1 CB    1 HB1    0.0000    0.00  180.00    0.00   0.0000
+    7   1 HB1   1 CA    1 *CB   1 HB2    0.0000    0.00  120.00    0.00   0.0000
+    8   1 HB1   1 CA    1 *CB   1 HB3    0.0000    0.00 -120.00    0.00   0.0000
+    9   1 N     1 CA    1 C     2 N      0.0000    0.00  180.00    0.00   0.0000
+   10   2 N     1 CA    1 *C    1 O      0.0000    0.00  180.00    0.00   0.0000
+   11   1 CA    1 C     2 N     2 CA     0.0000    0.00  180.00    0.00   0.0000
+   12   2 CA    1 C     2 *N    2 HN     0.0000    0.00  180.00    0.00   0.0000
+   13   1 C     2 N     2 CA    2 C      0.0000    0.00  180.00    0.00   0.0000
+   14   2 C     2 N     2 *CA   2 CB     0.0000    0.00  120.00    0.00   0.0000
+   15   2 CB    2 N     2 *CA   2 HA     0.0000    0.00 -120.00    0.00   0.0000
+   16   2 N     2 CA    2 CB    2 CG     0.0000    0.00  180.00    0.00   0.0000
+   17   2 CG    2 CA    2 *CB   2 HB1    0.0000    0.00  120.00    0.00   0.0000
+   18   2 CG    2 CA    2 *CB   2 HB2    0.0000    0.00 -120.00    0.00   0.0000
+   19   2 CA    2 CB    2 CG    2 ND2    0.0000    0.00  180.00    0.00   0.0000
+   20   2 ND2   2 CB    2 *CG   2 OD1    0.0000    0.00  180.00    0.00   0.0000
+   21   2 CB    2 CG    2 ND2   2 HD21   0.0000    0.00  180.00    0.00   0.0000
+   22   2 HD21  2 CG    2 *ND2  2 HD22   0.0000    0.00  180.00    0.00   0.0000
+   23   2 N     2 CA    2 C     3 N      0.0000    0.00  180.00    0.00   0.0000
+   24   3 N     2 CA    2 *C    2 O      0.0000    0.00  180.00    0.00   0.0000
+   25   2 CA    2 C     3 N     3 CA     0.0000    0.00  180.00    0.00   0.0000
+   26   3 CA    2 C     3 *N    3 HN     0.0000    0.00  180.00    0.00   0.0000
+   27   2 C     3 N     3 CA    3 C      0.0000    0.00  180.00    0.00   0.0000
+   28   3 C     3 N     3 *CA   3 CB     0.0000    0.00  120.00    0.00   0.0000
+   29   3 CB    3 N     3 *CA   3 HA     0.0000    0.00 -120.00    0.00   0.0000
+   30   3 N     3 CA    3 CB    3 HB1    0.0000    0.00  180.00    0.00   0.0000
+   31   3 HB1   3 CA    3 *CB   3 HB2    0.0000    0.00  120.00    0.00   0.0000
+   32   3 HB1   3 CA    3 *CB   3 HB3    0.0000    0.00 -120.00    0.00   0.0000
+   33   3 N     3 CA    3 C     3 OT2    0.0000    0.00  180.00    0.00   0.0000
+   34   3 OT2   3 CA    3 *C    3 OT1    0.0000    0.00  180.00    0.00   0.0000
+  
+ CHARMM>    ic param
+  
+ CHARMM>    ic seed @segn 1 N @segn 1 CA @segn 1 C
+ Parameter: SEGN -> "ANA"
+ Parameter: SEGN -> "ANA"
+ Parameter: SEGN -> "ANA"
+  
+ CHARMM>    ic build
+  
+ CHARMM>    print coor
+
+          COORDINATE FILE MODULE
+ TITLE>  **
+ TITLE>  *  DATE:     9/25/13      9:46:33      CREATED BY USER: mcrowley
+ TITLE>  *
+   37
+    1    1 ALA  N      0.00000   0.00000   0.00000 ANA  1      0.00000
+    2    1 ALA  HT1   -0.34716  -0.98035  -0.00000 ANA  1      0.00000
+    3    1 ALA  HT2   -0.34716   0.49017   0.84901 ANA  1      0.00000
+    4    1 ALA  HT3   -0.34716   0.49017  -0.84901 ANA  1      0.00000
+    5    1 ALA  CA     1.48000   0.00000   0.00000 ANA  1      0.00000
+    6    1 ALA  HA     1.80476   1.03001   0.00000 ANA  1      0.00000
+    7    1 ALA  CB     2.00603  -0.72262   1.25162 ANA  1      0.00000
+    8    1 ALA  HB1    3.11703  -0.72359   1.25330 ANA  1      0.00000
+    9    1 ALA  HB2    1.64641  -0.20872   2.16863 ANA  1      0.00000
+   10    1 ALA  HB3    1.64641  -1.77372   1.26507 ANA  1      0.00000
+   11    1 ALA  C      1.98961   1.40014   0.00000 ANA  1      0.00000
+   12    1 ALA  O      1.21555   2.35603  -0.00000 ANA  1      0.00000
+   13    2 ASN  N      3.32596   1.55240   0.00000 ANA  2      0.00000
+   14    2 ASN  HN     3.96013   0.78309   0.00000 ANA  2      0.00000
+   15    2 ASN  CA     3.89618   2.86380   0.00000 ANA  2      0.00000
+   16    2 ASN  HA     4.97120   2.76028   0.00000 ANA  2      0.00000
+   17    2 ASN  CB     3.49399   3.70741  -1.22148 ANA  2      0.00000
+   18    2 ASN  HB1    3.82561   3.20757  -2.15663 ANA  2      0.00000
+   19    2 ASN  HB2    2.39041   3.83161  -1.25307 ANA  2      0.00000
+   20    2 ASN  CG     4.16498   5.06767  -1.09514 ANA  2      0.00000
+   21    2 ASN  OD1    4.88518   5.33194  -0.13370 ANA  2      0.00000
+   22    2 ASN  ND2    3.92351   5.95853  -2.09397 ANA  2      0.00000
+   23    2 ASN  HD21   4.33802   6.86808  -2.06374 ANA  2      0.00000
+   24    2 ASN  HD22   3.33145   5.70404  -2.85862 ANA  2      0.00000
+   25    2 ASN  C      5.37660   2.69512   0.00000 ANA  2      0.00000
+   26    2 ASN  O      5.88667   1.57587   0.00000 ANA  2      0.00000
+   27    3 ALA  N      6.10914   3.82314   0.00000 ANA  3      0.00000
+   28    3 ALA  HN     5.70362   4.73394  -0.00000 ANA  3      0.00000
+   29    3 ALA  CA     7.53718   3.74829   0.00000 ANA  3      0.00000
+   30    3 ALA  HA     7.92421   4.75656   0.00000 ANA  3      0.00000
+   31    3 ALA  CB     8.11270   3.01195   1.22148 ANA  3      0.00000
+   32    3 ALA  HB1    9.22195   2.98680   1.16441 ANA  3      0.00000
+   33    3 ALA  HB2    7.81334   3.53175   2.15663 ANA  3      0.00000
+   34    3 ALA  HB3    7.73144   1.96889   1.25307 ANA  3      0.00000
+   35    3 ALA  C      8.05773   5.17851   0.00000 ANA  3      0.00000
+   36    3 ALA  OT1    7.21463   6.11487  -0.00000 ANA  3      0.00000
+   37    3 ALA  OT2    9.30547   5.35387   0.00000 ANA  3      0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    mini sd nstep 100
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found     99 exclusions and     84 interactions(1-4)
+ <MAKGRP> found     25 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR      667 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      567 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+
+
+ STEEPD> An energy minimization has been requested.
+
+ NSTEP  =          100   NPRINT =           10
+ STEP   =    0.0200000   TOLFUN =    0.0000000
+ TOLGRD =    0.0000000   TOLSTP =    0.0000000
+
+MINI MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+MINI INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+MINI CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+MINI EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        0   1556.03235      0.00000    476.40339      0.02000
+MINI INTERN>        0.00000    533.20075      0.57566     14.65327      0.00000
+MINI CROSS>         0.12679      0.00000      0.00000      0.00000
+MINI EXTERN>     1066.52918    -59.05330      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       10    353.95349   1202.07886     31.96268      0.02150
+MINI INTERN>       46.62614    255.45328      5.57537     19.18625      0.31765
+MINI CROSS>         0.02080      0.00000      0.00000      0.00000
+MINI EXTERN>       67.18660    -40.41260      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        12
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR      667 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      567 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>       20     92.23197    261.72152      7.74482      0.00963
+MINI INTERN>        3.16495     82.75066      2.31248     19.61921      1.53206
+MINI CROSS>         0.22474      0.00000      0.00000      0.00000
+MINI EXTERN>       12.31552    -29.68764      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       30     58.39883     33.83314     14.27470      0.01035
+MINI INTERN>        4.52853     52.52599      2.16137     19.73659      0.80710
+MINI CROSS>         0.00747      0.00000      0.00000      0.00000
+MINI EXTERN>        7.15224    -28.52046      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       40     38.74798     19.65085      3.75728      0.00464
+MINI INTERN>        1.55160     39.91368      1.86138     20.12933      0.66364
+MINI CROSS>        -0.14672      0.00000      0.00000      0.00000
+MINI EXTERN>        5.60007    -30.82499      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        46
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR      667 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      567 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>       50     29.64663      9.10136      7.14293      0.00498
+MINI INTERN>        2.46275     32.43818      1.63491     20.85723      0.57227
+MINI CROSS>        -0.26937      0.00000      0.00000      0.00000
+MINI EXTERN>        4.11769    -32.16704      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       60     23.87058      5.77605      8.78965      0.00536
+MINI INTERN>        2.79457     26.93873      1.57822     21.62355      0.50179
+MINI CROSS>        -0.34243      0.00000      0.00000      0.00000
+MINI EXTERN>        3.32868    -32.55254      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       70     17.97872      5.89186      2.29146      0.00240
+MINI INTERN>        1.72744     22.80058      1.46719     22.29985      0.45679
+MINI CROSS>        -0.39152      0.00000      0.00000      0.00000
+MINI EXTERN>        2.50385    -32.88547      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       80     14.44422      3.53450      2.08371      0.00258
+MINI INTERN>        1.84781     19.59588      1.41023     22.86656      0.42714
+MINI CROSS>        -0.41872      0.00000      0.00000      0.00000
+MINI EXTERN>        2.03991    -33.32458      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       90     11.77677      2.66745      3.63712      0.00277
+MINI INTERN>        2.03336     17.08397      1.35619     23.34666      0.41118
+MINI CROSS>        -0.43106      0.00000      0.00000      0.00000
+MINI EXTERN>        1.67771    -33.70123      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      100      9.82307      1.95370      4.05384      0.00298
+MINI INTERN>        2.13543     15.10310      1.32477     23.67292      0.40926
+MINI CROSS>        -0.43333      0.00000      0.00000      0.00000
+MINI EXTERN>        1.49033    -33.87939      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+
+ STEEPD> Minimization exiting with number of steps limit (       100) exceeded.
+
+STPD MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+STPD INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+STPD CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+STPD EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+STPD>      100      9.82307      1.95370      4.05384      0.00358
+STPD INTERN>        2.13543     15.10310      1.32477     23.67292      0.40926
+STPD CROSS>        -0.43333      0.00000      0.00000      0.00000
+STPD EXTERN>        1.49033    -33.87939      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    write coor pdb  name pdb/@name.pdb
+ Parameter: NAME -> "ANA"
+ VOPEN> Attempting to open::pdb/ana.pdb::
+ RDTITL>  
+ RDTITL> No title read.
+  Write CHARMM-pdb format
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    dyna nstep 1000 nprint 1000 start leap firstt 600 finalt 600
+  IUNREA = -1         IUNWRI = -1          IUNOS = -1
+  IUNCRD = -1         IUNVEL = -1          KUNIT = -1
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      567 atom  pairs and      183 atom  exclusions.
+ There are        0 group pairs and       25 group exclusions.
+   NSTEP =     1000    NSAVC =        1    NSAVV =       10
+  ISCALE =        0   ISCVEL =        0   IASORS =        0
+  IASVEL =        1   ICHECW =        1   NTRFRQ =        0
+  IHTFRQ =        0   IEQFRQ =        0   NPRINT =     1000
+  INBFRQ =       -1   IHBFRQ =        0   IPRFRQ =     1000
+  ILBFRQ =       50   IMGFRQ =        0
+  ISVFRQ =        0   NCYCLE =       50    NSNOS =       10
+  FIRSTT =   600.000  TEMINC =     5.000  TSTRUC =  -999.000
+  FINALT =   600.000  TWINDH =    10.000  TWINDL =   -10.000
+
+  TIME STEP =  2.04548E-02 AKMA       1.00000E-03 PS
+
+  RANDOM NUM. GEN. SEED(S) = 1439491465 1439491465 1439491465 1439491465
+ NUMBER OF DEGREES OF FREEDOM =    105
+
+          GAUSSIAN OPTION                  IS            1
+          VELOCITIES ASSIGNED AT TEMPERATURE =    750.0000
+          SEED FOR RANDOM NUMBER GENERATOR IS:
+          SEEDS> 1439491465 1439491465 1439491465 1439491465
+
+     DETAILS ABOUT CENTRE OF MASS
+     POSITION          :    4.5979439        3.1808548      -0.11118294    
+     VELOCITY          :   0.13708956       8.27111173E-02   4.86669986E-02
+     ANGULAR MOMENTUM  :   -59.828911        26.262511        3.1521769    
+     KINETIC ENERGY    :    3.8403106    
+DYNA DYN: Step         Time      TOTEner        TOTKe       ENERgy  TEMPerature
+DYNA PROP:             GRMS      HFCTote        HFCKe       EHFCor        VIRKe
+DYNA INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+DYNA CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+DYNA EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+DYNA PRESS:            VIRE         VIRI       PRESSE       PRESSI       VOLUme
+ ----------       ---------    ---------    ---------    ---------    ---------
+DYNA>        0      0.00000     72.30732     62.48425      9.82307    598.92386
+DYNA PROP>          4.16806     72.31229     62.49917      0.00498     18.64737
+DYNA INTERN>        2.13543     15.10310      1.32477     23.67292      0.40926
+DYNA CROSS>        -0.43333      0.00000      0.00000      0.00000
+DYNA EXTERN>        1.49033    -33.87939      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000    -12.43158      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        40
+ UPDECI: Nonbond update at step        66
+ UPDECI: Nonbond update at step        89
+ UPDECI: Nonbond update at step       123
+ UPDECI: Nonbond update at step       150
+ UPDECI: Nonbond update at step       169
+ UPDECI: Nonbond update at step       206
+ UPDECI: Nonbond update at step       232
+ UPDECI: Nonbond update at step       261
+ UPDECI: Nonbond update at step       292
+ UPDECI: Nonbond update at step       319
+ UPDECI: Nonbond update at step       359
+ UPDECI: Nonbond update at step       404
+ UPDECI: Nonbond update at step       431
+ UPDECI: Nonbond update at step       455
+ UPDECI: Nonbond update at step       487
+ UPDECI: Nonbond update at step       518
+ UPDECI: Nonbond update at step       575
+ UPDECI: Nonbond update at step       605
+ UPDECI: Nonbond update at step       631
+ UPDECI: Nonbond update at step       666
+ UPDECI: Nonbond update at step       696
+ UPDECI: Nonbond update at step       729
+ UPDECI: Nonbond update at step       753
+ UPDECI: Nonbond update at step       785
+ UPDECI: Nonbond update at step       807
+ UPDECI: Nonbond update at step       850
+ UPDECI: Nonbond update at step       880
+ UPDECI: Nonbond update at step       906
+ UPDECI: Nonbond update at step       936
+ UPDECI: Nonbond update at step       967
+ UPDECI: Nonbond update at step       995
+DYNA>     1000      1.00000     72.76181     73.35267     -0.59086    703.09991
+DYNA PROP>         19.74359     73.12196     73.98025      0.36015    -73.08033
+DYNA INTERN>       12.34897     32.54259      3.58037     35.68998      6.27999
+DYNA CROSS>        -4.09641      0.00000      0.00000      0.00000
+DYNA EXTERN>       14.74286   -101.67922      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000     48.72022      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ DYNAMC> Averages for the last 1000 steps:
+AVER DYN: Step         Time      TOTEner        TOTKe       ENERgy  TEMPerature
+AVER PROP:             GRMS      HFCTote        HFCKe       EHFCor        VIRKe
+AVER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+AVER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+AVER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+AVER PRESS:            VIRE         VIRI       PRESSE       PRESSI       VOLUme
+ ----------       ---------    ---------    ---------    ---------    ---------
+AVER>     1000      1.00000     72.86971     56.90361     15.96611    545.43235
+AVER PROP>         22.98497     73.10728     57.61676      0.23757     60.53143
+AVER INTERN>       14.17009     23.84193      3.39530     25.57382      4.55571
+AVER CROSS>        -2.45112      0.00000      0.00000      0.00000
+AVER EXTERN>        3.47538    -56.59502      0.00000      0.00000      0.00000
+AVER PRESS>         0.00000    -40.35429      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ DYNAMC> RMS fluctuations for the last 1000 steps:
+FLUC>     1000      1.00000      0.12692     12.33291     12.35709    118.21341
+FLUC PROP>          2.17109      0.01320     12.30828      0.13758    105.47109
+FLUC INTERN>        3.39735      5.49382      1.06147      5.00844      2.76350
+FLUC CROSS>         1.44434      0.00000      0.00000      0.00000
+FLUC EXTERN>        4.67045     21.93589      0.00000      0.00000      0.00000
+FLUC PRESS>         0.00000     70.31406      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+
+     DRIFT/STEP (LAST-TOTAL):    3.93110098E-07   3.93110098E-07
+     E AT STEP 0            :     73.107083        73.107083    
+     CORR. COEFFICIENT      :    8.59426576E-03   8.59426576E-03
+
+     DETAILS ABOUT CENTRE OF MASS
+     POSITION          :    4.5979439        3.1808548      -0.11118294    
+     VELOCITY          :  -1.06862361E-16  -1.45721402E-16  -2.59060270E-17
+     ANGULAR MOMENTUM  :   1.06981154E-13  -1.56721381E-13  -2.29203974E-13
+     KINETIC ENERGY    :   4.57019720E-30
+  
+ CHARMM>    write coor pdb  name pdb/@name_600k.pdb
+ Parameter: NAME -> "ANA"
+ VOPEN> Attempting to open::pdb/ana_600k.pdb::
+ RDTITL>  
+ RDTITL> No title read.
+  Write CHARMM-pdb format
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    read coor pdb  name  pdb/@name.pdb
+ Parameter: NAME -> "ANA"
+ VOPEN> Attempting to open::PDB/ANA.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE>  *
+ TITLE>    DATE:     9/25/13      9:46:33      CREATED BY USER: MCROWLEY
+ TITLE>  *
+
+ ** WARNING ** Coordinates were overwritten for    37 atoms.
+ *** LEVEL  2 WARNING *** BOMLEV IS    0
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =999.000 CTEXNB =999.000 CTONNB =997.000 CTOFNB =998.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      567 atom  pairs and      183 atom  exclusions.
+ There are        0 group pairs and       25 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR      667 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      567 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0    -18.26042      0.00000      3.89545
+ENER INTERN>        2.13707     15.11907      1.32574     23.67779      0.40784
+ENER CROSS>        -0.43360      0.00000      0.00000      0.00000
+ENER EXTERN>        1.48769    -61.98203      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    open unit 20 form write name charmm_output/@{name}_chm.frcdmp
+ Parameter: NAME -> "ANA"
+ VOPEN> Attempting to open::charmm_output/ana_chm.frcdmp::
+ OPNLGU> Unit 20 opened for WRITE access to charmm_output/ana_chm.frcdmp
+  
+ CHARMM>    frcdump unit 20
+ Energies and Forces dumped to unit     20
+  
+ CHARMM>    close unit 20
+ VCLOSE: Closing unit   20 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    read coor pdb  name  pdb/@name_600k.pdb
+ Parameter: NAME -> "ANA"
+ VOPEN> Attempting to open::PDB/ANA_600K.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE>  *
+ TITLE>    DATE:     9/25/13      9:46:33      CREATED BY USER: MCROWLEY
+ TITLE>  *
+
+ ** WARNING ** Coordinates were overwritten for    37 atoms.
+ *** LEVEL  2 WARNING *** BOMLEV IS    0
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =999.000 CTEXNB =999.000 CTONNB =997.000 CTOFNB =998.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      567 atom  pairs and      183 atom  exclusions.
+ There are        0 group pairs and       25 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR      667 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      567 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0    -16.96480     -1.29562     19.31116
+ENER INTERN>       12.33881     32.54549      3.56753     35.69612      6.28157
+ENER CROSS>        -4.09936      0.00000      0.00000      0.00000
+ENER EXTERN>       14.71337   -118.00833      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    open unit 20 form write name charmm_output/@{name}_600k_chm.frcdmp
+ Parameter: NAME -> "ANA"
+ VOPEN> Attempting to open::charmm_output/ana_600k_chm.frcdmp::
+ OPNLGU> Unit 20 opened for WRITE access to charmm_output/ana_600k_chm.frcdmp
+  
+ CHARMM>    frcdump unit 20
+ Energies and Forces dumped to unit     20
+  
+ CHARMM>    close unit 20
+ VCLOSE: Closing unit   20 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+$$$$$$  New timer profile $$$$$
+   First List                      0.00 Other:            0.00
+         Save shake coords               0.00 Other:            0.00
+         Heuristic check                 0.00 Other:            0.00
+         Temp and virial calc            0.00 Other:            0.00
+      dynamc                          0.01 Other:            0.00
+   Dynamics total                  0.01 Other:            0.00
+      NBONDS                          0.00 Other:            0.00
+   List time                       0.00 Other:            0.00
+         Electrostatic & VDW             0.02 Other:            0.00
+      Nonbond force                   0.02 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.01 Other:            0.00
+         Dihedral energy                 0.01 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.02 Other:            0.00
+   Energy time                     0.05 Other:            0.00
+ Total time                      0.13 Other:            0.07
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    MOST SEVERE WARNING WAS AT LEVEL  2
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.13  SECONDS 
+                         CPU TIME:     0.12  SECONDS 
+ 
+|                *****************************************************
+|                *   CHAMBER: Charmm psf to AMBER prmtop convertor   *
+|                *                                                   *
+|                *                       v1.0                        *
+|                *                                                   *
+|                *                    Written by:                    *
+|                *                 Mark J. Williamson                *
+|                *                 Michael F. Crowley                *
+|                *                   Ross C. Walker                  *
+|                *                                                   *
+|                *****************************************************
+ 
+
+===========================================================
+          PSF input parsing summary
+===========================================================
+
+                        Number of PSF flags found:        3
+
+                            Number of atoms found:       37
+                         Number of residues found:        3
+
+                            Number of bonds found:       36
+                           Number of angles found:       63
+                        Number of dihedrals found:       84
+                        Number of impropers found:        9
+
+                           Number of donors found:        7
+                        Number of acceptors found:        5
+    Number of explicit nonbonded exclusions found:        0
+
+                           Number of groups found:       11
+                       Number of ST2 waters found:        0
+
+                      Number of cross terms found:        1
+===========================================================
+
+   --- Found all ATOM TYPES in topology file
+
+   --- Found all nonbond parameters
+
+===========================================================
+          Parameter assignment summary             
+===========================================================
+
+CHARMM ff version:   36
+   CHARMM ff type: *>>>>>>>>CHARMM36 All-Hydrogen Topology 
+
+                    Number of atom types assigned:       15
+
+                    Number of bond types assigned:       18
+                   Number of angle types assigned:       36
+                   Number of UB angle terms found:       26
+                Number of UB angle types assigned:       11
+               Number of dihedrals types assigned:       58
+                               Explicit:         45
+                               WildCard:         13
+                Number of improper types assigned:        6
+
+               Number of unique cross types found:        1
+===========================================================
+
+
+===========================================================
+        Created prmtop summary
+===========================================================
+
+                    Number of bonds with hydrogen:       18
+                 Number of bonds without hydrogen:       18
+
+                   Number of angles with hydrogen:       39
+                Number of angles without hydrogen:       24
+
+                Number of dihedrals with hydrogen:       60
+             Number of dihedrals without hydrogen:       36
+===========================================================
+
+ Determining filetype of coordinate file: pdb/ana.pdb
+ Assuming PDB File.
+
+
+<write_prmtop_header> NPHB      0
+| Conversion carried out in     0.02 seconds
+Run sander (y/n):  
+|                *****************************************************
+|                *   CHAMBER: Charmm psf to AMBER prmtop convertor   *
+|                *                                                   *
+|                *                       v1.0                        *
+|                *                                                   *
+|                *                    Written by:                    *
+|                *                 Mark J. Williamson                *
+|                *                 Michael F. Crowley                *
+|                *                   Ross C. Walker                  *
+|                *                                                   *
+|                *****************************************************
+ 
+
+===========================================================
+          PSF input parsing summary
+===========================================================
+
+                        Number of PSF flags found:        3
+
+                            Number of atoms found:       37
+                         Number of residues found:        3
+
+                            Number of bonds found:       36
+                           Number of angles found:       63
+                        Number of dihedrals found:       84
+                        Number of impropers found:        9
+
+                           Number of donors found:        7
+                        Number of acceptors found:        5
+    Number of explicit nonbonded exclusions found:        0
+
+                           Number of groups found:       11
+                       Number of ST2 waters found:        0
+
+                      Number of cross terms found:        1
+===========================================================
+
+   --- Found all ATOM TYPES in topology file
+
+   --- Found all nonbond parameters
+
+===========================================================
+          Parameter assignment summary             
+===========================================================
+
+CHARMM ff version:   36
+   CHARMM ff type: *>>>>>>>>CHARMM36 All-Hydrogen Topology 
+
+                    Number of atom types assigned:       15
+
+                    Number of bond types assigned:       18
+                   Number of angle types assigned:       36
+                   Number of UB angle terms found:       26
+                Number of UB angle types assigned:       11
+               Number of dihedrals types assigned:       58
+                               Explicit:         45
+                               WildCard:         13
+                Number of improper types assigned:        6
+
+               Number of unique cross types found:        1
+===========================================================
+
+
+===========================================================
+        Created prmtop summary
+===========================================================
+
+                    Number of bonds with hydrogen:       18
+                 Number of bonds without hydrogen:       18
+
+                   Number of angles with hydrogen:       39
+                Number of angles without hydrogen:       24
+
+                Number of dihedrals with hydrogen:       60
+             Number of dihedrals without hydrogen:       36
+===========================================================
+
+ Determining filetype of coordinate file: pdb/ana_600k.pdb
+ Assuming PDB File.
+
+
+<write_prmtop_header> NPHB      0
+| Conversion carried out in     0.02 seconds
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+Relative error in energy:
+  ANGL   5.874556e-16
+  BOND   4.156050e-16
+  CMAP   6.452970e-07
+  DIHE   5.161910e-03
+  ELEC   6.878213e-16
+  ENER   6.693326e-03
+  IMPR  -1.136509e-13
+  VDW    5.970175e-16
+32  6.982675e-28
+ 33  7.652197e-28
+ 21  7.362078e-02
+ 7  2.873996e-27
+ 26  3.951311e-23
+ 2  4.784634e-28
+ 17  3.017123e-01
+ 1  5.748454e-28
+ 18  2.038127e-28
+ 30  1.734015e-28
+ 16  9.625413e-29
+ 27  1.972603e-13
+ 25  1.602562e-12
+ 28  1.750660e-26
+ 20  3.012104e-02
+ 14  5.453001e-28
+ 24  7.483856e-28
+ 10  7.311385e-28
+ 31  4.877921e-27
+ 35  3.432819e-23
+ 11  8.733208e-13
+ 22  6.114362e-02
+ 13  2.262455e-12
+ 23  6.242234e-28
+ 29  3.028251e-24
+ 6  3.899438e-28
+ 36  4.429621e-24
+ 3  2.270440e-28
+ 9  2.334165e-28
+ 12  4.076909e-25
+ 15  1.582868e-01
+ 8  2.009623e-28
+ 4  2.068788e-28
+ 34  1.872420e-28
+ 37  4.576934e-24
+ 19  1.059046e-28
+ 5  2.677986e-25
+ RMSD of forces on all atoms: 1.299568e-01
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+Relative error in energy:
+  ANGL  -4.366459e-16
+  CMAP   3.341205e-07
+  DIHE   3.545409e-03
+  ELEC   2.528872e-15
+  ENER   7.460078e-03
+  IMPR  -8.483656e-16
+  VDW    1.207308e-16
+32  1.924821e-28
+ 33  2.202031e-28
+ 21  5.537709e-02
+ 7  3.826173e-27
+ 26  1.194317e-23
+ 2  1.932709e-28
+ 17  2.861116e-01
+ 1  1.061018e-27
+ 18  1.605332e-28
+ 30  1.621306e-27
+ 16  6.363427e-28
+ 27  8.965663e-10
+ 25  2.245535e-09
+ 28  1.265333e-27
+ 20  3.230573e-02
+ 14  1.407328e-27
+ 24  7.770280e-28
+ 10  7.675617e-28
+ 31  8.681907e-28
+ 35  2.546577e-25
+ 11  7.111115e-11
+ 22  6.624213e-02
+ 13  9.306101e-10
+ 23  1.187236e-27
+ 29  4.053818e-26
+ 6  6.072265e-28
+ 36  3.017945e-26
+ 3  9.663546e-30
+ 9  1.676329e-28
+ 12  1.963948e-26
+ 15  1.482408e-01
+ 8  5.679799e-28
+ 4  2.133869e-28
+ 34  1.262177e-28
+ 37  3.364018e-26
+ 19  7.099748e-28
+ 5  2.558794e-26
+ RMSD of forces on all atoms: 1.260928e-01
+----------------------------------------------------------------

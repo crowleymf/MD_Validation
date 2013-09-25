@@ -1,0 +1,50 @@
+**
+*
+
+set name ana
+set segn @name
+read rtf   card name toppar/top_all27_prot_na.rtf
+read param card name toppar/par_all27_prot_na.prm
+
+read sequ card
+**
+*
+3 
+ALA ASN ALA
+
+generate @segn first nter last cter
+autogenerate angles dihe
+
+write psf card unit 1 name       charmm_output/@name.psf
+write psf card xplor unit 1 name charmm_output/@{name}_xplor.psf
+
+ic gener
+ic param
+ic seed @segn 1 N @segn 1 CA @segn 1 C
+ic build
+print coor
+
+mini sd nstep 100
+
+write coor pdb  name pdb/@name.pdb
+
+dyna nstep 1000 nprint 1000 start leap firstt 600 finalt 600
+write coor pdb  name pdb/@name_600k.pdb
+
+read coor pdb  name  pdb/@name.pdb
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+
+read coor pdb  name  pdb/@name_600k.pdb
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_600k_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+
+stop
