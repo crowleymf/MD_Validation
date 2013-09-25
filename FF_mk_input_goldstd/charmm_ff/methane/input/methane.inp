@@ -13,15 +13,15 @@ ch4
 generate meth first none last none setup warn
 auto angle dihe
 
-write psf card name output/methane.psf
+write psf card name psf/methane.psf
 read coor pdb name methane.pdb
-write coor pdb name output/methane.pdb
+write coor pdb name pdb/methane.pdb
 read coor pdb name methane.pdb
 
 fast off
 ener cutnb 999 ctofnb 998 ctonnb 997
 
-open unit 11 form write name output/methane_chm.frcdmp
+open unit 11 form write name charmm_output/methane_chm.frcdmp
 frcd unit 11
 close unit 11
 
