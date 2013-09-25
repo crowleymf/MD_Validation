@@ -2,18 +2,26 @@
 
 set name=methane
 set toppar=../../../toppar
-set top=methane.rtf
+set top=.rtf
 set par=methane.prm
 
-charmm -i  input/$name.inp | tee charmm_output/charmm.out
+set ff all27_prot_nt
+if ( $1 != "" ) then
+  echo ff is $1
+  set ff = $1
+endif 
+set top=top_$ff.rtf
+set par=par_$ff.prm
+
+charmm -i  input/$name.inp ff=$ff | tee charmm_output/charmm.out
 
 #  if ( ! -e charmm_output/methane2.psf) cp SAVED/methane.psf SAVED/charmm.out charmm_output
 
-chamber -cmap  \
+chamber -nocmap  \
     -p Amber_output/$name.prmtop \
     -inpcrd Amber_output/$name.inpcrd \
     -crd pdb/$name.pdb \
-    -psf charmm_output/$name.psf \
+    -psf psf/$name.psf \
     -top   $toppar/$top \
     -param $toppar/$par
 
@@ -37,11 +45,11 @@ $sander -O -i input/mdin -inf Amber_output/mdinfo \
     mv charmm_gold Amber_output/${name}_amber.frcdmp
 
 
-chamber -cmap  \
+chamber -nocmap  \
     -p Amber_output/$name.prmtop \
     -inpcrd Amber_output/${name}_600k.inpcrd \
     -crd pdb/${name}_600k.pdb \
-    -psf charmm_output/$name.psf \
+    -psf psf/$name.psf \
     -top   $toppar/$top \
     -param $toppar/$par
 

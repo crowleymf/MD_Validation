@@ -1,8 +1,11 @@
 **
 *
+if @?ff == 0 set ff all27_prot_na
+set name methane
+
 bomlev -1
-read rtf   card name ../../../toppar/methane.rtf
-read param card name ../../../toppar/methane.prm
+read rtf   card name ../../../toppar/top_@ff.rtf
+read param card name ../../../toppar/par_@ff.prm
 
 read sequence card
 * methane
@@ -16,14 +19,26 @@ auto angle dihe
 write psf card name psf/methane.psf
 read coor pdb name methane.pdb
 write coor pdb name pdb/methane.pdb
-read coor pdb name methane.pdb
 
-fast off
-ener cutnb 999 ctofnb 998 ctonnb 997
+dyna nstep 1000 nprint 1000 start leap firstt 600 finalt 600
+write coor pdb  name pdb/@name_600k.pdb
 
-open unit 11 form write name charmm_output/methane_chm.frcdmp
-frcd unit 11
-close unit 11
+!--------- get frcdump for original structure --------------
+read coor pdb  name  pdb/@name.pdb
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+!--------- get frcdump for 600K structure --------------
+read coor pdb  name  pdb/@name_600k.pdb
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_600k_chm.frcdmp
+frcdump unit 20
+close unit 20
+
 
 stop
 
