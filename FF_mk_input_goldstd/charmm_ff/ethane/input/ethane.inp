@@ -4,7 +4,11 @@ bomlev -1
 
 set name ethane
 
-read rtf   card name ../../../toppar/top_all27_prot_na.rtf
+if @?ff == 0 set ff all27_prot_na
+
+bomlev -1
+read rtf   card name ../../../toppar/top_@ff.rtf
+
 read rtf append card
 **
 *
@@ -27,7 +31,7 @@ BOND C1  C2
 
 END
 
-read param card name ../../../toppar/par_all27_prot_na.prm
+read param card name ../../../toppar/par_@ff.prm
 
 read sequence card
 * ethane
@@ -38,7 +42,7 @@ eth
 generate eth first none last none setup warn
 auto angle dihe
 
-write psf card name @name.psf
+write psf card name psf/@name.psf
 read coor pdb name @name.pdb
 write coor pdb name pdb/@name.pdb
 
