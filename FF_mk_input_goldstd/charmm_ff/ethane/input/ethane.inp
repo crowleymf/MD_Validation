@@ -5,24 +5,27 @@ bomlev -1
 set name ethane
 
 if @?ff == 0 set ff all27_prot_na
-
 bomlev -1
 read rtf   card name ../../../toppar/top_@ff.rtf
+
+if @ff .eq. all36_lipid then
+
 
 read rtf append card
 **
 *
+36  1
 
 RESI ETH        0.00 
 GROUP
-ATOM C1   ct3     -0.0939
-ATOM H11  ha       0.0313
-ATOM H12  ha       0.0313
-atom h13  ha       0.0313
-atom c2   ct3     -0.0939
-atom h21  ha       0.0313
-atom h22  ha       0.0313
-atom h23  ha       0.0313
+ATOM C1   ctl3     -0.0939
+ATOM H11  hal3     0.0313
+ATOM H12  hal3     0.0313
+atom h13  hal3     0.0313
+atom c2   ctl3     -0.0939
+atom h21  hal3     0.0313
+atom h22  hal3     0.0313
+atom h23  hal3     0.0313
 
 BOND C1  H11  C1  H12  C1  H13
 BOND C2  H21  C2  H22  C2  H23
@@ -30,6 +33,33 @@ BOND C1  C2
 
 
 END
+
+else
+
+read rtf append card
+**
+*
+36  1
+
+RESI ETH        0.00 
+GROUP
+ATOM C1   ct3     -0.0939
+ATOM H11  ha     0.0313
+ATOM H12  ha     0.0313
+atom h13  ha     0.0313
+atom c2   ct3     -0.0939
+atom h21  ha     0.0313
+atom h22  ha     0.0313
+atom h23  ha     0.0313
+
+BOND C1  H11  C1  H12  C1  H13
+BOND C2  H21  C2  H22  C2  H23
+BOND C1  C2
+
+
+END
+
+endif
 
 read param card name ../../../toppar/par_@ff.prm
 
