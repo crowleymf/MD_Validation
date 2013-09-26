@@ -5,4 +5,5 @@ clean:
 	   mdcrd	     \
 	   mdinfo	     \
 	   mdout	     \
+	   pdb/*.pdb	     \
 	   restrt

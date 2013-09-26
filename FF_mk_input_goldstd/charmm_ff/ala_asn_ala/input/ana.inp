@@ -3,8 +3,10 @@
 
 set name ana
 set segn @name
-read rtf   card name toppar/top_all36_prot.rtf
-read param card name toppar/par_all36_prot.prm
+if @?ff == 0 set ff all27_prot_na
+set toppar ../../../toppar
+read rtf   card name @toppar/top_@ff.rtf
+read param card name @toppar/par_@ff.prm
 
 read sequ card
 **
