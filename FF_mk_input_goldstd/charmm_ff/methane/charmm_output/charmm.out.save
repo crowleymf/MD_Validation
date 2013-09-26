@@ -1,0 +1,341 @@
+ Parameter: FF <- "METHANE"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+            (CHARMM) - Developmental Version 38a2  February 15, 2013            
+                             Git commit ID 42dbfd3                              
+       Copyright(c) 1984-2001  President and Fellows of Harvard College
+                              All Rights Reserved
+                        Current operating system: nohost                        
+                 Created on  9/25/13 at 18:05:48 by user: mcrowley    
+
+            Maximum number of ATOMS:     60120, and RESidues:       20040
+ RDTITL> **
+ RDTITL> *
+  
+ CHARMM>    if @?ff == 0 set ff all27_prot_na
+ Comparing "1" and "0".
+ ERROR FROM MISCOM: Illegal IF test
+ IF test evaluated as false.  Skipping command
+  
+ CHARMM>    set name methane
+ Parameter: NAME <- "METHANE"
+  
+ CHARMM>     
+  
+ CHARMM>    bomlev -1
+  
+ CHARMM>    read rtf   card name ../../../toppar/top_@ff.rtf
+ Parameter: FF -> "METHANE"
+ VOPEN> Attempting to open::../../../TOPPAR/TOP_METHANE.RTF::
+ MAINIO> Residue topology file being read from unit  90.
+ TITLE> * METHANE
+ TITLE> *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read param card name ../../../toppar/par_@ff.prm
+ Parameter: FF -> "METHANE"
+ VOPEN> Attempting to open::../../../TOPPAR/PAR_METHANE.PRM::
+
+          PARAMETER FILE BEING READ FROM UNIT 90
+ TITLE> * METHANE PARAMETERS
+ TITLE> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * METHANE
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    ch4
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          CH4 
+  
+ CHARMM>     
+  
+ CHARMM>    generate meth first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ GENPSF> Segment   1 has been generated. Its identifier is METH.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        5   Number of groups     =        1
+         Number of bonds         =        4   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    auto angle dihe
+ AUTOGEN: All angles are removed and regenerated.
+ AUTOGEN: All dihedrals are removed and regenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        5   Number of groups     =        1
+         Number of bonds         =        4   Number of angles     =        6
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    write psf card name psf/methane.psf
+ VOPEN> Attempting to open::psf/methane.psf::
+ RDTITL> READ COOR PDB NAME METHANE.PDB
+ RDTITL> No title read.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read coor pdb name methane.pdb
+ VOPEN> Attempting to open::METHANE.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE>  *
+ TITLE>    DATE:    10/ 2/ 6     16:24:42      CREATED BY USER: CROWLEY
+ TITLE>  *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    write coor pdb name pdb/methane.pdb
+ VOPEN> Attempting to open::pdb/methane.pdb::
+ RDTITL>  
+ RDTITL> No title read.
+  Write CHARMM-pdb format
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    dyna nstep 1000 nprint 1000 start leap firstt 600 finalt 600
+  IUNREA = -1         IUNWRI = -1          IUNOS = -1
+  IUNCRD = -1         IUNVEL = -1          KUNIT = -1
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found     10 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+   NSTEP =     1000    NSAVC =       10    NSAVV =       10
+  ISCALE =        0   ISCVEL =        0   IASORS =        0
+  IASVEL =        1   ICHECW =        1   NTRFRQ =        0
+  IHTFRQ =        0   IEQFRQ =        0   NPRINT =     1000
+  INBFRQ =       -1   IHBFRQ =        0   IPRFRQ =     1000
+  ILBFRQ =       50   IMGFRQ =        0
+  ISVFRQ =        0   NCYCLE =       50    NSNOS =       10
+  FIRSTT =   600.000  TEMINC =     5.000  TSTRUC =  -999.000
+  FINALT =   600.000  TWINDH =    10.000  TWINDL =   -10.000
+
+  TIME STEP =  2.04548E-02 AKMA       1.00000E-03 PS
+
+  RANDOM NUM. GEN. SEED(S) = 1469446424 1469446424 1469446424 1469446424
+ NUMBER OF DEGREES OF FREEDOM =      9
+
+          GAUSSIAN OPTION                  IS            1
+          VELOCITIES ASSIGNED AT TEMPERATURE =    750.0000
+          SEED FOR RANDOM NUMBER GENERATOR IS:
+          SEEDS> 1469446424 1469446424 1469446424 1469446424
+
+     DETAILS ABOUT CENTRE OF MASS
+     POSITION          :    1.1897906       1.10628663E-02    0.0000000    
+     VELOCITY          :   0.21735889       0.47706456       1.59364091E-02
+     ANGULAR MOMENTUM  :    1.9361315        5.1885827        1.5546970    
+     KINETIC ENERGY    :    2.2050235    
+DYNA DYN: Step         Time      TOTEner        TOTKe       ENERgy  TEMPerature
+DYNA PROP:             GRMS      HFCTote        HFCKe       EHFCor        VIRKe
+DYNA INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+DYNA PRESS:            VIRE         VIRI       PRESSE       PRESSI       VOLUme
+ ----------       ---------    ---------    ---------    ---------    ---------
+DYNA>        0      0.00000     15.34354      9.74322      5.60032   1089.55797
+DYNA PROP>         43.36452     15.45587     10.08023      0.11234      8.80464
+DYNA INTERN>        4.08209      1.51372      0.00451      0.00000      0.00000
+DYNA PRESS>         0.00000     -5.86976      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+DYNA>     1000      1.00000     15.16536     12.43664      2.72872   1390.75612
+DYNA PROP>         28.88208     15.73740     12.56649      0.57204     13.25394
+DYNA INTERN>        1.31556      1.37104      0.04213      0.00000      0.00000
+DYNA PRESS>         0.00000     -8.83596      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ DYNAMC> Averages for the last 1000 steps:
+AVER DYN: Step         Time      TOTEner        TOTKe       ENERgy  TEMPerature
+AVER PROP:             GRMS      HFCTote        HFCKe       EHFCor        VIRKe
+AVER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+AVER PRESS:            VIRE         VIRI       PRESSE       PRESSI       VOLUme
+ ----------       ---------    ---------    ---------    ---------    ---------
+AVER>     1000      1.00000     15.53015      7.49174      8.03840    837.78145
+AVER PROP>         46.23307     15.69795      7.99341      0.16780      8.08264
+AVER INTERN>        6.13689      1.67742      0.22409      0.00000      0.00000
+AVER PRESS>         0.00000     -5.38843      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ DYNAMC> RMS fluctuations for the last 1000 steps:
+FLUC>     1000      1.00000      0.22080      2.72272      2.94086    304.47439
+FLUC PROP>         11.62175      0.02242      2.50553      0.24001     17.84328
+FLUC INTERN>        2.84660      0.56713      0.12353      0.00000      0.00000
+FLUC PRESS>         0.00000     11.89552      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+
+     DRIFT/STEP (LAST-TOTAL):   -2.09698473E-07  -2.09698473E-07
+     E AT STEP 0            :     15.698052        15.698052    
+     CORR. COEFFICIENT      :   -2.70027595E-03  -2.70027595E-03
+
+     DETAILS ABOUT CENTRE OF MASS
+     POSITION          :    1.1897906       1.10628663E-02  -3.60117553E-15
+     VELOCITY          :   4.17251588E-16   4.39758935E-16  -2.90864177E-16
+     ANGULAR MOMENTUM  :   4.27043294E-15  -7.76836434E-15   3.34341822E-15
+     KINETIC ENERGY    :   3.62378993E-30
+  
+ CHARMM>    write coor pdb  name pdb/@name_600k.pdb
+ Parameter: NAME -> "METHANE"
+ VOPEN> Attempting to open::pdb/methane_600k.pdb::
+ RDTITL>  
+ RDTITL> No title read.
+  Write CHARMM-pdb format
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    !--------- get frcdump for original structure --------------
+ CHARMM>    read coor pdb  name  pdb/@name.pdb
+ Parameter: NAME -> "METHANE"
+ VOPEN> Attempting to open::PDB/METHANE.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE>  *
+ TITLE>    DATE:     9/25/13     18: 5:48      CREATED BY USER: MCROWLEY
+ TITLE>  *
+
+ ** WARNING ** Coordinates were overwritten for     5 atoms.
+ *** LEVEL  2 WARNING *** BOMLEV IS   -1
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =999.000 CTEXNB =999.000 CTONNB =997.000 CTOFNB =998.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and       10 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      5.60032      0.00000     33.59001
+ENER INTERN>        4.08209      1.51372      0.00451      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    open unit 20 form write name charmm_output/@{name}_chm.frcdmp
+ Parameter: NAME -> "METHANE"
+ VOPEN> Attempting to open::charmm_output/methane_chm.frcdmp::
+ OPNLGU> Unit 20 opened for WRITE access to charmm_output/methane_chm.frcdmp
+  
+ CHARMM>    frcdump unit 20
+ Energies and Forces dumped to unit     20
+  
+ CHARMM>    close unit 20
+ VCLOSE: Closing unit   20 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    !--------- get frcdump for 600K structure --------------
+ CHARMM>    read coor pdb  name  pdb/@name_600k.pdb
+ Parameter: NAME -> "METHANE"
+ VOPEN> Attempting to open::PDB/METHANE_600K.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE>  *
+ TITLE>    DATE:     9/25/13     18: 5:48      CREATED BY USER: MCROWLEY
+ TITLE>  *
+
+ ** WARNING ** Coordinates were overwritten for     5 atoms.
+ *** LEVEL  2 WARNING *** BOMLEV IS   -1
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =999.000 CTEXNB =999.000 CTONNB =997.000 CTOFNB =998.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and       10 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      2.75608      2.84424     22.50156
+ENER INTERN>        1.33006      1.38430      0.04172      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    open unit 20 form write name charmm_output/@{name}_600k_chm.frcdmp
+ Parameter: NAME -> "METHANE"
+ VOPEN> Attempting to open::charmm_output/methane_600k_chm.frcdmp::
+ OPNLGU> Unit 20 opened for WRITE access to charmm_output/methane_600k_chm.frcdmp
+  
+ CHARMM>    frcdump unit 20
+ Energies and Forces dumped to unit     20
+  
+ CHARMM>    close unit 20
+ VCLOSE: Closing unit   20 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+$$$$$$  New timer profile $$$$$
+   First List                      0.00 Other:            0.00
+         Save shake coords               0.00 Other:            0.00
+         Heuristic check                 0.00 Other:            0.00
+         Temp and virial calc            0.00 Other:            0.00
+      dynamc                          0.00 Other:            0.00
+   Dynamics total                  0.01 Other:            0.00
+   List time                       0.00 Other:            0.00
+         Electrostatic & VDW             0.00 Other:            0.00
+      Nonbond force                   0.00 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.00 Other:            0.00
+         Dihedral energy                 0.00 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.01 Other:            0.00
+   Energy time                     0.01 Other:            0.00
+ Total time                      0.03 Other:            0.01
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    MOST SEVERE WARNING WAS AT LEVEL  2
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.03  SECONDS 
+                         CPU TIME:     0.02  SECONDS 
