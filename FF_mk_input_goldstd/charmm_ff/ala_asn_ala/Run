@@ -11,8 +11,8 @@ chamber -cmap  \
     -inpcrd Amber_output/$name.inpcrd \
     -crd pdb/$name.pdb \
     -psf charmm_output/$name.psf \
-    -top   toppar/top_all36_prot.rtf \
-    -param toppar/par_all36_prot.prm
+    -top toppar/top_all27_prot_na.rtf \
+    -param toppar/par_all27_prot_na.prm
 
 
 echo -n "Run sander (y/n): "
@@ -39,8 +39,8 @@ chamber -cmap  \
     -inpcrd Amber_output/${name}_600k.inpcrd \
     -crd pdb/${name}_600k.pdb \
     -psf charmm_output/$name.psf \
-    -top   toppar/top_all36_prot.rtf \
-    -param toppar/par_all36_prot.prm
+    -top toppar/top_all27_prot_na.rtf \
+    -param toppar/par_all27_prot_na.prm
 
 $sander -O -i input/mdin -inf Amber_output/mdinfo \
    -c Amber_output/${name}_600k.inpcrd \
