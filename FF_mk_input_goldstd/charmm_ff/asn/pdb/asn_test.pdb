@@ -1,0 +1,21 @@
+REMARK *                                                                              
+REMARK   DATE:     9/26/13     12:42:10      CREATED BY USER: mcrowley                
+ATOM      1  N   ASN     1       0.056  -0.069   0.060  1.00  0.00      ASN 
+ATOM      2  HT1 ASN     1      -0.236   0.490   0.891  1.00  0.00      ASN 
+ATOM      3  HT2 ASN     1      -0.275   0.489  -0.759  1.00  0.00      ASN 
+ATOM      4  HT3 ASN     1      -0.292  -1.036   0.068  1.00  0.00      ASN 
+ATOM      5  CA  ASN     1       1.542   0.069  -0.001  1.00  0.00      ASN 
+ATOM      6  HA  ASN     1       1.963  -0.308   0.924  1.00  0.00      ASN 
+ATOM      7  CB  ASN     1       2.047  -0.706  -1.253  1.00  0.00      ASN 
+ATOM      8  HB1 ASN     1       1.570  -1.706  -1.310  1.00  0.00      ASN 
+ATOM      9  HB2 ASN     1       1.830  -0.129  -2.174  1.00  0.00      ASN 
+ATOM     10  CG  ASN     1       3.546  -0.966  -1.148  1.00  0.00      ASN 
+ATOM     11  OD1 ASN     1       4.119  -1.008  -0.065  1.00  0.00      ASN 
+ATOM     12  ND2 ASN     1       4.180  -1.281  -2.297  1.00  0.00      ASN 
+ATOM     13 HD21 ASN     1       5.175  -1.346  -2.240  1.00  0.00      ASN 
+ATOM     14 HD22 ASN     1       3.675  -1.417  -3.141  1.00  0.00      ASN 
+ATOM     15  C   ASN     1       1.833   1.589  -0.082  1.00  0.00      ASN 
+ATOM     16  OT1 ASN     1       0.847   2.381  -0.111  1.00  0.00      ASN 
+ATOM     17  OT2 ASN     1       3.024   1.960  -0.118  1.00  0.00      ASN 
+TER      18      ASN      1
+END
