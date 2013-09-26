@@ -2,8 +2,10 @@
 *
 
 set name triala
-read rtf   card name toppar/top_all27_prot_na.rtf
-read param card name toppar/par_all27_prot_na.prm
+if @?ff == 0 set ff all27_prot_na
+set toppar ../../../toppar
+read rtf   card name @toppar/top_@ff.rtf
+read param card name @toppar/par_@ff.prm
 
 read sequ card
 **
@@ -14,14 +16,13 @@ ALA ALA ALA
 generate aal first nter last cter
 autogenerate angles dihe
 
-write psf card unit 1 name       charmm_output/@name.psf
-write psf card xplor unit 1 name charmm_output/@{name}_xplor.psf
+write psf card unit 1 name       psf/@name.psf
+write psf card xplor unit 1 name psf/@{name}_xplor.psf
 
 ic gener
 ic param
 ic seed aal 1 N aal 1 CA aal 1 C
 ic build
-print coor
 
 mini sd nstep 100
 
