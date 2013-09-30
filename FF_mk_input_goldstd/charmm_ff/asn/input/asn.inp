@@ -3,8 +3,8 @@
 
 set name asn
 set segn @name
-if @?ff == 0 set ff all27_prot_na
-if @?toppar == 0 set toppar ../../../toppar
+if @?ff .eq. 0 set ff all27_prot_na
+if @?toppar .eq. 0 set toppar ../../../toppar
 read rtf   card name @toppar/top_@ff.rtf
 read param card name @toppar/par_@ff.prm
 

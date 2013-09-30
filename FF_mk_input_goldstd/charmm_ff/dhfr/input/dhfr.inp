@@ -2,16 +2,18 @@
 *
 
 set name dhfr
-if @?ff == 0 set ff all27_prot_na
-if @?toppar == 0 set toppar .
+if @?ff .eq. 0 set ff all27_prot_na
+if @?toppar .eq. 0 set toppar .
+set top top_@ff.rtf
+set par par_@ff.prm
 read rtf   card name @toppar/top_@ff.rtf
 read param card name @toppar/par_@ff.prm
 
-set nbonds cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+!set nbonds cutnb 999 ctofnb 998 ctonnb 997 switch vswit
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Read in Topology and parameter file for ALL27
+! Read in Topology and parameter file 
 
 read rtf   card name @top
 read param card name @par
@@ -33,9 +35,9 @@ read param card name @par
          cutnb 9999.0   ctofnb 9998.0   ctonnb 9997.0 
 
   mini sd nstep 200 tolgrd 0.0001 nprint 50
-  write coor pdb name output/@name_min.pdb
+  write coor pdb name pdb/@name_min.pdb
 
-  read coor pdb name output/@name_min.pdb
+  read coor pdb name pdb/@name_min.pdb
   ener
   open unit 20 form write name output/@name_min_chm.frcdmp
   frcdump unit 20
@@ -43,9 +45,9 @@ read param card name @par
 
 !---- Get energy and forces for 600k structure-----------
 dyna nstep 200 nprint 20 start leap firstt 600 finalt 600
-write coor pdb  name output/@name_600k.pdb
+write coor pdb  name pdb/@name_600k.pdb
 
-read coor pdb  name output/@name_600k.pdb
+read coor pdb  name pdb/@name_600k.pdb
 ener cutnb 999 ctofnb 998 ctonnb 997 switch vswitch
 
 open unit 20 form write name output/@name_600k_chm.frcdmp
