@@ -3413,20 +3413,15 @@ DIHEDRALS
 !x!-- ON5  CN7C CN7  HN7       0.000   3       0.0
 !x!-- ON5  CN7C CN7  ON2       0.000   3       0.0
 !x!-- !@@@@@@ End of torsions specifically defined for arabinose @@@@@@
-H    NH2  CC   CT2      1.4000  2   180.00 !  ALLOW   PEP POL ARO PRO 1917:!x
-O    CC   NH2  H        1.4000  2   180.00 !  ALLOW PEP POL ARO PRO   2401:!x
-X    CT1  CC   X        0.0500  6   180.00 ! ALLOW   POL PEP	      2485:!x
-X    CT1  CT2  X        0.2000  3     0.00 ! ALLOW   ALI	      2491:!x
-X    CT1  NH3  X        0.1000  3     0.00 ! ALLOW   ALI POL	      2495:!x
-X    CT2  CC   X        0.0500  6   180.00 ! ALLOW   POL PEP	      2503:!x
+H    NH2  CC   CT2      1.4000  2   180.00 !  ALLOW   PEP POL ARO PRO 1917
+O    CC   NH2  H        1.4000  2   180.00 !  ALLOW PEP POL ARO PRO   2401
 NH2  CC   CT2  HA       0.0000  3   180.00 ! ALLOW POL  	      2239
-O    CC   CT2  HA       0.0000  3   180.00 ! ALLOW POL  	      2399          
-O    CC   NH2  H        1.4000  2   180.00 !  ALLOW PEP POL ARO PRO     2401
+O    CC   CT2  HA       0.0000  3   180.00 ! ALLOW POL  	      2399
 OC   CC   CT1  NH3      3.2000  2   180.00 ! ALLOW PEP PRO            2423
-X    CT1  CC   X        0.0500  6   180.00 ! ALLOW   POL PEP          2485
-X    CT1  CT2  X        0.2000  3     0.00 ! ALLOW   ALI              2491
-X    CT1  NH3  X        0.1000  3     0.00 ! ALLOW   ALI POL          2495
-X    CT2  CC   X        0.0500  6   180.00 ! ALLOW   POL PEP          2503
+X    CT1  CC   X        0.0500  6   180.00 ! ALLOW   POL PEP	      2485
+X    CT1  CT2  X        0.2000  3     0.00 ! ALLOW   ALI	      2491
+X    CT1  NH3  X        0.1000  3     0.00 ! ALLOW   ALI POL	      2495
+X    CT2  CC   X        0.0500  6   180.00 ! ALLOW   POL PEP	      2503
 
 IMPROPER
 !

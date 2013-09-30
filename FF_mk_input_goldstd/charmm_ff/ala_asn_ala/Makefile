@@ -6,4 +6,5 @@ clean:
 	   mdinfo	     \
 	   mdout	     \
 	   pdb/*.pdb	     \
+	   psf/*.psf	     \
 	   restrt

@@ -2,11 +2,19 @@
 *
 
 set name dhfr
+if @?ff == 0 set ff all27_prot_na
+if @?toppar == 0 set toppar .
+read rtf   card name @toppar/top_@ff.rtf
+read param card name @toppar/par_@ff.prm
+
+set nbonds cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Read in Topology and parameter file for ALL27
 
-read rtf   card name ../../../toppar/top_all27_prot_na.rtf
-read param card name ../../../toppar/par_all27_prot_na.prm
+read rtf   card name @top
+read param card name @par
 
 
 ! Read in DHFR Gas Phase PDB
@@ -18,8 +26,8 @@ read param card name ../../../toppar/par_all27_prot_na.prm
 
     read coor pdb name @name_initial.pdb
 
-    write psf card name output/@name.psf
-    write psf card xplor name output/@name_xplor.psf
+    write psf card name  psf/@name.psf
+    write psf card xplor name psf/@name_xplor.psf
 
   update bycb  vswitch  switch -
          cutnb 9999.0   ctofnb 9998.0   ctonnb 9997.0 

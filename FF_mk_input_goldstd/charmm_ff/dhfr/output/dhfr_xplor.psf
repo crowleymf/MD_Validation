@@ -2,7 +2,7 @@ PSF CMAP CHEQ
 
        2 !NTITLE
 * DHFR GAS PHASE MINIMIZATION                                                   
-*  DATE:    10/14/11     11: 9:29      CREATED BY USER: crowley                 
+*  DATE:     9/30/13      9:44:44      CREATED BY USER: mcrowley                
 
     2489 !NATOM
        1 DHFR 1    MET  N    NH3   -0.300000       14.0070           0   0.00000     -0.301140E-02

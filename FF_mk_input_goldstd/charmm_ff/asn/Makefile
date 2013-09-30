@@ -5,5 +5,5 @@ clean:
 	   mdcrd	     \
 	   mdinfo	     \
 	   mdout	     \
-	   pdb/*.pdb	     \
+	   pdb/asn.pdb asn_600k.pdb \
 	   restrt

@@ -4,7 +4,7 @@
 set name asn
 set segn @name
 if @?ff == 0 set ff all27_prot_na
-set toppar ../../../toppar
+if @?toppar == 0 set toppar ../../../toppar
 read rtf   card name @toppar/top_@ff.rtf
 read param card name @toppar/par_@ff.prm
 
@@ -30,6 +30,7 @@ print coor
 
 mini sd nstep 100 @nbonds
 
+read coor pdb name pdb/@name_test.pdb
 write coor pdb  name pdb/@name.pdb
 
 dyna nstep 1000 nprint 1000 start leap firstt 600 finalt 600 -

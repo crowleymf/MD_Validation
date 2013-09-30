@@ -3,6 +3,17 @@
 set name=dhfr
 
 /bin/cp ../../../FF_mk_input_goldstd/charmm_ff/dhfr/output/* .
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/dhfr/psf/* .
+/bin/cp ../../../FF_mk_input_goldstd/charmm_ff/dhfr/pdb/* .
+set ff = all27_prot_na
+if ( $1 != "" ) then
+  echo ff is $1
+  set ff = $1
+endif 
+set top=top_$ff.rtf
+set par=par_$ff.prm
+! set toppar=../../../toppar
+set toppar=.
 
 
 chamber -cmap  \
@@ -10,8 +21,8 @@ chamber -cmap  \
     -inpcrd Amber_output/${name}_min.inpcrd \
     -crd ${name}_min.pdb \
     -psf $name.psf \
-    -top   ../../../toppar/top_all27_prot_na.rtf \
-    -param ../../../toppar/par_all27_prot_na.prm
+    -top   $top \
+    -param $par
 
 sander:
 if ( $?SANDER ) then
