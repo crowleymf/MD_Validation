@@ -2,7 +2,7 @@
 *
 
 set name triala
-if @?ff == 0 set ff all27_prot_na
+if @?ff .eq. 0 set ff all27_prot_na
 set toppar ../../../toppar
 read rtf   card name @toppar/top_@ff.rtf
 read param card name @toppar/par_@ff.prm
