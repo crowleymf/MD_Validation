@@ -1,0 +1,55 @@
+* Take the 36 chain 2mer and make a 20mer 36-chain 
+*
+goto getargs
+label backgetargs
+
+read rtf   card name toppar/top_all36_carb.rtf
+read param card name toppar/par_all36_carb.prm
+
+calc nchain = @dim * @dim
+set fil @nchain_@len
+read psf card name psf/@fil.psf
+read coor pdb name pdb/@fil.pdb resid
+
+energy cutnb 14 ctofnb 12 ctonnb 11
+stop
+open unit 10 write unform name dcd/@fil_vac_@run_@temp.dcd
+open unit 11 write form   name rst/@fil_vac_@run_@temp.rst
+
+dyna bycc start leap -
+  firstt 10 finalt 10 ieqfrq 200 -
+  nstep @nstep nprint 100 -
+  nsavc 100 iuncrd 10 iunwri 11 iunsav 12 iunrea 13 -
+  nbond cutnb 15 ctofnb 12 ctonnb 11 vswitch shift 
+  
+write coor pdb name cor/@fil_vac_@run_@temp.pdb
+
+stop
+
+
+
+
+label getargs
+
+if @?run .eq. 0 then
+  echo need run number
+  stop
+endif
+if @?dim .eq. 0 then
+  echo need dim: fiber dimension
+  stop
+endif
+if @?len .eq. 0 then
+  echo need len: fiber length
+  stop
+endif
+
+if @?temp .eq. 0 then
+   set temp 300
+endif
+
+if @?nstep .eq. 0 then
+   set nstep 10000
+endif
+
+goto backgetargs

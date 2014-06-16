@@ -1,0 +1,88 @@
+* Force field parameters for neutral fcc metals
+* Developer     : Hendrik Heinz
+* Email Address : hh29@uakron.edu
+* Institution   : The University of Akron. Department of Polymer Engineering.
+* Date          : February 12, 2010
+* Force field parameters for eight neutral fcc metals 
+* Ag, Al, Au, Cu, Ni, Pb, Pd and Pt are added to CHARMM22
+*
+
+!Reference
+!H. Heinz, R. A. Vaia, B. L. Farmer and R. R. Naik, Accurate Simulation
+!of Surfaces and Interfaces of Face-Centered Cubic Metals Using 12-6 and 9-6
+!Lennard-Jones Potentials, Journal of Physical Chemistry C, 2008, 112,17281-17290.
+
+read rtf card append
+* Topology for fcc metals
+*
+31  1
+
+DEFA FIRS NONE LAST NONE
+
+MASS   107 AG  107.868200 AG ! Silver metal (HH et al. 2008)    
+MASS   108 AL   26.981539 AL ! Aluminium metal (HH et al. 2008)
+MASS   109 AU  196.966500 AU ! Gold metal (HH et al. 2008)
+MASS   110 CU   63.546000 CU ! Copper metal (HH et al. 2008)
+MASS   111 NI   58.693400 NI ! Nickel metal (HH et al. 2008)
+MASS   112 PB  207.200000 PB ! Lead metal (HH et al. 2008)
+MASS   113 PD  106.420000 PD ! Palladium metal (HH et al. 2008)
+MASS   114 PT  195.084000 PT ! Platinum metal (HH et al. 2008)
+
+RESI AG        0.00 ! Silver metal
+GROUP
+ATOM AG   AG   0.00
+PATCHING FIRST NONE LAST NONE
+
+RESI AL        0.00 ! Aluminium metal
+GROUP
+ATOM AL   AL   0.00
+PATCHING FIRST NONE LAST NONE
+
+RESI AU        0.00 ! Gold metal
+GROUP
+ATOM AU   AU   0.00
+PATCHING FIRST NONE LAST NONE
+
+RESI CU        0.00 ! Copper metal
+GROUP
+ATOM CU   CU   0.00
+PATCHING FIRST NONE LAST NONE
+
+RESI NI        0.00 ! Nickel metal
+GROUP
+ATOM NI   NI   0.00
+PATCHING FIRST NONE LAST NONE
+
+RESI PB        0.00 ! Lead metal
+GROUP
+ATOM PB   PB   0.00
+PATCHING FIRST NONE LAST NONE
+
+RESI PD        0.00 ! Palladium metal
+GROUP
+ATOM PD   PD   0.00
+PATCHING FIRST NONE LAST NONE
+
+RESI PT        0.00 ! Platinum metal
+GROUP
+ATOM PT   PT   0.00
+PATCHING FIRST NONE LAST NONE
+
+END
+
+read param card append
+
+NONBONDED nbxmod  5 atom cdiel shift vatom vdistance vswitch -
+cutnb 14.0 ctofnb 12.0 ctonnb 10.0 eps 1.0 e14fac 1.0 wmin 1.5
+                !adm jr., 5/08/91, suggested cutoff scheme
+
+AG       0.0     -4.56         1.4775 ! HH et al. (2008)
+AL       0.0     -4.02         1.4625 ! HH et al. (2008)
+AU       0.0     -5.29         1.4755 ! HH et al. (2008)
+CU       0.0     -4.72         1.3080 ! HH et al. (2008)
+NI       0.0     -5.65         1.2760 ! HH et al. (2008)
+PB       0.0     -2.93         1.7825 ! HH et al. (2008)
+PD       0.0     -6.15         1.4095 ! HH et al. (2008)
+PT       0.0     -7.80         1.4225 ! HH et al. (2008)
+
+END

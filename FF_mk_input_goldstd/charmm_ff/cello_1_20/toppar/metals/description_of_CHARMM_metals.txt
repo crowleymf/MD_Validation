@@ -1,0 +1,20 @@
+Force field parameters for neutral fcc metals
+Developer     : Hendrik Heinz
+Email Address : hh29@uakron.edu
+Institution   : The University of Akron. Department of Polymer Engineering.
+Date          : February 12, 2010
+
+Force field parameters for eight neutral fcc metals Ag, Al, Au, Cu, Ni, Pb, Pd and Pt are added to CHARMM22.
+
+New files:    top_all22_prot_metals.inp and par_all22_prot_metals.inp.
+
+Reference: 1. H. Heinz, R. A. Vaia, B. L. Farmer and R. R. Naik, Accurate Simulation
+              of Surfaces and Interfaces of Face-Centered Cubic Metals Using 12-6 and 9-6
+              Lennard-Jones Potentials, Journal of Physical Chemistry C, 2008, 112,17281-17290.
+           2. H. Heinz, B. L. Farmer, R. B. Pandey, J. M. Slocik, S. S. Patnaik, R. Pachter, and R. R. Naik,
+              Nature of Molecular Interactions of Peptides with Gold, Palladium, and Pd-Au Bimetal Surfaces
+              in Aqueous Solution, J. Am. Chem. Soc. 2009, 131, 9704-9714. 
+           3. J. Feng, R. B. Pandey, R. J. Berry, J. M. Slocik, R. R. Naik, B. L. Farmer and H. Heinz, Molecular
+              Epitaxy Determines Adsorption of Amino Acids and Surfactants on Au {111} Surfaces in Aqueous Solution
+              (submitted).
+
