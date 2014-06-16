@@ -1,0 +1,146 @@
+* Take the 36 chain 2mer and make a 20mer 36-chain 
+*
+goto getargs
+label backgetargs
+
+goto setup
+label backsetup
+
+
+set return donetask
+goto @task
+label donetask
+stop
+
+!===============================
+!        dynamics
+!===============================
+label dyna
+  set returndyna @return
+
+read coor card name cor/@fil_min.cor
+
+energy @domdec -
+     @nbond ilbfrq 0 echeck -1 iseed 121239 2329 328241 32111 -
+     eps 1.0 cutnb 9 cutim 9 ctofnb 8 ctonnb 7.5 vswi -
+     Ewald kappa 0.320 pmEwald order 4 fftx 64 ffty 32 fftz 32 ntrfq 200 - !PME
+
+shake fast param bonh
+
+open unit 20 unform write name dcd/@fil_equil_@run_@temp.dcd
+open unit 21   form write name rst/@fil_equil_@run_@temp.rst
+
+
+if @run .eq. 1 then
+  !---------------------------------------------------------------------------
+  !                 Constant pressure equilibration
+  !---------------------------------------------------------------------------
+
+  if @?nstep .eq. 0 then
+    set nstep 10000
+  endif
+  if @?nstep .eq. 0 then
+    set nprint 100
+  endif
+
+  dynamics @list leap start timestep 0.002 -
+       cpt -
+       pconst pref 1 pmass 200 pgamma .1 - !prxx 1 pryy 1 przz 1 -
+       nstep @nstep nprint @nprint  iprfrq 100 -
+       nsavc 100 iuncrd 20 iunwrite 21 -
+       firstt @temp finalt @temp twindl -5.0 twindh 5.0 -
+       ichecw 0 teminc 30.0 ihtfrq 0 ieqfrq 1000 -
+       iasors 1 iasvel 1 iscvel 0  -
+       @nbond ilbfrq 0 echeck -1 iseed 121239 2329 328241 32111 -
+       eps 1.0  -
+       Ewald kappa 0.320 pmEwald order 4 fftx 64 ffty 32 fftz 32 ntrfq 200 - !PME
+
+       write coor card name cor/@fil_@run.cor
+else
+!---------------------------------------------------------------------------
+!              Constant volume production
+!---------------------------------------------------------------------------
+  if @?nstep .eq. 0 then
+    set nstep 10000000
+  endif
+  calc runm = @run - 1
+  open unit 22   form read name rst/@fil_equil_@runm_@temp.rst
+  dynamics @list leap restart timestep 0.002 -
+       nstep @nstep nprint 100  iprfrq 100 -
+       nsavc 500 iuncrd 20 iunwrite 21 iunread 22 -
+       firstt @temp finalt @temp twindl -5.0 twindh 5.0 -
+       ichecw 0 teminc 30.0 ihtfrq 0 ieqfrq 1000 -
+       iasors 1 iasvel 1 iscvel 0  -
+       @nbond ilbfrq 0 echeck -1 iseed 121239 2329 328241 32111 -
+       eps 1.0  -
+       Ewald kappa 0.320 pmEwald order 4 fftx 64 ffty 32 fftz 32 ntrfq 200 - !PME
+  
+endif
+
+goto @returndyna
+
+
+
+
+
+
+
+!==========================================================
+label getargs
+!==========================================================
+set dim 1
+set len 20
+set task dyna
+set run 1
+! set domdec domdec ndir @ndx @ndy @ndz 
+set domdec
+goto backgetargs
+
+if @?dim .eq. 0 then
+  echo need dim: fiber dimension
+  stop
+endif
+if @?len .eq. 0 then
+  echo need len: fiber length
+  stop
+endif
+
+if @?ndx .eq. 0 stop
+if @?ndy .eq. 0 stop
+if @?ndz .eq. 0 stop
+
+set task dyna
+
+
+goto backgetargs
+
+!==========================================================
+label setup
+!==========================================================
+read rtf   card name toppar/top_all36_carb.rtf
+read param card name toppar/par_all36_carb.prm flex
+stream toppar/toppar_water_ions.str
+
+calc nchain = @dim * @dim
+set fil @nchain_@len_wat
+read psf card name psf/@fil.psf
+
+set list bycb
+
+set nbond  inbfrq -1 imgfrq -1 cutnb 11 cutim 11 ctofnb 8 ctonnb 7.5 vswi
+set temp 300
+stream dims/@fil_dims.str
+
+read coor card name cor/@fil.cor
+set a @xsiz
+set b @ysiz
+set c @zsiz
+set  theta = 90.0
+Crystal define orthorhombic @a @b @c @theta @theta @theta    
+crystal build cutoff 11 noper 0
+
+image byseg xcen 0.0 ycen 0.0 zcen 0.0 select segid 0* end
+image byres xcen 0.0 ycen 0.0 zcen 0.0 select segid w* end
+
+
+goto backsetup

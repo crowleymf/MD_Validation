@@ -1,0 +1,81 @@
+**
+*
+
+set name cello_1_20_watbox
+set fil  @name
+set toppar ../../../toppar
+read rtf   card name @toppar/top_@ff.rtf
+read rtf   append card name @toppar/top_@ff2.rtf
+read param card name @toppar/par_@ff.prm
+boml -1
+read param append card name @toppar/par_@ff2.prm
+boml 0
+read sequ bglc 20
+
+generate 0101 first none last none
+set l1 1
+set l2 2
+label connect
+  patch 14bb 0101 @l1 0101 @l2
+  incr l1
+  incr l2
+  if @l1 .lt. 20 goto connect
+
+autogenerate angles dihe
+
+read sequence tip3 1701
+generate w111 noang nodihe first none last none
+read sequence tip3 1669
+generate w112 noang nodihe first none last none
+read sequence tip3 1671
+generate w113 noang nodihe first none last none
+read sequence tip3 1707
+generate w114 noang nodihe first none last none
+
+
+write psf card name psf/@name.psf
+read coor pdb name input/1_20_wat.pdb resid
+
+
+set list bycb
+
+set nbond  inbfrq -1 imgfrq -1 cutnb 11 cutim 11 ctofnb 8 ctonnb 7.5 vswi
+set temp 300
+stream dims/@fil_dims.str
+
+read coor card name cor/@fil.cor
+set a @xsiz
+set b @ysiz
+set c @zsiz
+set  theta = 90.0
+Crystal define orthorhombic @a @b @c @theta @theta @theta    
+crystal build cutoff 11 noper 0
+
+image byseg xcen 0.0 ycen 0.0 zcen 0.0 select segid 0* end
+image byres xcen 0.0 ycen 0.0 zcen 0.0 select segid w* end
+
+
+mini sd bycb nstep 100
+write coor pdb  name pdb/@name.pdb
+
+dyna nstep 1000 nprint 100 start leap firstt 600 finalt 600
+write coor pdb  name pdb/@name_600k.pdb 
+
+label forcedump
+read coor pdb  name  pdb/@name.pdb resid
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+
+read coor pdb  name  pdb/@name_600k.pdb resid
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_600k_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+
+stop

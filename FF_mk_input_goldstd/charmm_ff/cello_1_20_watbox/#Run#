@@ -1,0 +1,74 @@
+#! /bin/csh -x
+
+set name=cello_1_20_watbox
+set toppar=../../../toppar
+
+set nff = 2
+set ff = all36_carb
+set ff2 = all36_wation
+if ( $1 != "" ) then
+  echo ff is $1
+  set ff = $1
+endif 
+set top=toppar/top_$ff.rtf,toppar/top_$ff2.rtf
+set par=toppar/par_$ff.prm,toppar/par_$ff2.prm
+
+charmm -i  input/$name.inp ff=$ff ff2=$ff2 nff=$nff | tee charmm_output/charmm.out
+
+chamber -cmap  \
+    -p Amber_output/$name.prmtop \
+    -inpcrd Amber_output/$name.inpcrd \
+    -crd pdb/$name.pdb \
+    -psf psf/$name.psf \
+    -top   $top \
+    -box 
+    -param $par
+
+
+echo -n "Run sander (y/n): "
+set yn = $<
+if ( $yn == n ) exit
+
+sander:
+if ( $?SANDER ) then
+   set sander = $SANDER
+else 
+   set sander = `which sander`
+endif
+
+$sander -O -i input/mdin -inf Amber_output/mdinfo \
+   -c Amber_output/$name.inpcrd \
+   -p Amber_output/$name.prmtop \
+   -o Amber_output/stdout |& tee mdout
+
+    mv charmm_gold Amber_output/${name}_amber.frcdmp
+
+
+chamber -cmap  \
+    -p Amber_output/$name.prmtop \
+    -inpcrd Amber_output/${name}_600k.inpcrd \
+    -crd pdb/${name}_600k.pdb \
+    -psf psf/$name.psf \
+    -top   $toppar/$top \
+    -param $toppar/$par
+
+$sander -O -i input/mdin -inf Amber_output/mdinfo \
+   -c Amber_output/${name}_600k.inpcrd \
+   -p Amber_output/$name.prmtop \
+   -o Amber_output/stdout |& tee mdout
+
+    mv charmm_gold Amber_output/${name}_600k_amber.frcdmp
+
+echo "----------------------------------------------------------------"
+echo ""
+echo "----------------------------------------------------------------"
+../ffcompare charmm_output/${name}_chm.frcdmp \
+              Amber_output/${name}_amber.frcdmp
+echo "----------------------------------------------------------------"
+
+echo ""
+echo "----------------------------------------------------------------"
+../ffcompare charmm_output/${name}_600k_chm.frcdmp \
+              Amber_output/${name}_600k_amber.frcdmp
+echo "----------------------------------------------------------------"
+

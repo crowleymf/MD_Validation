@@ -1,0 +1,16 @@
+Dump forces and energies for cello_1_20
+
+  &cntrl
+	imin=1,irest=0,
+   maxcyc=0,ncyc=0,
+   ntb=0,
+   igb=6,
+   cut=999.0,
+   ntpr=1,
+
+ /
+
+ &debugf
+ do_charmm_dump_gold = 1
+ /
+
