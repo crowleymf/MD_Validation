@@ -1,7 +1,7 @@
 #! /bin/csh 
 
 set name=asn
-set ff = all27_prot_na
+set ff = all36_prot
 if ( $1 != "" ) then
   echo ff is $1
   set ff = $1
@@ -9,9 +9,8 @@ endif
 set top=top_$ff.rtf
 set par=par_$ff.prm
 set toppar=../../../toppar
-#set toppar=./toppar
 
-charmm -i  input/$name.inp ff=$ff toppar=$toppar | tee charmm_output/charmm_$ff.out
+charmm -i  input/$name.inp ff=$ff | tee charmm_output/charmm.out
 
 chamber -cmap  \
     -p Amber_output/$name.prmtop \
@@ -19,7 +18,7 @@ chamber -cmap  \
     -crd pdb/$name.pdb \
     -psf psf/$name.psf \
     -top   $toppar/$top \
-    -param $toppar/$par | tee chamber_$top.out
+    -param $toppar/$par | tee chamber.out
 
 
 echo -n "Run sander (y/n): "
@@ -47,7 +46,7 @@ chamber -cmap  \
     -crd pdb/${name}_600k.pdb \
     -psf psf/$name.psf \
     -top   $toppar/$top \
-    -param $toppar/$par | tee chamber_$top.out
+    -param $toppar/$par | tee chamber600.out
 
 $sander -O -i input/mdin -inf Amber_output/mdinfo \
    -c Amber_output/${name}_600k.inpcrd \
