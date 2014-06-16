@@ -1,0 +1,815 @@
+ Parameter: FF <- "ALL36_PROT"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+           (CHARMM) - Developmental Version 39a2   February 15, 2014            
+                             Git commit ID b9d5bd6                              
+       Copyright(c) 1984-2014  President and Fellows of Harvard College
+                              All Rights Reserved
+           Current operating system: Darwin-11.4.0(x86_64)@mfc[+  7]            
+                 Created on  6/14/14 at 16:02:42 by user: mcrowley    
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> * DHFR GAS PHASE MINIMIZATION
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    set name dhfr_vac
+ Parameter: NAME <- "DHFR_VAC"
+  
+ CHARMM>    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ CHARMM>    ! Read in Topology and parameter file for ALL27
+ CHARMM>    set toppar ../../../toppar
+ Parameter: TOPPAR <- "../../../TOPPAR"
+  
+ CHARMM>    read rtf   card name @toppar/top_all36_prot.rtf
+ Parameter: TOPPAR -> "../../../TOPPAR"
+ VOPEN> Attempting to open::../../../TOPPAR/TOP_ALL36_PROT.RTF::
+ MAINIO> Residue topology file being read from unit  90.
+ TITLE> *>>>>>>>>CHARMM36 ALL-HYDROGEN TOPOLOGY FILE FOR PROTEINS <<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> MAY 2011 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read param card name @toppar/par_all36_prot.prm flex
+ Parameter: TOPPAR -> "../../../TOPPAR"
+ VOPEN> Attempting to open::../../../TOPPAR/PAR_ALL36_PROT.PRM::
+
+          PARAMETER FILE BEING READ FROM UNIT 90
+ TITLE> *>>>> CHARMM36 ALL-HYDROGEN PARAMETER FILE FOR PROTEINS <<<<<<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> FEB. 2012 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    stream @toppar/toppar_water_ions.str
+ Parameter: TOPPAR -> "../../../TOPPAR"
+ VOPEN> Attempting to open::../../../TOPPAR/TOPPAR_WATER_IONS.STR::
+ OPNLGU> Unit 99 opened for READONLY access to /Users/mcrowley/charmm/Validate/MD_Validation/FF_mk_input_goldstd/charmm_ff/dhfr_vac/../../../TOPPAR/TOPPAR_WATER_IONS.STR
+
+                    INPUT STREAM SWITCHING TO UNIT    99
+ RDTITL> * TOPLOGY AND PARAMETER INFORMATION FOR WATER AND IONS.
+ RDTITL> *
+ Parameter: IN1 <- "" <empty>
+  
+ CHARMM>     
+  
+ CHARMM>    !Testcase
+ CHARMM>    !test_water_ions.inp
+ CHARMM>     
+  
+ CHARMM>    ! IMPORTANT NOTE: this file contains NBFixes between carboxylates and sodium,
+ CHARMM>    ! which will only apply if the main files containing carboxylate atom types
+ CHARMM>    ! have been read in first!
+ CHARMM>     
+  
+ CHARMM>    !references
+ CHARMM>    !
+ CHARMM>    !TIP3P water model
+ CHARMM>    !
+ CHARMM>    !W.L. Jorgensen; J.Chandrasekhar; J.D. Madura; R.W. Impey;
+ CHARMM>    !M.L. Klein; "Comparison of simple potential functions for
+ CHARMM>    !simulating liquid water", J. Chem. Phys. 79 926-935 (1983).
+ CHARMM>    !
+ CHARMM>    !IONS
+ CHARMM>    !
+ CHARMM>    !Ions from Roux and coworkers
+ CHARMM>    !
+ CHARMM>    !Beglov, D. and Roux, B., Finite Representation of an Infinite
+ CHARMM>    !Bulk System: Solvent Boundary Potential for Computer Simulations,
+ CHARMM>    !Journal of Chemical Physics, 1994, 100: 9050-9063
+ CHARMM>    !
+ CHARMM>    !ZINC
+ CHARMM>    !
+ CHARMM>    !Stote, R.H. and Karplus, M. Zinc Binding in Proteins and
+ CHARMM>    !Solution: A Simple but Accurate Nonbonded Representation, PROTEINS:
+ CHARMM>    !Structure, Function, and Genetics 23:12-31 (1995)
+ CHARMM>     
+  
+ CHARMM>    !test "append" to determine if previous toppar files have been read and
+ CHARMM>    !add append to "read rtf card" if true
+ CHARMM>    set nat ?NATC
+ RDCMND substituted energy or value "?NATC" to "83"
+ Parameter: NAT <- "83"
+  
+ CHARMM>    set app
+ Parameter: APP <- "" <empty>
+  
+ CHARMM>    !We're exploiting what is arguably a bug in the parser. On the left hand side,
+ CHARMM>    !the quotes have priority, so NAT is correctly substituted. On the right hand
+ CHARMM>    !side, the ? has priority and NATC" (sic) is not a valid substitution...
+ CHARMM>    if "@NAT" ne "?NATC" if @nat ne 0 set app append
+ Parameter: NAT -> "83"
+ Parameter: NAT -> "83"
+ RDCMND: can not substitute energy "?NATC""
+ Comparing ""83"" and ""?NATC"".
+ IF test evaluated as true.  Performing command
+ Comparing "83" and "0".
+ IF test evaluated as true.  Performing command
+ Parameter: APP <- "APPEND"
+  
+ CHARMM>     
+  
+ CHARMM>    read rtf card @app
+ Parameter: APP -> "APPEND"
+ MAINIO> Residue topology file being read from unit  99.
+ RDTITL> * TOPOLOGY FOR WATER AND IONS
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    read para card flex @app
+ Parameter: APP -> "APPEND"
+
+          PARAMETER FILE BEING READ FROM UNIT 99
+ RDTITL> * PARAMETERS FOR WATER AND IONS
+ RDTITL> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>     
+  
+ CHARMM>    ! The following section contains NBFixes for sodium interacting with
+ CHARMM>    ! carboxylate oxygens of various CHARMM force fields. It will generate
+ CHARMM>    ! level -1 warnings whenever any of these force fields have not been
+ CHARMM>    ! read prior to the current stream file. Since we don't want to force
+ CHARMM>    ! the user to always read all the force fields, we're suppressing the
+ CHARMM>    ! warnings. The only side effect is that you will have "most severe
+ CHARMM>    ! warning was at level 0" at the end of your output. Also note that
+ CHARMM>    ! the user is responsible for reading the current file last if they
+ CHARMM>    ! want the NBFixes to apply. A more elegant solution would require new
+ CHARMM>    ! features to be added to CHARMM.
+ CHARMM>    ! parallel fix, to avoid duplicated messages in the log
+ CHARMM>    set para
+ Parameter: PARA <- "" <empty>
+  
+ CHARMM>    if ?NUMNODE gt 1 set para node 0
+ RDCMND substituted energy or value "?NUMNODE" to "8"
+ Comparing "8" and "1".
+ IF test evaluated as true.  Performing command
+ Parameter: PARA <- "NODE 0"
+  
+ CHARMM>     
+  
+ CHARMM>    set wrn ?WRNLEV
+ RDCMND: can not substitute energy "?WRNLEV"
+ Parameter: WRN <- "?WRNLEV"
+  
+ CHARMM>    ! Some versions of CHARMM don't seem to initialize wrnlev...
+ CHARMM>    if "@WRN" eq "?WRNLEV" set wrn 5
+ Parameter: WRN -> "?WRNLEV"
+ RDCMND: can not substitute energy "?WRNLEV""
+ Comparing ""?WRNLEV"" and ""?WRNLEV"".
+ IF test evaluated as true.  Performing command
+ Parameter: WRN <- "5"
+  
+ CHARMM>    set bom ?bomlev
+ RDCMND substituted energy or value "?BOMLEV" to "0"
+ Parameter: BOM <- "0"
+  
+ CHARMM>    WRNLEV -1 @PARA
+ Parameter: PARA -> "NODE 0"
+  
+ CHARMM>    BOMLEV -1 @PARA
+ Parameter: PARA -> "NODE 0"
+  
+ CHARMM>    read para card flex append
+
+          PARAMETER FILE BEING READ FROM UNIT 99
+ RDTITL> * NBFIX BETWEEN CARBOXYLATE AND SODIUM
+ RDTITL> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>    BOMLEV @bom @PARA
+ Parameter: BOM -> "0"
+ Parameter: PARA -> "NODE 0"
+  
+ CHARMM>    WRNLEV @wrn @PARA
+ Parameter: WRN -> "5"
+ Parameter: PARA -> "NODE 0"
+  
+ CHARMM>     
+  
+ CHARMM>    return
+ VCLOSE: Closing unit   99 with status "KEEP"
+
+                    RETURNING TO INPUT STREAM     5
+  
+ CHARMM>     
+  
+ CHARMM>    !==============================
+ CHARMM>    ! Read in DHFR Gas Phase PDB
+ CHARMM>    !==============================
+ CHARMM>        open unit 3 read card name @name_initial.pdb
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::DHFR_VAC_INITIAL.PDB::
+ OPNLGU> Unit  3 opened for READONLY access to /Users/mcrowley/charmm/Validate/MD_Validation/FF_mk_input_goldstd/charmm_ff/dhfr_vac/DHFR_VAC_INITIAL.PDB
+  
+ CHARMM>        read sequ pdb unit 3
+ MAINIO> Sequence information being read from unit   3.
+ TITLE>  
+ TITLE>  *
+
+          RESIDUE SEQUENCE --   159 RESIDUES
+          MET ILE SER LEU ILE ALA ALA LEU ALA VAL ASP ARG VAL ILE GLY MET GLU ASN ALA MET 
+          PRO TRP ASN LEU PRO ALA ASP LEU ALA TRP PHE LYS ARG ASN THR LEU ASP LYS PRO VAL 
+          ILE MET GLY ARG HSD THR TRP GLU SER ILE GLY ARG PRO LEU PRO GLY ARG LYS ASN ILE 
+          ILE LEU SER SER GLN PRO GLY THR ASP ASP ARG VAL THR TRP VAL LYS SER VAL ASP GLU 
+          ALA ILE ALA ALA CYS GLY ASP VAL PRO GLU ILE MET VAL ILE GLY GLY GLY ARG VAL TYR 
+          GLU GLN PHE LEU PRO LYS ALA GLN LYS LEU TYR LEU THR HSD ILE ASP ALA GLU VAL GLU 
+          GLY ASP THR HSD PHE PRO ASP TYR GLU PRO ASP ASP TRP GLU SER VAL PHE SER GLU PHE 
+          HSD ASP ALA ASP ALA GLN ASN SER HSD SER TYR CYS PHE GLU ILE LEU GLU ARG ARG 
+ ***** Message from SEQRDR ***** THE SYSTEM CONTAINS 41 TITRATABLE GROUPS
+ THE USER MUST PREDETERMINE THE PROTONATION STATE THROUGH THE SEQUENCE AND RTF
+ HIS -  0  HSD -  5  HSE -  0  HSP -  0  ASP - 14  GLU - 12  LYS -  6  TYR -  4
+  
+ CHARMM>        close unit 3
+ VCLOSE: Closing unit    3 with status "KEEP"
+  
+ CHARMM>        generate DHFR first nter last cter setup
+ THE PATCH 'NTER' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CTER' WILL BE USED FOR THE LAST  RESIDUE
+ GENPSF> Segment   1 has been generated. Its identifier is DHFR.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =      159
+         Number of atoms         =     2489   Number of groups     =      719
+         Number of bonds         =     2523   Number of angles     =     4561
+         Number of dihedrals     =     6701   Number of impropers  =      436
+         Number of cross-terms   =      157
+         Number of HB acceptors  =      245   Number of HB donors  =      263
+         Number of NB exclusions =        0   Total charge =  -11.00000
+  
+ CHARMM>        autogenerate angl dihe
+ AUTOGEN: All angles are removed and regenerated.
+ AUTOGEN: All dihedrals are removed and regenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =      159
+         Number of atoms         =     2489   Number of groups     =      719
+         Number of bonds         =     2523   Number of angles     =     4561
+         Number of dihedrals     =     6701   Number of impropers  =      436
+         Number of cross-terms   =      157
+         Number of HB acceptors  =      245   Number of HB donors  =      263
+         Number of NB exclusions =        0   Total charge =  -11.00000
+  
+ CHARMM>     
+  
+ CHARMM>        read coor pdb name @name_initial.pdb
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::DHFR_VAC_INITIAL.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE>  
+ TITLE>  *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>        write psf card name psf/@name.psf
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::psf/dhfr_vac.psf::
+ RDTITL> WRITE PSF CARD XPLOR NAME PSF/DHFR_VAC_XPLOR.PSF
+ RDTITL> No title read.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>        write psf card xplor name psf/@name_xplor.psf
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::psf/dhfr_vac_xplor.psf::
+ RDTITL>  
+ RDTITL> No title read.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>      update bycb  vswitch  switch -
+ CHARMM>             cutnb 14.0   ctofnb 12.0   ctonnb 11.0
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYCB     NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 11.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found   7084 exclusions and   6556 interactions(1-4)
+ <MAKGRP> found   2094 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR        0 ATOM PAIRS AND        0 GROUP PAIRS
+ == IMAGES === SPACE FOR        0 ATOM PAIRS AND        0 GROUP PAIRS
+  
+ =========================================
+              TRIAL run of list...........
+ =========================================
+Using Image CUBE search
+Using Image CUBE search
+  NBNDGCM found:
+      150816  atom pairs
+           0  image atom pairs
+           0  self atom pairs
+      726957 total atom  pairs
+           0 total image pairs
+  
+ CHARMM>     
+  
+ CHARMM>      mini sd nstep 200 tolgrd 0.0001 nprint 50
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYCB     NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 11.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are   150816 atom  pairs and    13640 atom  exclusions.
+ There are        0 group pairs and     2094 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   196060 ATOM PAIRS AND        0 GROUP PAIRS
+ == IMAGES === SPACE FOR        0 ATOM PAIRS AND        0 GROUP PAIRS
+Using Image CUBE search
+  NBNDGCM found:
+      150816  atom pairs
+           0  image atom pairs
+           0  self atom pairs
+      726957 total atom  pairs
+           0 total image pairs
+
+
+ STEEPD> An energy minimization has been requested.
+
+ NSTEP  =          200   NPRINT =           50
+ STEP   =    0.0200000   TOLFUN =    0.0000000
+ TOLGRD =    0.0001000   TOLSTP =    0.0000000
+
+MINI MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+MINI INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+MINI CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+MINI EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        0    229.57723      0.00000     21.11057      0.02000
+MINI INTERN>      719.49836   1231.10895    144.38570   1674.44862    102.19045
+MINI CROSS>        17.05558      0.00000      0.00000      0.00000
+MINI EXTERN>     -646.63035  -3012.48007      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        39
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   196060 ATOM PAIRS AND        0 GROUP PAIRS
+ == IMAGES === SPACE FOR        1 ATOM PAIRS AND        0 GROUP PAIRS
+Using Image CUBE search
+  NBNDGCM found:
+      153678  atom pairs
+           0  image atom pairs
+           0  self atom pairs
+      726762 total atom  pairs
+           0 total image pairs
+MINI>       50  -6859.49695   7089.07418      8.18582      0.00498
+MINI INTERN>      479.71948   1151.86311     93.29867   1721.07955    158.83260
+MINI CROSS>        -5.69861      0.00000      0.00000      0.00000
+MINI EXTERN>     -511.01823  -9947.57352      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      100  -8077.24810   1217.75115      5.20956      0.00298
+MINI INTERN>      446.18452   1221.26267     96.05645   1739.36907    164.78482
+MINI CROSS>        -1.61277      0.00000      0.00000      0.00000
+MINI EXTERN>     -454.81778 -11288.47509      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       125
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   196060 ATOM PAIRS AND        0 GROUP PAIRS
+ == IMAGES === SPACE FOR        1 ATOM PAIRS AND        0 GROUP PAIRS
+Using Image CUBE search
+  NBNDGCM found:
+      154248  atom pairs
+           0  image atom pairs
+           0  self atom pairs
+      727094 total atom  pairs
+           0 total image pairs
+MINI>      150  -8643.10406    565.85596      1.78642      0.00178
+MINI INTERN>      425.85746   1255.10930     98.89577   1762.13419    168.95263
+MINI CROSS>        -0.00907      0.00000      0.00000      0.00000
+MINI EXTERN>     -417.83228 -11936.21205      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>      200  -8958.48397    315.37991      0.93553      0.00107
+MINI INTERN>      428.31832   1277.01037     98.44308   1782.12477    171.08603
+MINI CROSS>         0.54107      0.00000      0.00000      0.00000
+MINI EXTERN>     -399.69796 -12316.30964      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+
+ STEEPD> Minimization exiting with number of steps limit (       200) exceeded.
+
+STPD MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+STPD INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+STPD CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+STPD EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+STPD>      200  -8958.48397    315.37991      0.93553      0.00128
+STPD INTERN>      428.31832   1277.01037     98.44308   1782.12477    171.08603
+STPD CROSS>         0.54107      0.00000      0.00000      0.00000
+STPD EXTERN>     -399.69796 -12316.30964      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>      write coor pdb name pdb/@name.pdb
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::pdb/dhfr_vac.pdb::
+ RDTITL>  
+ RDTITL> No title read.
+  Write CHARMM-pdb format
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>      read coor pdb name pdb/@name.pdb
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::PDB/DHFR_VAC.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE>   DHFR GAS PHASE MINIMIZATION
+ TITLE>    DATE:     6/14/14     16: 2:45      CREATED BY USER: MCROWLEY
+ TITLE>  *
+
+ ** WARNING ** Coordinates were overwritten for  2489 atoms.
+ *** LEVEL  2 WARNING *** BOMLEV IS    0
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>      ener  cutnb 9999.0   ctofnb 9998.0   ctonnb 9997.0
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYCB     NOEXtnd  NOEWald 
+ CUTNB  =******* CTEXNB =999.000 CTONNB =******* CTOFNB =*******
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are   154248 atom  pairs and    13640 atom  exclusions.
+ There are        0 group pairs and     2094 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   196060 ATOM PAIRS AND        0 GROUP PAIRS
+ == IMAGES === SPACE FOR        1 ATOM PAIRS AND        0 GROUP PAIRS
+Using Image CUBE search
+  
+ =========================================
+              TRIAL run of list...........
+ =========================================
+Using Image CUBE search
+Using Image CUBE search
+  NBNDGCM found:
+     3089232  atom pairs
+           0  image atom pairs
+           0  self atom pairs
+     3089232 total atom  pairs
+           0 total image pairs
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0   1102.34060 -10060.82457     10.18295
+ENER INTERN>      428.55184   1277.04399     98.53567   1782.15358    170.86786
+ENER CROSS>         0.56314      0.00000      0.00000      0.00000
+ENER EXTERN>     -423.24440  -2232.13107      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>      open unit 20 form write name charmm_output/@name.frcdmp
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::charmm_output/dhfr_vac.frcdmp::
+ OPNLGU> Unit 20 opened for WRITE access to /Users/mcrowley/charmm/Validate/MD_Validation/FF_mk_input_goldstd/charmm_ff/dhfr_vac/charmm_output/dhfr_vac.frcdmp
+  
+ CHARMM>      frcdump unit 20
+ Energies and Forces dumped to unit     20
+  
+ CHARMM>      close unit 20
+ VCLOSE: Closing unit   20 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    !---- Get energy and forces for 600k structure-----------
+ CHARMM>    dyna nstep 200 nprint 20 start leap firstt 600 finalt 600 -
+ CHARMM>             cutnb 14.0   ctofnb 12.0   ctonnb 11.0
+  IUNREA = -1         IUNWRI = -1          IUNOS = -1
+  IUNCRD = -1         IUNVEL = -1          KUNIT = -1
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYCB     NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 11.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are  3089232 atom  pairs and    13640 atom  exclusions.
+ There are        0 group pairs and     2094 group exclusions.
+Using Image CUBE search
+Using Image CUBE search
+Using Image CUBE search
+   NSTEP =      200    NSAVC =        1    NSAVV =       10
+  ISCALE =        0   ISCVEL =        0   IASORS =        0
+  IASVEL =        1   ICHECW =        1   NTRFRQ =        0
+  IHTFRQ =        0   IEQFRQ =        0   NPRINT =       20
+  INBFRQ =       -1   IHBFRQ =        0   IPRFRQ =      200
+  ILBFRQ =       50   IMGFRQ =        0
+  ISVFRQ =        0   NCYCLE =       50    NSNOS =       10
+  FIRSTT =   600.000  TEMINC =     5.000  TSTRUC =  -999.000
+  FINALT =   600.000  TWINDH =    10.000  TWINDL =   -10.000
+
+  TIME STEP =  2.04548E-02 AKMA       1.00000E-03 PS
+
+  RANDOM NUM. GEN. SEED(S) = 494300553 494300553 494300553 494300553
+ NUMBER OF DEGREES OF FREEDOM =   7461
+
+          GAUSSIAN OPTION                  IS            1
+          VELOCITIES ASSIGNED AT TEMPERATURE =    750.0000
+          SEED FOR RANDOM NUMBER GENERATOR IS:
+          SEEDS> 494300553 494300553 494300553 494300553
+
+     DETAILS ABOUT CENTRE OF MASS
+     POSITION          :    32.447701        32.568678        32.689173    
+     VELOCITY          :  -2.78434980E-03   1.26091305E-02   5.83280378E-03
+     ANGULAR MOMENTUM  :    1742.6184        660.17350       -3656.1415    
+     KINETIC ENERGY    :    1.8058068    
+DYNA DYN: Step         Time      TOTEner        TOTKe       ENERgy  TEMPerature
+DYNA PROP:             GRMS      HFCTote        HFCKe       EHFCor        VIRKe
+DYNA INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+DYNA CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+DYNA EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+DYNA PRESS:            VIRE         VIRI       PRESSE       PRESSI       VOLUme
+ ----------       ---------    ---------    ---------    ---------    ---------
+DYNA>        0      0.00000  -3398.66010   5559.63091  -8958.29101    749.96208
+DYNA PROP>          0.98920  -3398.58689   5559.85053      0.07321      9.91583
+DYNA INTERN>      428.55184   1277.04399     98.53567   1782.15358    170.86786
+DYNA CROSS>         0.56314      0.00000      0.00000      0.00000
+DYNA EXTERN>     -399.86232 -12316.14476      0.00000      0.00000      0.00000
+DYNA PRESS>        -0.00000     -6.61055      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        19
+Using Image CUBE search
+DYNA>       20      0.02000  -3316.64178   2597.49879  -5914.14057    350.38758
+DYNA PROP>         24.33497  -3314.70317   2679.89260      1.93861  -4997.46435
+DYNA INTERN>     1567.58911   2255.64753    279.54345   1952.95734    222.97530
+DYNA CROSS>         6.39155      0.00000      0.00000      0.00000
+DYNA EXTERN>     -254.67807 -11944.56678      0.00000      0.00000      0.00000
+DYNA PRESS>        -0.00000   3331.64290      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+DYNA>       40      0.04000  -3341.03316   3136.26856  -6477.30173    423.06450
+DYNA PROP>         22.99962  -3311.22899   3196.69845     29.80418   2219.80367
+DYNA INTERN>     1257.22829   2195.91649    261.61622   1978.41780    256.55683
+DYNA CROSS>         8.54787      0.00000      0.00000      0.00000
+DYNA EXTERN>     -279.74683 -12155.83839      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000  -1479.86911      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        41
+Using Image CUBE search
+DYNA>       60      0.06000  -3329.81124   3104.49686  -6434.30810    418.77869
+DYNA PROP>         24.38171  -3313.61421   3177.11314     16.19702   7779.91884
+DYNA INTERN>     1479.81736   2282.97452    274.23217   2009.70014    233.63769
+DYNA CROSS>         8.41256      0.00000      0.00000      0.00000
+DYNA EXTERN>     -200.32474 -12522.75781      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000  -5186.61256      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        64
+Using Image CUBE search
+DYNA>       80      0.08000  -3333.32430   3299.04979  -6632.37409    445.02275
+DYNA PROP>         24.78455  -3312.07340   3367.79828     21.25090   9160.60198
+DYNA INTERN>     1484.89026   2288.72503    268.17822   2056.08903    254.18612
+DYNA CROSS>        15.49919      0.00000      0.00000      0.00000
+DYNA EXTERN>     -161.52729 -12838.41465      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000  -6107.06799      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        92
+Using Image CUBE search
+DYNA>      100      0.10000  -3339.79678   3435.60901  -6775.40579    463.44380
+DYNA PROP>         23.82654  -3312.39097   3496.36423     27.40581  -1832.49679
+DYNA INTERN>     1349.71182   2338.79086    250.63215   2045.76998    236.54047
+DYNA CROSS>        -2.39878      0.00000      0.00000      0.00000
+DYNA EXTERN>     -140.43616 -12854.01613      0.00000      0.00000      0.00000
+DYNA PRESS>        -0.00000   1221.66452      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       112
+Using Image CUBE search
+DYNA>      120      0.12000  -3329.74978   3396.12251  -6725.87229    458.11730
+DYNA PROP>         25.31738  -3313.07146   3468.25720     16.67832   -191.69639
+DYNA INTERN>     1509.07136   2247.49893    262.23839   2050.26413    231.58733
+DYNA CROSS>         5.43979      0.00000      0.00000      0.00000
+DYNA EXTERN>     -133.96239 -12898.00983      0.00000      0.00000      0.00000
+DYNA PRESS>         0.00000    127.79759      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       129
+Using Image CUBE search
+DYNA>      140      0.14000  -3335.30476   3469.25086  -6804.55563    467.98189
+DYNA PROP>         24.95504  -3312.37769   3535.66602     22.92707   4128.41347
+DYNA INTERN>     1425.65226   2340.85672    269.44619   2081.19278    247.94533
+DYNA CROSS>        17.21313      0.00000      0.00000      0.00000
+DYNA EXTERN>      -94.59989 -13092.26214      0.00000      0.00000      0.00000
+DYNA PRESS>        -0.00000  -2752.27565      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       150
+Using Image CUBE search
+DYNA>      160      0.16000  -3333.29468   3435.75986  -6769.05454    463.46415
+DYNA PROP>         25.14235  -3313.01269   3504.63984     20.28199  10810.08331
+DYNA INTERN>     1539.01430   2379.67567    268.82774   2054.51588    245.85017
+DYNA CROSS>        13.74787      0.00000      0.00000      0.00000
+DYNA EXTERN>      -79.71505 -13190.97113      0.00000      0.00000      0.00000
+DYNA PRESS>        -0.00000  -7206.72221      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       170
+Using Image CUBE search
+DYNA>      180      0.18000  -3338.37883   3585.28615  -6923.66498    483.63438
+DYNA PROP>         24.19618  -3312.22685   3647.53858     26.15199   4918.18405
+DYNA INTERN>     1407.86157   2432.11050    264.78803   2109.64937    265.26137
+DYNA CROSS>        13.94462      0.00000      0.00000      0.00000
+DYNA EXTERN>      -60.69168 -13356.58875      0.00000      0.00000      0.00000
+DYNA PRESS>        -0.00000  -3278.78937      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       188
+Using Image CUBE search
+DYNA>      200      0.20000  -3332.85681   3577.10347  -6909.96028    482.53059
+DYNA PROP>         24.64445  -3312.56239   3644.64883     20.29442  -3049.01058
+DYNA INTERN>     1463.69515   2377.30878    259.50482   2132.46384    248.95871
+DYNA CROSS>         3.93222      0.00000      0.00000      0.00000
+DYNA EXTERN>      -72.18883 -13323.63497      0.00000      0.00000      0.00000
+DYNA PRESS>        -0.00000   2032.67372      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ DYNAMC> Averages for the last 200 steps:
+AVER DYN: Step         Time      TOTEner        TOTKe       ENERgy  TEMPerature
+AVER PROP:             GRMS      HFCTote        HFCKe       EHFCor        VIRKe
+AVER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+AVER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+AVER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+AVER PRESS:            VIRE         VIRI       PRESSE       PRESSI       VOLUme
+ ----------       ---------    ---------    ---------    ---------    ---------
+AVER>      200      0.20000  -3334.59006   3318.90150  -6653.49156    447.70063
+AVER PROP>         24.35460  -3312.63600   3385.42568     21.95406   3106.26956
+AVER INTERN>     1432.84701   2295.03050    261.82965   2037.12070    242.64758
+AVER CROSS>         8.28706      0.00000      0.00000      0.00000
+AVER EXTERN>     -165.02700 -12766.22706      0.00000      0.00000      0.00000
+AVER PRESS>        -0.00000  -2070.84637      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ DYNAMC> RMS fluctuations for the last 200 steps:
+FLUC>      200      0.20000      9.67619    319.93410    324.40552     43.15726
+FLUC PROP>          1.41643      1.05256    316.00842     10.57166   3656.95382
+FLUC INTERN>      126.24662    136.04441     20.72532     60.68512     17.53068
+FLUC CROSS>         6.32247      0.00000      0.00000      0.00000
+FLUC EXTERN>       74.34400    459.84195      0.00000      0.00000      0.00000
+FLUC PRESS>         0.00000   2437.96921      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+
+     DRIFT/STEP (LAST-TOTAL):    1.92747128E-03   1.92747128E-03
+     E AT STEP 0            :    -3312.8297       -3312.8297    
+     CORR. COEFFICIENT      :    0.10572406       0.10572406    
+
+     DETAILS ABOUT CENTRE OF MASS
+     POSITION          :    32.464490        32.596066        32.689238    
+     VELOCITY          :   4.10402660E-03   6.69468309E-03   1.58620056E-05
+     ANGULAR MOMENTUM  :   -1730.7661        245.18952        611.43195    
+     KINETIC ENERGY    :   0.55462918    
+  
+ CHARMM>    write coor pdb  name pdb/@name_600k.pdb
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::pdb/dhfr_vac_600k.pdb::
+ RDTITL>  
+ RDTITL> No title read.
+  Write CHARMM-pdb format
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    read coor pdb  name pdb/@name_600k.pdb
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::PDB/DHFR_VAC_600K.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE>   DHFR GAS PHASE MINIMIZATION
+ TITLE>    DATE:     6/14/14     16: 2:48      CREATED BY USER: MCROWLEY
+ TITLE>  *
+
+ ** WARNING ** Coordinates were overwritten for  2489 atoms.
+ *** LEVEL  2 WARNING *** BOMLEV IS    0
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    ener cutnb 999 ctofnb 998 ctonnb 997 switch vswitch
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYCB     NOEXtnd  NOEWald 
+ CUTNB  =999.000 CTEXNB =999.000 CTONNB =997.000 CTOFNB =998.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are   147807 atom  pairs and    13640 atom  exclusions.
+ There are        0 group pairs and     2094 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   197429 ATOM PAIRS AND        0 GROUP PAIRS
+ == IMAGES === SPACE FOR        1 ATOM PAIRS AND        0 GROUP PAIRS
+Using Image CUBE search
+  
+ =========================================
+              TRIAL run of list...........
+ =========================================
+Using Image CUBE search
+Using Image CUBE search
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0   4168.41302      0.00000     25.51022
+ENER INTERN>     1463.60502   2377.29730    259.50241   2132.41144    249.07833
+ENER CROSS>         3.94434      0.00000      0.00000      0.00000
+ENER EXTERN>      -95.50597  -2221.91985      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    open unit 20 form write name charmm_output/@name_600k_chm.frcdmp
+ Parameter: NAME -> "DHFR_VAC"
+ VOPEN> Attempting to open::charmm_output/dhfr_vac_600k_chm.frcdmp::
+ OPNLGU> Unit 20 opened for WRITE access to /Users/mcrowley/charmm/Validate/MD_Validation/FF_mk_input_goldstd/charmm_ff/dhfr_vac/charmm_output/dhfr_vac_600k_chm.frcdmp
+  
+ CHARMM>    frcdump unit 20
+ Energies and Forces dumped to unit     20
+  
+ CHARMM>    close unit 20
+ VCLOSE: Closing unit   20 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+ Parallel load balance (sec.):
+ Node Eext      Eint   Wait    Comm    EComm   List   Integ   Total
+   0     4.7     0.2     0.0     0.5     0.0     0.1     0.0     5.4
+   1     4.2     0.2     0.0     1.0     0.0     0.1     0.0     5.4
+   2     2.6     0.2     0.0     2.6     0.0     0.1     0.0     5.4
+   3     2.6     0.2     0.0     2.6     0.0     0.1     0.0     5.4
+   4     1.9     0.2     0.0     3.3     0.0     0.1     0.0     5.4
+   5     1.8     0.2     0.0     3.4     0.0     0.1     0.0     5.4
+   6     1.7     0.2     0.0     3.5     0.0     0.1     0.0     5.4
+   7     1.6     0.2     0.0     3.6     0.0     0.1     0.0     5.4
+PARALLEL> Average timing for all nodes:
+   8     2.6     0.2     0.0     2.6     0.0     0.1     0.0     5.4
+
+      $$$$$$  New timer profile Local node$$$$$
+
+   First List                      0.02 Other:            0.00
+      Comm coords                     0.02 Other:            0.00
+         Comm variables                  0.01 Other:            0.00
+         Save shake coords               0.00 Other:            0.00
+         Heuristic check                 0.00 Other:            0.00
+         Temp and virial calc            0.00 Other:            0.00
+      dynamc                          0.02 Other:            0.01
+   Dynamics total                  0.04 Other:            0.00
+      xdistm setup                    0.00 Other:            0.00
+      xdistm Build list               0.31 Other:            0.00
+      Heuristic check                 0.01 Other:            0.00
+      NBONDS                          0.06 Other:            0.00
+   List time                       0.39 Other:            0.00
+         Electrostatic & VDW             4.67 Other:            0.00
+      Nonbond force                   4.68 Other:            0.01
+         Bond energy                     0.01 Other:            0.00
+         Angle energy                    0.04 Other:            0.00
+         Dihedral energy                 0.09 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.15 Other:            0.01
+      Comm energy                     0.01 Other:            0.00
+      Comm force                      0.47 Other:            0.00
+   Energy time                     5.32 Other:            0.02
+ Total time                      6.60 Other:            0.82
+
+         $$$$$$  Average   profile $$$$$
+
+   First List                      0.02 Other:            0.00
+      Comm coords                     0.02 Other:            0.00
+         Comm variables                  0.01 Other:            0.00
+         Save shake coords               0.00 Other:            0.00
+         Heuristic check                 0.00 Other:            0.00
+         Temp and virial calc            0.00 Other:            0.00
+      dynamc                          0.02 Other:            0.01
+   Dynamics total                  0.04 Other:            0.00
+      xdistm setup                    0.00 Other:            0.00
+      xdistm Build list               0.19 Other:            0.00
+      Heuristic check                 0.01 Other:            0.00
+      NBONDS                          0.06 Other:            0.00
+   List time                       0.39 Other:            0.00
+         Electrostatic & VDW             2.60 Other:            0.00
+      Nonbond force                   4.67 Other:            0.00
+         Bond energy                     0.01 Other:            0.00
+         Angle energy                    0.04 Other:            0.00
+         Dihedral energy                 0.09 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.15 Other:            0.01
+      Comm energy                     0.01 Other:            0.00
+      Comm force                      2.54 Other:            0.00
+   Energy time                     5.32 Other:            0.02
+ Total time                      6.60 Other:            0.82
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    MOST SEVERE WARNING WAS AT LEVEL  0
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     6.60  SECONDS 
+                         CPU TIME:     6.38  SECONDS 
