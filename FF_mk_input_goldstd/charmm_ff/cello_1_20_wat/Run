@@ -1,5 +1,14 @@
 #! /bin/csh -x
 
+set chm = charmm
+set runit 
+if ( $1 == M ) then
+   set chm = mcharmm
+   set np = $2
+   set runit = "mpirun -np $np "
+   shift;shift
+endif
+
 set name=cello_1_20_wat
 set toppar=../../../toppar
 
@@ -13,7 +22,7 @@ endif
 set top=toppar/top_$ff.rtf,toppar/top_$ff2.rtf
 set par=toppar/par_$ff.prm,toppar/par_$ff2.prm
 
-charmm -i  input/$name.inp ff=$ff ff2=$ff2 nff=$nff | tee charmm_output/charmm.out
+# $runit $chm -i  input/$name.inp ff=$ff ff2=$ff2 nff=$nff | tee charmm_output/charmm.out
 
 chamber -cmap  \
     -p Amber_output/$name.prmtop \
