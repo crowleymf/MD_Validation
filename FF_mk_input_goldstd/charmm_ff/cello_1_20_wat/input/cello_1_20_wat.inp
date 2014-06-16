@@ -1,0 +1,62 @@
+**
+*
+
+set name cello_1_20_wat
+if @?ff .eq. 0 set ff all27_prot_na
+set toppar ../../../toppar
+read rtf   card name @toppar/top_@ff.rtf
+read rtf   append card name @toppar/top_@ff2.rtf
+read param card name @toppar/par_@ff.prm
+boml -1
+read param append card name @toppar/par_@ff2.prm
+boml 0
+read sequ bglc 20
+
+generate 0101 first none last none
+set l1 1
+set l2 2
+label connect
+  patch 14bb 0101 @l1 0101 @l2
+  incr l1
+  incr l2
+  if @l1 .lt. 20 goto connect
+
+autogenerate angles dihe
+
+read sequence tip3 1701
+generate w111 noang nodihe first none last none
+read sequence tip3 1669
+generate w112 noang nodihe first none last none
+read sequence tip3 1671
+generate w113 noang nodihe first none last none
+read sequence tip3 1707
+generate w114 noang nodihe first none last none
+
+
+write psf card name psf/@name.psf
+read coor pdb name input/1_20_wat.pdb resid
+
+mini sd bycc nstep 100
+
+write coor pdb  name pdb/@name.pdb
+
+dyna nstep 1000 nprint 1000 start leap firstt 600 finalt 600
+write coor pdb  name pdb/@name_600k.pdb
+
+read coor pdb  name  pdb/@name.pdb resid
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+
+read coor pdb  name  pdb/@name_600k.pdb resid
+ener cutnb 999 ctofnb 998 ctonnb 997 switch vswit
+
+open unit 20 form write name charmm_output/@{name}_600k_chm.frcdmp
+frcdump unit 20
+close unit 20
+
+
+stop
