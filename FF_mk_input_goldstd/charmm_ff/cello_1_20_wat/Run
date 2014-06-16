@@ -1,4 +1,7 @@
 #! /bin/csh -x
+set name=cello_1_20_wat
+set toppar=../../../toppar
+
 
 set chm = charmm
 set runit 
@@ -9,9 +12,6 @@ if ( $1 == M ) then
    shift;shift
 endif
 
-set name=cello_1_20_wat
-set toppar=../../../toppar
-
 set nff = 2
 set ff = all36_carb
 set ff2 = all36_wation
@@ -19,10 +19,10 @@ if ( $1 != "" ) then
   echo ff is $1
   set ff = $1
 endif 
-set top=toppar/top_$ff.rtf,toppar/top_$ff2.rtf
-set par=toppar/par_$ff.prm,toppar/par_$ff2.prm
+set top=${toppar}/top_$ff.rtf,${toppar}/top_$ff2.rtf
+set par=${toppar}/par_$ff.prm,${toppar}/par_$ff2.prm
 
-# $runit $chm -i  input/$name.inp ff=$ff ff2=$ff2 nff=$nff | tee charmm_output/charmm.out
+$runit $chm -i  input/$name.inp ff=$ff ff2=$ff2 nff=$nff | tee charmm_output/charmm.out
 
 chamber -cmap  \
     -p Amber_output/$name.prmtop \
@@ -57,8 +57,8 @@ chamber -cmap  \
     -inpcrd Amber_output/${name}_600k.inpcrd \
     -crd pdb/${name}_600k.pdb \
     -psf psf/$name.psf \
-    -top   $toppar/$top \
-    -param $toppar/$par
+    -top   $top \
+    -param $par
 
 $sander -O -i input/mdin -inf Amber_output/mdinfo \
    -c Amber_output/${name}_600k.inpcrd \

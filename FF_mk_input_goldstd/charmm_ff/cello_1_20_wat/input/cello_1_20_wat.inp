@@ -36,7 +36,7 @@ generate w114 noang nodihe first none last none
 write psf card name psf/@name.psf
 read coor pdb name input/1_20_wat.pdb resid
 
-mini sd bycc nstep 100
+mini sd bycb nstep 100
 
 write coor pdb  name pdb/@name.pdb
 
